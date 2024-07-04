@@ -1,4 +1,5 @@
 ﻿using blogsproject_1.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -23,12 +24,14 @@ namespace blogsproject_1.Controllers
         }
 
         [HttpGet]
+        [Authorize(Policy = "AdminPolicy")]
         public async Task<ActionResult<IEnumerable<User>>> GetUsers()
         {
             return await _context.Users.ToListAsync();
         }
 
         [HttpGet("{id}")]
+        [Authorize]
         public async Task<ActionResult<User>> GetUser(int id)
         {
             var user = await _context.Users.FindAsync(id);
@@ -38,7 +41,23 @@ namespace blogsproject_1.Controllers
                 return NotFound();
             }
 
-            return user;
+            var userIdClaim = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Name);
+            if (userIdClaim == null)
+            {
+                return Unauthorized(new { message = "User ID not found in token." });
+            }
+            var userId = int.Parse(userIdClaim.Value);
+
+
+            var isAdmin = User.IsInRole("Admin");
+
+           
+            if (isAdmin || userId == id)
+            {
+                return user;
+            }
+
+            return Forbid("You are not authorized to view this profile.");
         }
 
         [HttpPost]
@@ -54,7 +73,13 @@ namespace blogsproject_1.Controllers
                 return Conflict(new { message = "This email is already registered." });
             }
 
-            user.Password = BCrypt.Net.BCrypt.HashPassword(user.Password); // Hash the password
+           
+            if (user.Role != "writer" && user.Role != "reader")
+            {
+                return BadRequest(new { message = "Invalid role. Please choose either 'writer' or 'reader'." });
+            }
+
+            user.Password = BCrypt.Net.BCrypt.HashPassword(user.Password);
 
             user.Posts = new List<Post>();
             user.Comments = new List<Comment>();
@@ -65,7 +90,40 @@ namespace blogsproject_1.Controllers
             return CreatedAtAction(nameof(GetUser), new { id = user.Id }, user);
         }
 
+        [HttpPost("create-admin")]
+        [Authorize(Policy = "AdminPolicy")]
+        public async Task<ActionResult<User>> CreateAdmin([FromBody] AdminCreateDto adminCreateDto)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            if (await _context.Users.AnyAsync(u => u.Email == adminCreateDto.Email))
+            {
+                return Conflict(new { message = "This email is already registered." });
+            }
+
+            var user = new User
+            {
+                Name = adminCreateDto.Name,
+                Email = adminCreateDto.Email,
+                Password = BCrypt.Net.BCrypt.HashPassword(adminCreateDto.Password),
+                Role = "Admin",
+                Image = adminCreateDto.Image,
+                Posts = new List<Post>(),
+                Comments = new List<Comment>()
+            };
+
+            _context.Users.Add(user);
+            await _context.SaveChangesAsync();
+
+            return CreatedAtAction(nameof(GetUser), new { id = user.Id }, user);
+        }
+
+
         [HttpPut("{id}")]
+        [Authorize]
         public async Task<IActionResult> PutUser(int id, User user)
         {
             if (!ModelState.IsValid)
@@ -78,11 +136,24 @@ namespace blogsproject_1.Controllers
                 return BadRequest();
             }
 
+
             var existingUser = await _context.Users.FindAsync(id);
             if (existingUser == null)
             {
                 return NotFound();
             }
+            var userIdClaim = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Name);
+            if (userIdClaim == null)
+            {
+                return Unauthorized(new { message = "User ID not found in token." });
+            }
+            var userId = int.Parse(userIdClaim.Value);
+            if (user.Id != userId )
+            {
+                return StatusCode(403, new { message = "You are not authorized to update this user." });
+            }
+
+          
 
             existingUser.Name = user.Name;
             existingUser.Email = user.Email;
@@ -116,13 +187,34 @@ namespace blogsproject_1.Controllers
             return NoContent();
         }
 
+
+
         [HttpDelete("{id}")]
+        [Authorize]
         public async Task<IActionResult> DeleteUser(int id)
         {
+            var userIdClaim = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Name);
+            if (userIdClaim == null)
+            {
+                return Unauthorized(new { message = "User ID not found in token." });
+            }
+
+            var userId = int.Parse(userIdClaim.Value);
+            var userRoleClaim = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Role);
+            var userRole = userRoleClaim?.Value;
+
             var user = await _context.Users.FindAsync(id);
             if (user == null)
             {
                 return NotFound();
+            }
+
+
+
+
+            if (user.Id != userId && userRole != "Admin")
+            {
+                return StatusCode(403, new { message = "You are not authorized to delete this user." });
             }
 
             _context.Users.Remove(user);

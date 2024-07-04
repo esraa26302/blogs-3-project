@@ -2,6 +2,7 @@ using blogsproject_1.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using System.Security.Claims;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -44,6 +45,18 @@ builder.Services.AddAuthorization(options =>
 {
     options.AddPolicy("WriterPolicy", policy =>
         policy.RequireRole("writer"));
+});
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("AdminPolicy", policy =>
+        policy.RequireRole("Admin"));
+});
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("WriterOrAdminPolicy", policy =>
+        policy.RequireAssertion(context =>
+            context.User.HasClaim(c => (c.Type == ClaimTypes.Role && c.Value == "writer") ||
+                                       (c.Type == ClaimTypes.Role && c.Value == "Admin"))));
 });
 
 builder.Services.AddAuthorization(options =>

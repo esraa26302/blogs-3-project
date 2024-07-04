@@ -179,7 +179,11 @@ namespace blogsproject_1.Controllers
             }
 
             var userId = int.Parse(userIdClaim.Value);
-            if (comment.UserId != userId)
+
+           
+            var isAdmin = User.IsInRole("Admin");
+
+            if (comment.UserId != userId && !isAdmin)
             {
                 return StatusCode(StatusCodes.Status403Forbidden, new { message = "You are not authorized to delete this comment." });
             }
@@ -189,6 +193,7 @@ namespace blogsproject_1.Controllers
 
             return NoContent();
         }
+
 
         private bool CommentExists(int id)
         {

@@ -292,3 +292,4 @@ C:\Users\hassa\OneDrive\Desktop\blogsproject 1\blogsproject 1\obj\Debug\net8.0\r
 C:\Users\hassa\OneDrive\Desktop\blogsproject 1\blogsproject 1\obj\Debug\net8.0\blogsproject 1.pdb
 C:\Users\hassa\OneDrive\Desktop\blogsproject 1\blogsproject 1\obj\Debug\net8.0\blogsproject 1.genruntimeconfig.cache
 C:\Users\hassa\OneDrive\Desktop\blogsproject 1\blogsproject 1\obj\Debug\net8.0\ref\blogsproject 1.dll
+C:\Users\hassa\OneDrive\Desktop\blogsproject 1\blogsproject 1\obj\Debug\net8.0\blogsproject 1.sourcelink.json
