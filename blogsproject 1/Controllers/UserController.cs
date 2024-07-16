@@ -17,6 +17,7 @@ namespace blogsproject_1.Controllers
         private readonly ApplicationDbContext _context;
         private readonly IConfiguration _configuration;
 
+
         public UserController(ApplicationDbContext context, IConfiguration configuration)
         {
             _context = context;
@@ -32,7 +33,7 @@ namespace blogsproject_1.Controllers
 
         [HttpGet("{id}")]
         [Authorize]
-        public async Task<ActionResult<User>> GetUser(int id)
+        public async Task<ActionResult<User>> GetUser(string id)
         {
             var user = await _context.Users.FindAsync(id);
 
@@ -46,7 +47,7 @@ namespace blogsproject_1.Controllers
             {
                 return Unauthorized(new { message = "User ID not found in token." });
             }
-            var userId = int.Parse(userIdClaim.Value);
+            var userId = userIdClaim.Value;
 
 
             var isAdmin = User.IsInRole("Admin");

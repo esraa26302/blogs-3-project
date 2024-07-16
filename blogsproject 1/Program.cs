@@ -1,13 +1,14 @@
 using blogsproject_1.Models;
+using blogsproject_1.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using RestSharp;
 using System.Security.Claims;
 using System.Text;
 using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
-
 
 builder.Services.AddControllers()
     .AddJsonOptions(options =>
@@ -16,9 +17,10 @@ builder.Services.AddControllers()
         options.JsonSerializerOptions.DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull;
     });
 
-
 builder.Services.AddHttpContextAccessor();
-
+builder.Logging.ClearProviders();
+builder.Logging.AddConsole();
+builder.Services.AddTransient<INotificationService, OneSignalNotificationService>();
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
@@ -40,36 +42,28 @@ builder.Services.AddAuthentication(options =>
     };
 });
 
-
 builder.Services.AddAuthorization(options =>
 {
-    options.AddPolicy("WriterPolicy", policy =>
-        policy.RequireRole("writer"));
-});
-builder.Services.AddAuthorization(options =>
-{
-    options.AddPolicy("AdminPolicy", policy =>
-        policy.RequireRole("Admin"));
-});
-builder.Services.AddAuthorization(options =>
-{
+    options.AddPolicy("WriterPolicy", policy => policy.RequireRole("writer"));
+    options.AddPolicy("AdminPolicy", policy => policy.RequireRole("Admin"));
     options.AddPolicy("WriterOrAdminPolicy", policy =>
         policy.RequireAssertion(context =>
             context.User.HasClaim(c => (c.Type == ClaimTypes.Role && c.Value == "writer") ||
                                        (c.Type == ClaimTypes.Role && c.Value == "Admin"))));
-});
-
-builder.Services.AddAuthorization(options =>
-{
     options.AddPolicy("LoggedInUser", policy => policy.RequireAuthenticatedUser());
 });
 
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+
+
+builder.Services.AddHttpClient<IRestClient, RestClient>(client =>
+{
+    client.BaseAddress = new Uri("https://api.onesignal.com/");
+});
+
+
+builder.Configuration.AddJsonFile("appsettings.json");
+
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
-
-
-
 builder.Services.AddSwaggerGen(opt =>
 {
     opt.SwaggerDoc("v1", new OpenApiInfo { Title = "MyAPI", Version = "v1" });
@@ -89,18 +83,18 @@ builder.Services.AddSwaggerGen(opt =>
             {
                 Reference = new OpenApiReference
                 {
-                    Type=ReferenceType.SecurityScheme,
-                    Id="Bearer"
+                    Type = ReferenceType.SecurityScheme,
+                    Id = "Bearer"
                 }
             },
-            new string[]{}
+            new string[] {}
         }
     });
 });
 
+
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -108,18 +102,14 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
 app.UseRouting();
-
 app.UseAuthentication();
-
-
 app.UseAuthorization();
-
 app.UseEndpoints(endpoints =>
 {
     endpoints.MapControllers();
 });
 
 app.Run();
+
 

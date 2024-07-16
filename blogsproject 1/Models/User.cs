@@ -25,6 +25,7 @@ namespace blogsproject_1.Models
 
         [Required(ErrorMessage = "Role is required.")]
         public string Role { get; set; }
+        public string? OneId { get; set; }
 
         public ICollection<Post> Posts { get; set; } = new List<Post>();
         public ICollection<Comment> Comments { get; set; } = new List<Comment>();

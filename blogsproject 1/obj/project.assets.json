@@ -164,6 +164,52 @@
           "buildMultiTargeting/Microsoft.AspNetCore.Identity.UI.targets": {}
         }
       },
+      "Microsoft.AspNetCore.Mvc.Razor.Extensions/6.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Razor.Language": "6.0.0",
+          "Microsoft.CodeAnalysis.Razor": "6.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.Mvc.Razor.Extensions.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.Mvc.Razor.Extensions.dll": {}
+        }
+      },
+      "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation/8.0.7": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Mvc.Razor.Extensions": "6.0.0",
+          "Microsoft.CodeAnalysis.Razor": "6.0.0",
+          "Microsoft.Extensions.DependencyModel": "8.0.1"
+        },
+        "compile": {
+          "lib/net8.0/Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation.dll": {
+            "related": ".xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ],
+        "build": {
+          "buildTransitive/net8.0/Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation.targets": {}
+        }
+      },
+      "Microsoft.AspNetCore.Razor.Language/6.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.Razor.Language.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.Razor.Language.dll": {}
+        }
+      },
       "Microsoft.Bcl.AsyncInterfaces/6.0.0": {
         "type": "package",
         "compile": {
@@ -193,7 +239,7 @@
           "System.Text.Encoding.CodePages": "6.0.0"
         },
         "compile": {
-          "lib/netcoreapp3.1/_._": {
+          "lib/netcoreapp3.1/Microsoft.CodeAnalysis.dll": {
             "related": ".pdb;.xml"
           }
         },
@@ -250,7 +296,7 @@
           "Microsoft.CodeAnalysis.Common": "[4.5.0]"
         },
         "compile": {
-          "lib/netcoreapp3.1/_._": {
+          "lib/netcoreapp3.1/Microsoft.CodeAnalysis.CSharp.dll": {
             "related": ".pdb;.xml"
           }
         },
@@ -359,6 +405,20 @@
           "lib/netcoreapp3.1/zh-Hant/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll": {
             "locale": "zh-Hant"
           }
+        }
+      },
+      "Microsoft.CodeAnalysis.Razor/6.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Razor.Language": "6.0.0",
+          "Microsoft.CodeAnalysis.CSharp": "4.0.0",
+          "Microsoft.CodeAnalysis.Common": "4.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.CodeAnalysis.Razor.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.CodeAnalysis.Razor.dll": {}
         }
       },
       "Microsoft.CodeAnalysis.Workspaces.Common/4.5.0": {
@@ -648,6 +708,26 @@
           "buildTransitive/net6.0/_._": {}
         }
       },
+      "Microsoft.Extensions.Configuration/8.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.Abstractions": "8.0.0",
+          "Microsoft.Extensions.Primitives": "8.0.0"
+        },
+        "compile": {
+          "lib/net8.0/Microsoft.Extensions.Configuration.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.Extensions.Configuration.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
+        }
+      },
       "Microsoft.Extensions.Configuration.Abstractions/8.0.0": {
         "type": "package",
         "dependencies": {
@@ -665,6 +745,25 @@
         },
         "build": {
           "buildTransitive/net6.0/_._": {}
+        }
+      },
+      "Microsoft.Extensions.Configuration.Binder/8.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.Abstractions": "8.0.0"
+        },
+        "compile": {
+          "lib/net8.0/Microsoft.Extensions.Configuration.Binder.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.Extensions.Configuration.Binder.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/netstandard2.0/Microsoft.Extensions.Configuration.Binder.targets": {}
         }
       },
       "Microsoft.Extensions.DependencyInjection/8.0.0": {
@@ -702,19 +801,61 @@
           "buildTransitive/net6.0/_._": {}
         }
       },
-      "Microsoft.Extensions.DependencyModel/8.0.0": {
+      "Microsoft.Extensions.DependencyModel/8.0.1": {
         "type": "package",
         "dependencies": {
           "System.Text.Encodings.Web": "8.0.0",
-          "System.Text.Json": "8.0.0"
+          "System.Text.Json": "8.0.4"
         },
         "compile": {
-          "lib/net8.0/_._": {
+          "lib/net8.0/Microsoft.Extensions.DependencyModel.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
           "lib/net8.0/Microsoft.Extensions.DependencyModel.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
+        }
+      },
+      "Microsoft.Extensions.Diagnostics/8.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Configuration": "8.0.0",
+          "Microsoft.Extensions.Diagnostics.Abstractions": "8.0.0",
+          "Microsoft.Extensions.Options.ConfigurationExtensions": "8.0.0"
+        },
+        "compile": {
+          "lib/net8.0/Microsoft.Extensions.Diagnostics.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.Extensions.Diagnostics.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
+        }
+      },
+      "Microsoft.Extensions.Diagnostics.Abstractions/8.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.0",
+          "Microsoft.Extensions.Options": "8.0.0",
+          "System.Diagnostics.DiagnosticSource": "8.0.0"
+        },
+        "compile": {
+          "lib/net8.0/Microsoft.Extensions.Diagnostics.Abstractions.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.Extensions.Diagnostics.Abstractions.dll": {
             "related": ".xml"
           }
         },
@@ -761,6 +902,30 @@
         },
         "buildMultiTargeting": {
           "buildMultiTargeting/_._": {}
+        }
+      },
+      "Microsoft.Extensions.Http/8.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.Abstractions": "8.0.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.0",
+          "Microsoft.Extensions.Diagnostics": "8.0.0",
+          "Microsoft.Extensions.Logging": "8.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "8.0.0",
+          "Microsoft.Extensions.Options": "8.0.0"
+        },
+        "compile": {
+          "lib/net8.0/Microsoft.Extensions.Http.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.Extensions.Http.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
         }
       },
       "Microsoft.Extensions.Identity.Core/8.0.6": {
@@ -857,6 +1022,29 @@
         },
         "build": {
           "buildTransitive/net6.0/Microsoft.Extensions.Options.targets": {}
+        }
+      },
+      "Microsoft.Extensions.Options.ConfigurationExtensions/8.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.Abstractions": "8.0.0",
+          "Microsoft.Extensions.Configuration.Binder": "8.0.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.0",
+          "Microsoft.Extensions.Options": "8.0.0",
+          "Microsoft.Extensions.Primitives": "8.0.0"
+        },
+        "compile": {
+          "lib/net8.0/Microsoft.Extensions.Options.ConfigurationExtensions.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.Extensions.Options.ConfigurationExtensions.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
         }
       },
       "Microsoft.Extensions.Primitives/8.0.0": {
@@ -1004,6 +1192,15 @@
           }
         }
       },
+      "Microsoft.NETCore.Platforms/1.1.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard1.0/_._": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/_._": {}
+        }
+      },
       "Microsoft.OpenApi/1.2.3": {
         "type": "package",
         "compile": {
@@ -1062,6 +1259,114 @@
         },
         "runtime": {
           "lib/netstandard2.0/Mono.TextTemplating.dll": {}
+        }
+      },
+      "NETStandard.Library/2.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.1.0"
+        },
+        "compile": {
+          "lib/netstandard1.0/_._": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/_._": {}
+        },
+        "build": {
+          "build/netstandard2.0/NETStandard.Library.targets": {}
+        }
+      },
+      "Newtonsoft.Json/13.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "OneSignal.CSharp.SDK/0.10.0": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "9.0.1",
+          "RestSharp": "105.2.3"
+        },
+        "compile": {
+          "lib/net45/OneSignal.CSharp.SDK.dll": {}
+        },
+        "runtime": {
+          "lib/net45/OneSignal.CSharp.SDK.dll": {}
+        }
+      },
+      "OneSignal.CSharp.SDK.Core/2.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.3",
+          "RestSharp": "106.11.7"
+        },
+        "compile": {
+          "lib/netcoreapp3.1/OneSignal.CSharp.SDK.Core.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/OneSignal.CSharp.SDK.Core.dll": {}
+        }
+      },
+      "OneSignalSDK.DotNet/5.1.3": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/OneSignalSDK.DotNet.Core.dll": {
+            "related": ".pdb"
+          },
+          "lib/netstandard2.0/OneSignalSDK.DotNet.dll": {
+            "related": ".Core.pdb;.pdb"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/OneSignalSDK.DotNet.Core.dll": {
+            "related": ".pdb"
+          },
+          "lib/netstandard2.0/OneSignalSDK.DotNet.dll": {
+            "related": ".Core.pdb;.pdb"
+          }
+        }
+      },
+      "OneSignalSDK.Xamarin/4.3.5": {
+        "type": "package",
+        "dependencies": {
+          "NETStandard.Library": "2.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/OneSignalSDK.Xamarin.Core.dll": {
+            "related": ".pdb"
+          },
+          "lib/netstandard2.0/OneSignalSDK.Xamarin.dll": {
+            "related": ".Core.pdb;.pdb"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/OneSignalSDK.Xamarin.Core.dll": {
+            "related": ".pdb"
+          },
+          "lib/netstandard2.0/OneSignalSDK.Xamarin.dll": {
+            "related": ".Core.pdb;.pdb"
+          }
+        }
+      },
+      "RestSharp/111.3.0": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/RestSharp.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/RestSharp.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Swashbuckle.AspNetCore/6.4.0": {
@@ -1144,7 +1449,7 @@
           "System.Runtime.CompilerServices.Unsafe": "6.0.0"
         },
         "compile": {
-          "lib/net6.0/_._": {
+          "lib/net6.0/System.Collections.Immutable.dll": {
             "related": ".xml"
           }
         },
@@ -1281,23 +1586,20 @@
           "buildTransitive/netcoreapp3.1/_._": {}
         }
       },
-      "System.Diagnostics.DiagnosticSource/6.0.1": {
+      "System.Diagnostics.DiagnosticSource/8.0.0": {
         "type": "package",
-        "dependencies": {
-          "System.Runtime.CompilerServices.Unsafe": "6.0.0"
-        },
         "compile": {
-          "lib/net6.0/System.Diagnostics.DiagnosticSource.dll": {
+          "lib/net8.0/System.Diagnostics.DiagnosticSource.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net6.0/System.Diagnostics.DiagnosticSource.dll": {
+          "lib/net8.0/System.Diagnostics.DiagnosticSource.dll": {
             "related": ".xml"
           }
         },
         "build": {
-          "buildTransitive/netcoreapp3.1/_._": {}
+          "buildTransitive/net6.0/_._": {}
         }
       },
       "System.Drawing.Common/6.0.0": {
@@ -1439,7 +1741,7 @@
           "System.Collections.Immutable": "6.0.0"
         },
         "compile": {
-          "lib/net6.0/_._": {
+          "lib/net6.0/System.Reflection.Metadata.dll": {
             "related": ".xml"
           }
         },
@@ -1608,7 +1910,7 @@
           "System.Runtime.CompilerServices.Unsafe": "6.0.0"
         },
         "compile": {
-          "lib/net6.0/_._": {
+          "lib/net6.0/System.Text.Encoding.CodePages.dll": {
             "related": ".xml"
           }
         },
@@ -1649,7 +1951,7 @@
           }
         }
       },
-      "System.Text.Json/8.0.0": {
+      "System.Text.Json/8.0.4": {
         "type": "package",
         "dependencies": {
           "System.Text.Encodings.Web": "8.0.0"
@@ -1993,6 +2295,51 @@
         "staticwebassets/V5/lib/jquery/dist/jquery.js",
         "staticwebassets/V5/lib/jquery/dist/jquery.min.js",
         "staticwebassets/V5/lib/jquery/dist/jquery.min.map"
+      ]
+    },
+    "Microsoft.AspNetCore.Mvc.Razor.Extensions/6.0.0": {
+      "sha512": "M0h+ChPgydX2xY17agiphnAVa/Qh05RAP8eeuqGGhQKT10claRBlLNO6d2/oSV8zy0RLHzwLnNZm5xuC/gckGA==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.mvc.razor.extensions/6.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/netstandard2.0/Microsoft.AspNetCore.Mvc.Razor.Extensions.dll",
+        "microsoft.aspnetcore.mvc.razor.extensions.6.0.0.nupkg.sha512",
+        "microsoft.aspnetcore.mvc.razor.extensions.nuspec"
+      ]
+    },
+    "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation/8.0.7": {
+      "sha512": "sDBZRnrn62IZzE941Pi/HZziuuH03i7iQatxl2TTHr9IdNtT5DUkHBqXTj5AtPYH+hD80edZHwQIX+z3S+F1Bw==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.mvc.razor.runtimecompilation/8.0.7",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "THIRD-PARTY-NOTICES.TXT",
+        "build/net8.0/Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation.targets",
+        "buildTransitive/net8.0/Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation.targets",
+        "lib/net8.0/Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation.dll",
+        "lib/net8.0/Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation.xml",
+        "microsoft.aspnetcore.mvc.razor.runtimecompilation.8.0.7.nupkg.sha512",
+        "microsoft.aspnetcore.mvc.razor.runtimecompilation.nuspec"
+      ]
+    },
+    "Microsoft.AspNetCore.Razor.Language/6.0.0": {
+      "sha512": "yCtBr1GSGzJrrp1NJUb4ltwFYMKHw/tJLnIDvg9g/FnkGIEzmE19tbCQqXARIJv5kdtBgsoVIdGLL+zmjxvM/A==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.razor.language/6.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/netstandard2.0/Microsoft.AspNetCore.Razor.Language.dll",
+        "microsoft.aspnetcore.razor.language.6.0.0.nupkg.sha512",
+        "microsoft.aspnetcore.razor.language.nuspec"
       ]
     },
     "Microsoft.Bcl.AsyncInterfaces/6.0.0": {
@@ -2400,6 +2747,20 @@
         "lib/netstandard2.0/zh-Hant/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll",
         "microsoft.codeanalysis.csharp.workspaces.4.5.0.nupkg.sha512",
         "microsoft.codeanalysis.csharp.workspaces.nuspec"
+      ]
+    },
+    "Microsoft.CodeAnalysis.Razor/6.0.0": {
+      "sha512": "uqdzuQXxD7XrJCbIbbwpI/LOv0PBJ9VIR0gdvANTHOfK5pjTaCir+XcwvYvBZ5BIzd0KGzyiamzlEWw1cK1q0w==",
+      "type": "package",
+      "path": "microsoft.codeanalysis.razor/6.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/netstandard2.0/Microsoft.CodeAnalysis.Razor.dll",
+        "microsoft.codeanalysis.razor.6.0.0.nupkg.sha512",
+        "microsoft.codeanalysis.razor.nuspec"
       ]
     },
     "Microsoft.CodeAnalysis.Workspaces.Common/4.5.0": {
@@ -2933,6 +3294,36 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "Microsoft.Extensions.Configuration/8.0.0": {
+      "sha512": "0J/9YNXTMWSZP2p2+nvl8p71zpSwokZXZuJW+VjdErkegAnFdO1XlqtA62SJtgVYHdKu3uPxJHcMR/r35HwFBA==",
+      "type": "package",
+      "path": "microsoft.extensions.configuration/8.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "PACKAGE.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/Microsoft.Extensions.Configuration.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net6.0/_._",
+        "buildTransitive/netcoreapp2.0/Microsoft.Extensions.Configuration.targets",
+        "lib/net462/Microsoft.Extensions.Configuration.dll",
+        "lib/net462/Microsoft.Extensions.Configuration.xml",
+        "lib/net6.0/Microsoft.Extensions.Configuration.dll",
+        "lib/net6.0/Microsoft.Extensions.Configuration.xml",
+        "lib/net7.0/Microsoft.Extensions.Configuration.dll",
+        "lib/net7.0/Microsoft.Extensions.Configuration.xml",
+        "lib/net8.0/Microsoft.Extensions.Configuration.dll",
+        "lib/net8.0/Microsoft.Extensions.Configuration.xml",
+        "lib/netstandard2.0/Microsoft.Extensions.Configuration.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.Configuration.xml",
+        "microsoft.extensions.configuration.8.0.0.nupkg.sha512",
+        "microsoft.extensions.configuration.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
     "Microsoft.Extensions.Configuration.Abstractions/8.0.0": {
       "sha512": "3lE/iLSutpgX1CC0NOW70FJoGARRHbyKmG7dc0klnUZ9Dd9hS6N/POPWhKhMLCEuNN5nXEY5agmlFtH562vqhQ==",
       "type": "package",
@@ -2960,6 +3351,47 @@
         "lib/netstandard2.0/Microsoft.Extensions.Configuration.Abstractions.xml",
         "microsoft.extensions.configuration.abstractions.8.0.0.nupkg.sha512",
         "microsoft.extensions.configuration.abstractions.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "Microsoft.Extensions.Configuration.Binder/8.0.0": {
+      "sha512": "mBMoXLsr5s1y2zOHWmKsE9veDcx8h1x/c3rz4baEdQKTeDcmQAPNbB54Pi/lhFO3K431eEq6PFbMgLaa6PHFfA==",
+      "type": "package",
+      "path": "microsoft.extensions.configuration.binder/8.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "PACKAGE.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "analyzers/dotnet/cs/Microsoft.Extensions.Configuration.Binder.SourceGeneration.dll",
+        "analyzers/dotnet/cs/cs/Microsoft.Extensions.Configuration.Binder.SourceGeneration.resources.dll",
+        "analyzers/dotnet/cs/de/Microsoft.Extensions.Configuration.Binder.SourceGeneration.resources.dll",
+        "analyzers/dotnet/cs/es/Microsoft.Extensions.Configuration.Binder.SourceGeneration.resources.dll",
+        "analyzers/dotnet/cs/fr/Microsoft.Extensions.Configuration.Binder.SourceGeneration.resources.dll",
+        "analyzers/dotnet/cs/it/Microsoft.Extensions.Configuration.Binder.SourceGeneration.resources.dll",
+        "analyzers/dotnet/cs/ja/Microsoft.Extensions.Configuration.Binder.SourceGeneration.resources.dll",
+        "analyzers/dotnet/cs/ko/Microsoft.Extensions.Configuration.Binder.SourceGeneration.resources.dll",
+        "analyzers/dotnet/cs/pl/Microsoft.Extensions.Configuration.Binder.SourceGeneration.resources.dll",
+        "analyzers/dotnet/cs/pt-BR/Microsoft.Extensions.Configuration.Binder.SourceGeneration.resources.dll",
+        "analyzers/dotnet/cs/ru/Microsoft.Extensions.Configuration.Binder.SourceGeneration.resources.dll",
+        "analyzers/dotnet/cs/tr/Microsoft.Extensions.Configuration.Binder.SourceGeneration.resources.dll",
+        "analyzers/dotnet/cs/zh-Hans/Microsoft.Extensions.Configuration.Binder.SourceGeneration.resources.dll",
+        "analyzers/dotnet/cs/zh-Hant/Microsoft.Extensions.Configuration.Binder.SourceGeneration.resources.dll",
+        "buildTransitive/netstandard2.0/Microsoft.Extensions.Configuration.Binder.targets",
+        "lib/net462/Microsoft.Extensions.Configuration.Binder.dll",
+        "lib/net462/Microsoft.Extensions.Configuration.Binder.xml",
+        "lib/net6.0/Microsoft.Extensions.Configuration.Binder.dll",
+        "lib/net6.0/Microsoft.Extensions.Configuration.Binder.xml",
+        "lib/net7.0/Microsoft.Extensions.Configuration.Binder.dll",
+        "lib/net7.0/Microsoft.Extensions.Configuration.Binder.xml",
+        "lib/net8.0/Microsoft.Extensions.Configuration.Binder.dll",
+        "lib/net8.0/Microsoft.Extensions.Configuration.Binder.xml",
+        "lib/netstandard2.0/Microsoft.Extensions.Configuration.Binder.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.Configuration.Binder.xml",
+        "microsoft.extensions.configuration.binder.8.0.0.nupkg.sha512",
+        "microsoft.extensions.configuration.binder.nuspec",
         "useSharedDesignerContext.txt"
       ]
     },
@@ -3027,10 +3459,10 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "Microsoft.Extensions.DependencyModel/8.0.0": {
-      "sha512": "NSmDw3K0ozNDgShSIpsZcbFIzBX4w28nDag+TfaQujkXGazBm+lid5onlWoCBy4VsLxqnnKjEBbGSJVWJMf43g==",
+    "Microsoft.Extensions.DependencyModel/8.0.1": {
+      "sha512": "5Ou6varcxLBzQ+Agfm0k0pnH7vrEITYlXMDuE6s7ZHlZHz6/G8XJ3iISZDr5rfwfge6RnXJ1+Wc479mMn52vjA==",
       "type": "package",
-      "path": "microsoft.extensions.dependencymodel/8.0.0",
+      "path": "microsoft.extensions.dependencymodel/8.0.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -3052,8 +3484,66 @@
         "lib/net8.0/Microsoft.Extensions.DependencyModel.xml",
         "lib/netstandard2.0/Microsoft.Extensions.DependencyModel.dll",
         "lib/netstandard2.0/Microsoft.Extensions.DependencyModel.xml",
-        "microsoft.extensions.dependencymodel.8.0.0.nupkg.sha512",
+        "microsoft.extensions.dependencymodel.8.0.1.nupkg.sha512",
         "microsoft.extensions.dependencymodel.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "Microsoft.Extensions.Diagnostics/8.0.0": {
+      "sha512": "3PZp/YSkIXrF7QK7PfC1bkyRYwqOHpWFad8Qx+4wkuumAeXo1NHaxpS9LboNA9OvNSAu+QOVlXbMyoY+pHSqcw==",
+      "type": "package",
+      "path": "microsoft.extensions.diagnostics/8.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/Microsoft.Extensions.Diagnostics.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net6.0/_._",
+        "buildTransitive/netcoreapp2.0/Microsoft.Extensions.Diagnostics.targets",
+        "lib/net462/Microsoft.Extensions.Diagnostics.dll",
+        "lib/net462/Microsoft.Extensions.Diagnostics.xml",
+        "lib/net6.0/Microsoft.Extensions.Diagnostics.dll",
+        "lib/net6.0/Microsoft.Extensions.Diagnostics.xml",
+        "lib/net7.0/Microsoft.Extensions.Diagnostics.dll",
+        "lib/net7.0/Microsoft.Extensions.Diagnostics.xml",
+        "lib/net8.0/Microsoft.Extensions.Diagnostics.dll",
+        "lib/net8.0/Microsoft.Extensions.Diagnostics.xml",
+        "lib/netstandard2.0/Microsoft.Extensions.Diagnostics.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.Diagnostics.xml",
+        "microsoft.extensions.diagnostics.8.0.0.nupkg.sha512",
+        "microsoft.extensions.diagnostics.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "Microsoft.Extensions.Diagnostics.Abstractions/8.0.0": {
+      "sha512": "JHYCQG7HmugNYUhOl368g+NMxYE/N/AiclCYRNlgCY9eVyiBkOHMwK4x60RYMxv9EL3+rmj1mqHvdCiPpC+D4Q==",
+      "type": "package",
+      "path": "microsoft.extensions.diagnostics.abstractions/8.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/Microsoft.Extensions.Diagnostics.Abstractions.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net6.0/_._",
+        "buildTransitive/netcoreapp2.0/Microsoft.Extensions.Diagnostics.Abstractions.targets",
+        "lib/net462/Microsoft.Extensions.Diagnostics.Abstractions.dll",
+        "lib/net462/Microsoft.Extensions.Diagnostics.Abstractions.xml",
+        "lib/net6.0/Microsoft.Extensions.Diagnostics.Abstractions.dll",
+        "lib/net6.0/Microsoft.Extensions.Diagnostics.Abstractions.xml",
+        "lib/net7.0/Microsoft.Extensions.Diagnostics.Abstractions.dll",
+        "lib/net7.0/Microsoft.Extensions.Diagnostics.Abstractions.xml",
+        "lib/net8.0/Microsoft.Extensions.Diagnostics.Abstractions.dll",
+        "lib/net8.0/Microsoft.Extensions.Diagnostics.Abstractions.xml",
+        "lib/netstandard2.0/Microsoft.Extensions.Diagnostics.Abstractions.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.Diagnostics.Abstractions.xml",
+        "microsoft.extensions.diagnostics.abstractions.8.0.0.nupkg.sha512",
+        "microsoft.extensions.diagnostics.abstractions.nuspec",
         "useSharedDesignerContext.txt"
       ]
     },
@@ -3106,6 +3596,36 @@
         "microsoft.extensions.fileproviders.embedded.8.0.6.nupkg.sha512",
         "microsoft.extensions.fileproviders.embedded.nuspec",
         "tasks/netstandard2.0/Microsoft.Extensions.FileProviders.Embedded.Manifest.Task.dll"
+      ]
+    },
+    "Microsoft.Extensions.Http/8.0.0": {
+      "sha512": "cWz4caHwvx0emoYe7NkHPxII/KkTI8R/LC9qdqJqnKv2poTJ4e2qqPGQqvRoQ5kaSA4FU5IV3qFAuLuOhoqULQ==",
+      "type": "package",
+      "path": "microsoft.extensions.http/8.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "PACKAGE.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/Microsoft.Extensions.Http.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net6.0/_._",
+        "buildTransitive/netcoreapp2.0/Microsoft.Extensions.Http.targets",
+        "lib/net462/Microsoft.Extensions.Http.dll",
+        "lib/net462/Microsoft.Extensions.Http.xml",
+        "lib/net6.0/Microsoft.Extensions.Http.dll",
+        "lib/net6.0/Microsoft.Extensions.Http.xml",
+        "lib/net7.0/Microsoft.Extensions.Http.dll",
+        "lib/net7.0/Microsoft.Extensions.Http.xml",
+        "lib/net8.0/Microsoft.Extensions.Http.dll",
+        "lib/net8.0/Microsoft.Extensions.Http.xml",
+        "lib/netstandard2.0/Microsoft.Extensions.Http.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.Http.xml",
+        "microsoft.extensions.http.8.0.0.nupkg.sha512",
+        "microsoft.extensions.http.nuspec",
+        "useSharedDesignerContext.txt"
       ]
     },
     "Microsoft.Extensions.Identity.Core/8.0.6": {
@@ -3295,6 +3815,36 @@
         "lib/netstandard2.1/Microsoft.Extensions.Options.xml",
         "microsoft.extensions.options.8.0.2.nupkg.sha512",
         "microsoft.extensions.options.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "Microsoft.Extensions.Options.ConfigurationExtensions/8.0.0": {
+      "sha512": "0f4DMRqEd50zQh+UyJc+/HiBsZ3vhAQALgdkcQEalSH1L2isdC7Yj54M3cyo5e+BeO5fcBQ7Dxly8XiBBcvRgw==",
+      "type": "package",
+      "path": "microsoft.extensions.options.configurationextensions/8.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "PACKAGE.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/Microsoft.Extensions.Options.ConfigurationExtensions.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net6.0/_._",
+        "buildTransitive/netcoreapp2.0/Microsoft.Extensions.Options.ConfigurationExtensions.targets",
+        "lib/net462/Microsoft.Extensions.Options.ConfigurationExtensions.dll",
+        "lib/net462/Microsoft.Extensions.Options.ConfigurationExtensions.xml",
+        "lib/net6.0/Microsoft.Extensions.Options.ConfigurationExtensions.dll",
+        "lib/net6.0/Microsoft.Extensions.Options.ConfigurationExtensions.xml",
+        "lib/net7.0/Microsoft.Extensions.Options.ConfigurationExtensions.dll",
+        "lib/net7.0/Microsoft.Extensions.Options.ConfigurationExtensions.xml",
+        "lib/net8.0/Microsoft.Extensions.Options.ConfigurationExtensions.dll",
+        "lib/net8.0/Microsoft.Extensions.Options.ConfigurationExtensions.xml",
+        "lib/netstandard2.0/Microsoft.Extensions.Options.ConfigurationExtensions.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.Options.ConfigurationExtensions.xml",
+        "microsoft.extensions.options.configurationextensions.8.0.0.nupkg.sha512",
+        "microsoft.extensions.options.configurationextensions.nuspec",
         "useSharedDesignerContext.txt"
       ]
     },
@@ -3515,6 +4065,21 @@
         "microsoft.identitymodel.tokens.nuspec"
       ]
     },
+    "Microsoft.NETCore.Platforms/1.1.0": {
+      "sha512": "kz0PEW2lhqygehI/d6XsPCQzD7ff7gUJaVGPVETX611eadGsA3A877GdSlU0LRVMCTH/+P3o2iDTak+S08V2+A==",
+      "type": "package",
+      "path": "microsoft.netcore.platforms/1.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "ThirdPartyNotices.txt",
+        "dotnet_library_license.txt",
+        "lib/netstandard1.0/_._",
+        "microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+        "microsoft.netcore.platforms.nuspec",
+        "runtime.json"
+      ]
+    },
     "Microsoft.OpenApi/1.2.3": {
       "sha512": "Nug3rO+7Kl5/SBAadzSMAVgqDlfGjJZ0GenQrLywJ84XGKO0uRqkunz5Wyl0SDwcR71bAATXvSdbdzPrYRYKGw==",
       "type": "package",
@@ -3590,6 +4155,1182 @@
         "lib/netstandard2.0/Mono.TextTemplating.dll",
         "mono.texttemplating.2.2.1.nupkg.sha512",
         "mono.texttemplating.nuspec"
+      ]
+    },
+    "NETStandard.Library/2.0.0": {
+      "sha512": "7jnbRU+L08FXKMxqUflxEXtVymWvNOrS8yHgu9s6EM8Anr6T/wIX4nZ08j/u3Asz+tCufp3YVwFSEvFTPYmBPA==",
+      "type": "package",
+      "path": "netstandard.library/2.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "build/NETStandard.Library.targets",
+        "build/netstandard2.0/NETStandard.Library.targets",
+        "build/netstandard2.0/ref/Microsoft.Win32.Primitives.dll",
+        "build/netstandard2.0/ref/System.AppContext.dll",
+        "build/netstandard2.0/ref/System.Collections.Concurrent.dll",
+        "build/netstandard2.0/ref/System.Collections.NonGeneric.dll",
+        "build/netstandard2.0/ref/System.Collections.Specialized.dll",
+        "build/netstandard2.0/ref/System.Collections.dll",
+        "build/netstandard2.0/ref/System.ComponentModel.Composition.dll",
+        "build/netstandard2.0/ref/System.ComponentModel.EventBasedAsync.dll",
+        "build/netstandard2.0/ref/System.ComponentModel.Primitives.dll",
+        "build/netstandard2.0/ref/System.ComponentModel.TypeConverter.dll",
+        "build/netstandard2.0/ref/System.ComponentModel.dll",
+        "build/netstandard2.0/ref/System.Console.dll",
+        "build/netstandard2.0/ref/System.Core.dll",
+        "build/netstandard2.0/ref/System.Data.Common.dll",
+        "build/netstandard2.0/ref/System.Data.dll",
+        "build/netstandard2.0/ref/System.Diagnostics.Contracts.dll",
+        "build/netstandard2.0/ref/System.Diagnostics.Debug.dll",
+        "build/netstandard2.0/ref/System.Diagnostics.FileVersionInfo.dll",
+        "build/netstandard2.0/ref/System.Diagnostics.Process.dll",
+        "build/netstandard2.0/ref/System.Diagnostics.StackTrace.dll",
+        "build/netstandard2.0/ref/System.Diagnostics.TextWriterTraceListener.dll",
+        "build/netstandard2.0/ref/System.Diagnostics.Tools.dll",
+        "build/netstandard2.0/ref/System.Diagnostics.TraceSource.dll",
+        "build/netstandard2.0/ref/System.Diagnostics.Tracing.dll",
+        "build/netstandard2.0/ref/System.Drawing.Primitives.dll",
+        "build/netstandard2.0/ref/System.Drawing.dll",
+        "build/netstandard2.0/ref/System.Dynamic.Runtime.dll",
+        "build/netstandard2.0/ref/System.Globalization.Calendars.dll",
+        "build/netstandard2.0/ref/System.Globalization.Extensions.dll",
+        "build/netstandard2.0/ref/System.Globalization.dll",
+        "build/netstandard2.0/ref/System.IO.Compression.FileSystem.dll",
+        "build/netstandard2.0/ref/System.IO.Compression.ZipFile.dll",
+        "build/netstandard2.0/ref/System.IO.Compression.dll",
+        "build/netstandard2.0/ref/System.IO.FileSystem.DriveInfo.dll",
+        "build/netstandard2.0/ref/System.IO.FileSystem.Primitives.dll",
+        "build/netstandard2.0/ref/System.IO.FileSystem.Watcher.dll",
+        "build/netstandard2.0/ref/System.IO.FileSystem.dll",
+        "build/netstandard2.0/ref/System.IO.IsolatedStorage.dll",
+        "build/netstandard2.0/ref/System.IO.MemoryMappedFiles.dll",
+        "build/netstandard2.0/ref/System.IO.Pipes.dll",
+        "build/netstandard2.0/ref/System.IO.UnmanagedMemoryStream.dll",
+        "build/netstandard2.0/ref/System.IO.dll",
+        "build/netstandard2.0/ref/System.Linq.Expressions.dll",
+        "build/netstandard2.0/ref/System.Linq.Parallel.dll",
+        "build/netstandard2.0/ref/System.Linq.Queryable.dll",
+        "build/netstandard2.0/ref/System.Linq.dll",
+        "build/netstandard2.0/ref/System.Net.Http.dll",
+        "build/netstandard2.0/ref/System.Net.NameResolution.dll",
+        "build/netstandard2.0/ref/System.Net.NetworkInformation.dll",
+        "build/netstandard2.0/ref/System.Net.Ping.dll",
+        "build/netstandard2.0/ref/System.Net.Primitives.dll",
+        "build/netstandard2.0/ref/System.Net.Requests.dll",
+        "build/netstandard2.0/ref/System.Net.Security.dll",
+        "build/netstandard2.0/ref/System.Net.Sockets.dll",
+        "build/netstandard2.0/ref/System.Net.WebHeaderCollection.dll",
+        "build/netstandard2.0/ref/System.Net.WebSockets.Client.dll",
+        "build/netstandard2.0/ref/System.Net.WebSockets.dll",
+        "build/netstandard2.0/ref/System.Net.dll",
+        "build/netstandard2.0/ref/System.Numerics.dll",
+        "build/netstandard2.0/ref/System.ObjectModel.dll",
+        "build/netstandard2.0/ref/System.Reflection.Extensions.dll",
+        "build/netstandard2.0/ref/System.Reflection.Primitives.dll",
+        "build/netstandard2.0/ref/System.Reflection.dll",
+        "build/netstandard2.0/ref/System.Resources.Reader.dll",
+        "build/netstandard2.0/ref/System.Resources.ResourceManager.dll",
+        "build/netstandard2.0/ref/System.Resources.Writer.dll",
+        "build/netstandard2.0/ref/System.Runtime.CompilerServices.VisualC.dll",
+        "build/netstandard2.0/ref/System.Runtime.Extensions.dll",
+        "build/netstandard2.0/ref/System.Runtime.Handles.dll",
+        "build/netstandard2.0/ref/System.Runtime.InteropServices.RuntimeInformation.dll",
+        "build/netstandard2.0/ref/System.Runtime.InteropServices.dll",
+        "build/netstandard2.0/ref/System.Runtime.Numerics.dll",
+        "build/netstandard2.0/ref/System.Runtime.Serialization.Formatters.dll",
+        "build/netstandard2.0/ref/System.Runtime.Serialization.Json.dll",
+        "build/netstandard2.0/ref/System.Runtime.Serialization.Primitives.dll",
+        "build/netstandard2.0/ref/System.Runtime.Serialization.Xml.dll",
+        "build/netstandard2.0/ref/System.Runtime.Serialization.dll",
+        "build/netstandard2.0/ref/System.Runtime.dll",
+        "build/netstandard2.0/ref/System.Security.Claims.dll",
+        "build/netstandard2.0/ref/System.Security.Cryptography.Algorithms.dll",
+        "build/netstandard2.0/ref/System.Security.Cryptography.Csp.dll",
+        "build/netstandard2.0/ref/System.Security.Cryptography.Encoding.dll",
+        "build/netstandard2.0/ref/System.Security.Cryptography.Primitives.dll",
+        "build/netstandard2.0/ref/System.Security.Cryptography.X509Certificates.dll",
+        "build/netstandard2.0/ref/System.Security.Principal.dll",
+        "build/netstandard2.0/ref/System.Security.SecureString.dll",
+        "build/netstandard2.0/ref/System.ServiceModel.Web.dll",
+        "build/netstandard2.0/ref/System.Text.Encoding.Extensions.dll",
+        "build/netstandard2.0/ref/System.Text.Encoding.dll",
+        "build/netstandard2.0/ref/System.Text.RegularExpressions.dll",
+        "build/netstandard2.0/ref/System.Threading.Overlapped.dll",
+        "build/netstandard2.0/ref/System.Threading.Tasks.Parallel.dll",
+        "build/netstandard2.0/ref/System.Threading.Tasks.dll",
+        "build/netstandard2.0/ref/System.Threading.Thread.dll",
+        "build/netstandard2.0/ref/System.Threading.ThreadPool.dll",
+        "build/netstandard2.0/ref/System.Threading.Timer.dll",
+        "build/netstandard2.0/ref/System.Threading.dll",
+        "build/netstandard2.0/ref/System.Transactions.dll",
+        "build/netstandard2.0/ref/System.ValueTuple.dll",
+        "build/netstandard2.0/ref/System.Web.dll",
+        "build/netstandard2.0/ref/System.Windows.dll",
+        "build/netstandard2.0/ref/System.Xml.Linq.dll",
+        "build/netstandard2.0/ref/System.Xml.ReaderWriter.dll",
+        "build/netstandard2.0/ref/System.Xml.Serialization.dll",
+        "build/netstandard2.0/ref/System.Xml.XDocument.dll",
+        "build/netstandard2.0/ref/System.Xml.XPath.XDocument.dll",
+        "build/netstandard2.0/ref/System.Xml.XPath.dll",
+        "build/netstandard2.0/ref/System.Xml.XmlDocument.dll",
+        "build/netstandard2.0/ref/System.Xml.XmlSerializer.dll",
+        "build/netstandard2.0/ref/System.Xml.dll",
+        "build/netstandard2.0/ref/System.dll",
+        "build/netstandard2.0/ref/mscorlib.dll",
+        "build/netstandard2.0/ref/netstandard.dll",
+        "build/netstandard2.0/ref/netstandard.xml",
+        "lib/netstandard1.0/_._",
+        "netstandard.library.2.0.0.nupkg.sha512",
+        "netstandard.library.nuspec"
+      ]
+    },
+    "Newtonsoft.Json/13.0.3": {
+      "sha512": "HrC5BXdl00IP9zeV+0Z848QWPAoCr9P3bDEZguI+gkLcBKAOxix/tLEAAHC+UvDNPv4a2d18lOReHMOagPa+zQ==",
+      "type": "package",
+      "path": "newtonsoft.json/13.0.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "README.md",
+        "lib/net20/Newtonsoft.Json.dll",
+        "lib/net20/Newtonsoft.Json.xml",
+        "lib/net35/Newtonsoft.Json.dll",
+        "lib/net35/Newtonsoft.Json.xml",
+        "lib/net40/Newtonsoft.Json.dll",
+        "lib/net40/Newtonsoft.Json.xml",
+        "lib/net45/Newtonsoft.Json.dll",
+        "lib/net45/Newtonsoft.Json.xml",
+        "lib/net6.0/Newtonsoft.Json.dll",
+        "lib/net6.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.0/Newtonsoft.Json.dll",
+        "lib/netstandard1.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.3/Newtonsoft.Json.dll",
+        "lib/netstandard1.3/Newtonsoft.Json.xml",
+        "lib/netstandard2.0/Newtonsoft.Json.dll",
+        "lib/netstandard2.0/Newtonsoft.Json.xml",
+        "newtonsoft.json.13.0.3.nupkg.sha512",
+        "newtonsoft.json.nuspec",
+        "packageIcon.png"
+      ]
+    },
+    "OneSignal.CSharp.SDK/0.10.0": {
+      "sha512": "LWhq8bpkIkOumcdKr9hIfRaAvDWSxaEsfqea84jYuj9oKPlDfdLOr8y8lYd3Lqf/sYLJmw9Rc+GdGWCAgTfoZA==",
+      "type": "package",
+      "path": "onesignal.csharp.sdk/0.10.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net45/OneSignal.CSharp.SDK.dll",
+        "onesignal.csharp.sdk.0.10.0.nupkg.sha512",
+        "onesignal.csharp.sdk.nuspec"
+      ]
+    },
+    "OneSignal.CSharp.SDK.Core/2.0.0": {
+      "sha512": "YnX+YB/1jkIV5EcVHHgmPAehiKe+hn+mLbGR8AZoAnRmog/qpLGy35jk7nIhJAj+XAX358Z+L5zVNNYHBn2+Ww==",
+      "type": "package",
+      "path": "onesignal.csharp.sdk.core/2.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netcoreapp3.1/OneSignal.CSharp.SDK.Core.dll",
+        "onesignal.csharp.sdk.core.2.0.0.nupkg.sha512",
+        "onesignal.csharp.sdk.core.nuspec"
+      ]
+    },
+    "OneSignalSDK.DotNet/5.1.3": {
+      "sha512": "s+OVF3PWPVnXvs0uJ2A0moy+CSMeMtE/mWOmtShB4lQczEXsoY1lqiw3OPp21aYzGkhBbRmdbvhp25rWEqmj1Q==",
+      "type": "package",
+      "path": "onesignalsdk.dotnet/5.1.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "README.md",
+        "build/net7.0-ios11.0/OneSignalSDK.dotnet.targets",
+        "lib/net7.0-android21.0/OneSignalSDK.DotNet.Android.Core.Binding.dll",
+        "lib/net7.0-android21.0/OneSignalSDK.DotNet.Android.Core.Binding.pdb",
+        "lib/net7.0-android21.0/OneSignalSDK.DotNet.Android.InAppMessages.Binding.dll",
+        "lib/net7.0-android21.0/OneSignalSDK.DotNet.Android.InAppMessages.Binding.pdb",
+        "lib/net7.0-android21.0/OneSignalSDK.DotNet.Android.Location.Binding.dll",
+        "lib/net7.0-android21.0/OneSignalSDK.DotNet.Android.Location.Binding.pdb",
+        "lib/net7.0-android21.0/OneSignalSDK.DotNet.Android.Notifications.Binding.dll",
+        "lib/net7.0-android21.0/OneSignalSDK.DotNet.Android.Notifications.Binding.pdb",
+        "lib/net7.0-android21.0/OneSignalSDK.DotNet.Android.dll",
+        "lib/net7.0-android21.0/OneSignalSDK.DotNet.Android.pdb",
+        "lib/net7.0-android21.0/OneSignalSDK.DotNet.Core.dll",
+        "lib/net7.0-android21.0/OneSignalSDK.DotNet.Core.pdb",
+        "lib/net7.0-android21.0/OneSignalSDK.DotNet.dll",
+        "lib/net7.0-android21.0/OneSignalSDK.DotNet.pdb",
+        "lib/net7.0-android21.0/core-release.aar",
+        "lib/net7.0-android21.0/in-app-messages-release.aar",
+        "lib/net7.0-android21.0/location-release.aar",
+        "lib/net7.0-android21.0/notifications-release.aar",
+        "lib/net7.0-ios11.0/OneSignalSDK.DotNet.Core.dll",
+        "lib/net7.0-ios11.0/OneSignalSDK.DotNet.Core.pdb",
+        "lib/net7.0-ios11.0/OneSignalSDK.DotNet.dll",
+        "lib/net7.0-ios11.0/OneSignalSDK.DotNet.iOS.Binding.dll",
+        "lib/net7.0-ios11.0/OneSignalSDK.DotNet.iOS.Binding.pdb",
+        "lib/net7.0-ios11.0/OneSignalSDK.DotNet.iOS.dll",
+        "lib/net7.0-ios11.0/OneSignalSDK.DotNet.iOS.pdb",
+        "lib/net7.0-ios11.0/OneSignalSDK.DotNet.pdb",
+        "lib/netstandard2.0/OneSignalSDK.DotNet.Core.dll",
+        "lib/netstandard2.0/OneSignalSDK.DotNet.Core.pdb",
+        "lib/netstandard2.0/OneSignalSDK.DotNet.dll",
+        "lib/netstandard2.0/OneSignalSDK.DotNet.pdb",
+        "nuget_icon.png",
+        "onesignalsdk.dotnet.5.1.3.nupkg.sha512",
+        "onesignalsdk.dotnet.nuspec",
+        "res/ios/OneSignalCore.xcframework/Info.plist",
+        "res/ios/OneSignalCore.xcframework/_CodeSignature/CodeDirectory",
+        "res/ios/OneSignalCore.xcframework/_CodeSignature/CodeRequirements",
+        "res/ios/OneSignalCore.xcframework/_CodeSignature/CodeRequirements-1",
+        "res/ios/OneSignalCore.xcframework/_CodeSignature/CodeResources",
+        "res/ios/OneSignalCore.xcframework/_CodeSignature/CodeSignature",
+        "res/ios/OneSignalCore.xcframework/ios-arm64/OneSignalCore.framework/Headers/NSDateFormatter+OneSignal.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64/OneSignalCore.framework/Headers/NSString+OneSignal.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64/OneSignalCore.framework/Headers/NSURL+OneSignal.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64/OneSignalCore.framework/Headers/OSDeviceUtils.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64/OneSignalCore.framework/Headers/OSDialogInstanceManager.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64/OneSignalCore.framework/Headers/OSInAppMessages.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64/OneSignalCore.framework/Headers/OSJSONHandling.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64/OneSignalCore.framework/Headers/OSLocation.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64/OneSignalCore.framework/Headers/OSMacros.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64/OneSignalCore.framework/Headers/OSNetworkingUtils.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64/OneSignalCore.framework/Headers/OSNotification+Internal.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64/OneSignalCore.framework/Headers/OSNotification.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64/OneSignalCore.framework/Headers/OSNotificationClasses.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64/OneSignalCore.framework/Headers/OSObservable.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64/OneSignalCore.framework/Headers/OSPrivacyConsentController.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64/OneSignalCore.framework/Headers/OSRemoteParamController.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64/OneSignalCore.framework/Headers/OSRequests.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64/OneSignalCore.framework/Headers/OneSignalClient.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64/OneSignalCore.framework/Headers/OneSignalCommonDefines.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64/OneSignalCore.framework/Headers/OneSignalConfigManager.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64/OneSignalCore.framework/Headers/OneSignalCore.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64/OneSignalCore.framework/Headers/OneSignalCoreHelper.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64/OneSignalCore.framework/Headers/OneSignalLog.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64/OneSignalCore.framework/Headers/OneSignalMobileProvision.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64/OneSignalCore.framework/Headers/OneSignalRequest.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64/OneSignalCore.framework/Headers/OneSignalSelectorHelpers.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64/OneSignalCore.framework/Headers/OneSignalTrackFirebaseAnalytics.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64/OneSignalCore.framework/Headers/OneSignalUserDefaults.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64/OneSignalCore.framework/Headers/OneSignalWrapper.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64/OneSignalCore.framework/Headers/SwizzlingForwarder.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64/OneSignalCore.framework/Info.plist",
+        "res/ios/OneSignalCore.xcframework/ios-arm64/OneSignalCore.framework/Modules/module.modulemap",
+        "res/ios/OneSignalCore.xcframework/ios-arm64/OneSignalCore.framework/OneSignalCore",
+        "res/ios/OneSignalCore.xcframework/ios-arm64/OneSignalCore.framework/_CodeSignature/CodeResources",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Headers/NSDateFormatter+OneSignal.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Headers/NSString+OneSignal.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Headers/NSURL+OneSignal.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Headers/OSDeviceUtils.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Headers/OSDialogInstanceManager.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Headers/OSInAppMessages.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Headers/OSJSONHandling.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Headers/OSLocation.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Headers/OSMacros.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Headers/OSNetworkingUtils.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Headers/OSNotification+Internal.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Headers/OSNotification.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Headers/OSNotificationClasses.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Headers/OSObservable.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Headers/OSPrivacyConsentController.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Headers/OSRemoteParamController.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Headers/OSRequests.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Headers/OneSignalClient.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Headers/OneSignalCommonDefines.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Headers/OneSignalConfigManager.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Headers/OneSignalCore.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Headers/OneSignalCoreHelper.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Headers/OneSignalLog.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Headers/OneSignalMobileProvision.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Headers/OneSignalRequest.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Headers/OneSignalSelectorHelpers.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Headers/OneSignalTrackFirebaseAnalytics.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Headers/OneSignalUserDefaults.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Headers/OneSignalWrapper.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Headers/SwizzlingForwarder.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Modules/module.modulemap",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/OneSignalCore",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Resources/Info.plist",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Versions/A/Headers/NSDateFormatter+OneSignal.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Versions/A/Headers/NSString+OneSignal.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Versions/A/Headers/NSURL+OneSignal.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Versions/A/Headers/OSDeviceUtils.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Versions/A/Headers/OSDialogInstanceManager.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Versions/A/Headers/OSInAppMessages.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Versions/A/Headers/OSJSONHandling.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Versions/A/Headers/OSLocation.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Versions/A/Headers/OSMacros.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Versions/A/Headers/OSNetworkingUtils.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Versions/A/Headers/OSNotification+Internal.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Versions/A/Headers/OSNotification.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Versions/A/Headers/OSNotificationClasses.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Versions/A/Headers/OSObservable.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Versions/A/Headers/OSPrivacyConsentController.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Versions/A/Headers/OSRemoteParamController.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Versions/A/Headers/OSRequests.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Versions/A/Headers/OneSignalClient.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Versions/A/Headers/OneSignalCommonDefines.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Versions/A/Headers/OneSignalConfigManager.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Versions/A/Headers/OneSignalCore.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Versions/A/Headers/OneSignalCoreHelper.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Versions/A/Headers/OneSignalLog.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Versions/A/Headers/OneSignalMobileProvision.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Versions/A/Headers/OneSignalRequest.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Versions/A/Headers/OneSignalSelectorHelpers.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Versions/A/Headers/OneSignalTrackFirebaseAnalytics.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Versions/A/Headers/OneSignalUserDefaults.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Versions/A/Headers/OneSignalWrapper.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Versions/A/Headers/SwizzlingForwarder.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Versions/A/Modules/module.modulemap",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Versions/A/OneSignalCore",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Versions/A/Resources/Info.plist",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Versions/A/_CodeSignature/CodeResources",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Versions/Current/Headers/NSDateFormatter+OneSignal.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Versions/Current/Headers/NSString+OneSignal.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Versions/Current/Headers/NSURL+OneSignal.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Versions/Current/Headers/OSDeviceUtils.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Versions/Current/Headers/OSDialogInstanceManager.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Versions/Current/Headers/OSInAppMessages.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Versions/Current/Headers/OSJSONHandling.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Versions/Current/Headers/OSLocation.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Versions/Current/Headers/OSMacros.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Versions/Current/Headers/OSNetworkingUtils.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Versions/Current/Headers/OSNotification+Internal.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Versions/Current/Headers/OSNotification.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Versions/Current/Headers/OSNotificationClasses.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Versions/Current/Headers/OSObservable.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Versions/Current/Headers/OSPrivacyConsentController.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Versions/Current/Headers/OSRemoteParamController.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Versions/Current/Headers/OSRequests.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Versions/Current/Headers/OneSignalClient.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Versions/Current/Headers/OneSignalCommonDefines.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Versions/Current/Headers/OneSignalConfigManager.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Versions/Current/Headers/OneSignalCore.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Versions/Current/Headers/OneSignalCoreHelper.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Versions/Current/Headers/OneSignalLog.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Versions/Current/Headers/OneSignalMobileProvision.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Versions/Current/Headers/OneSignalRequest.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Versions/Current/Headers/OneSignalSelectorHelpers.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Versions/Current/Headers/OneSignalTrackFirebaseAnalytics.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Versions/Current/Headers/OneSignalUserDefaults.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Versions/Current/Headers/OneSignalWrapper.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Versions/Current/Headers/SwizzlingForwarder.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Versions/Current/Modules/module.modulemap",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Versions/Current/OneSignalCore",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Versions/Current/Resources/Info.plist",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Versions/Current/_CodeSignature/CodeResources",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-simulator/OneSignalCore.framework/Headers/NSDateFormatter+OneSignal.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-simulator/OneSignalCore.framework/Headers/NSString+OneSignal.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-simulator/OneSignalCore.framework/Headers/NSURL+OneSignal.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-simulator/OneSignalCore.framework/Headers/OSDeviceUtils.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-simulator/OneSignalCore.framework/Headers/OSDialogInstanceManager.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-simulator/OneSignalCore.framework/Headers/OSInAppMessages.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-simulator/OneSignalCore.framework/Headers/OSJSONHandling.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-simulator/OneSignalCore.framework/Headers/OSLocation.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-simulator/OneSignalCore.framework/Headers/OSMacros.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-simulator/OneSignalCore.framework/Headers/OSNetworkingUtils.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-simulator/OneSignalCore.framework/Headers/OSNotification+Internal.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-simulator/OneSignalCore.framework/Headers/OSNotification.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-simulator/OneSignalCore.framework/Headers/OSNotificationClasses.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-simulator/OneSignalCore.framework/Headers/OSObservable.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-simulator/OneSignalCore.framework/Headers/OSPrivacyConsentController.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-simulator/OneSignalCore.framework/Headers/OSRemoteParamController.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-simulator/OneSignalCore.framework/Headers/OSRequests.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-simulator/OneSignalCore.framework/Headers/OneSignalClient.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-simulator/OneSignalCore.framework/Headers/OneSignalCommonDefines.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-simulator/OneSignalCore.framework/Headers/OneSignalConfigManager.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-simulator/OneSignalCore.framework/Headers/OneSignalCore.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-simulator/OneSignalCore.framework/Headers/OneSignalCoreHelper.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-simulator/OneSignalCore.framework/Headers/OneSignalLog.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-simulator/OneSignalCore.framework/Headers/OneSignalMobileProvision.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-simulator/OneSignalCore.framework/Headers/OneSignalRequest.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-simulator/OneSignalCore.framework/Headers/OneSignalSelectorHelpers.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-simulator/OneSignalCore.framework/Headers/OneSignalTrackFirebaseAnalytics.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-simulator/OneSignalCore.framework/Headers/OneSignalUserDefaults.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-simulator/OneSignalCore.framework/Headers/OneSignalWrapper.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-simulator/OneSignalCore.framework/Headers/SwizzlingForwarder.h",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-simulator/OneSignalCore.framework/Info.plist",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-simulator/OneSignalCore.framework/Modules/module.modulemap",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-simulator/OneSignalCore.framework/OneSignalCore",
+        "res/ios/OneSignalCore.xcframework/ios-arm64_x86_64-simulator/OneSignalCore.framework/_CodeSignature/CodeResources",
+        "res/ios/OneSignalExtension.xcframework/Info.plist",
+        "res/ios/OneSignalExtension.xcframework/_CodeSignature/CodeDirectory",
+        "res/ios/OneSignalExtension.xcframework/_CodeSignature/CodeRequirements",
+        "res/ios/OneSignalExtension.xcframework/_CodeSignature/CodeRequirements-1",
+        "res/ios/OneSignalExtension.xcframework/_CodeSignature/CodeResources",
+        "res/ios/OneSignalExtension.xcframework/_CodeSignature/CodeSignature",
+        "res/ios/OneSignalExtension.xcframework/ios-arm64/OneSignalExtension.framework/Headers/OneSignalAttachmentHandler.h",
+        "res/ios/OneSignalExtension.xcframework/ios-arm64/OneSignalExtension.framework/Headers/OneSignalExtension.h",
+        "res/ios/OneSignalExtension.xcframework/ios-arm64/OneSignalExtension.framework/Headers/OneSignalExtensionBadgeHandler.h",
+        "res/ios/OneSignalExtension.xcframework/ios-arm64/OneSignalExtension.framework/Headers/OneSignalNotificationServiceExtensionHandler.h",
+        "res/ios/OneSignalExtension.xcframework/ios-arm64/OneSignalExtension.framework/Headers/OneSignalReceiveReceiptsController.h",
+        "res/ios/OneSignalExtension.xcframework/ios-arm64/OneSignalExtension.framework/Info.plist",
+        "res/ios/OneSignalExtension.xcframework/ios-arm64/OneSignalExtension.framework/Modules/module.modulemap",
+        "res/ios/OneSignalExtension.xcframework/ios-arm64/OneSignalExtension.framework/OneSignalExtension",
+        "res/ios/OneSignalExtension.xcframework/ios-arm64/OneSignalExtension.framework/PrivacyInfo.xcprivacy",
+        "res/ios/OneSignalExtension.xcframework/ios-arm64/OneSignalExtension.framework/_CodeSignature/CodeResources",
+        "res/ios/OneSignalExtension.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalExtension.framework/Headers/OneSignalAttachmentHandler.h",
+        "res/ios/OneSignalExtension.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalExtension.framework/Headers/OneSignalExtension.h",
+        "res/ios/OneSignalExtension.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalExtension.framework/Headers/OneSignalExtensionBadgeHandler.h",
+        "res/ios/OneSignalExtension.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalExtension.framework/Headers/OneSignalNotificationServiceExtensionHandler.h",
+        "res/ios/OneSignalExtension.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalExtension.framework/Headers/OneSignalReceiveReceiptsController.h",
+        "res/ios/OneSignalExtension.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalExtension.framework/Modules/module.modulemap",
+        "res/ios/OneSignalExtension.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalExtension.framework/OneSignalExtension",
+        "res/ios/OneSignalExtension.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalExtension.framework/Resources/Info.plist",
+        "res/ios/OneSignalExtension.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalExtension.framework/Resources/PrivacyInfo.xcprivacy",
+        "res/ios/OneSignalExtension.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalExtension.framework/Versions/A/Headers/OneSignalAttachmentHandler.h",
+        "res/ios/OneSignalExtension.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalExtension.framework/Versions/A/Headers/OneSignalExtension.h",
+        "res/ios/OneSignalExtension.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalExtension.framework/Versions/A/Headers/OneSignalExtensionBadgeHandler.h",
+        "res/ios/OneSignalExtension.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalExtension.framework/Versions/A/Headers/OneSignalNotificationServiceExtensionHandler.h",
+        "res/ios/OneSignalExtension.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalExtension.framework/Versions/A/Headers/OneSignalReceiveReceiptsController.h",
+        "res/ios/OneSignalExtension.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalExtension.framework/Versions/A/Modules/module.modulemap",
+        "res/ios/OneSignalExtension.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalExtension.framework/Versions/A/OneSignalExtension",
+        "res/ios/OneSignalExtension.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalExtension.framework/Versions/A/Resources/Info.plist",
+        "res/ios/OneSignalExtension.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalExtension.framework/Versions/A/Resources/PrivacyInfo.xcprivacy",
+        "res/ios/OneSignalExtension.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalExtension.framework/Versions/A/_CodeSignature/CodeResources",
+        "res/ios/OneSignalExtension.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalExtension.framework/Versions/Current/Headers/OneSignalAttachmentHandler.h",
+        "res/ios/OneSignalExtension.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalExtension.framework/Versions/Current/Headers/OneSignalExtension.h",
+        "res/ios/OneSignalExtension.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalExtension.framework/Versions/Current/Headers/OneSignalExtensionBadgeHandler.h",
+        "res/ios/OneSignalExtension.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalExtension.framework/Versions/Current/Headers/OneSignalNotificationServiceExtensionHandler.h",
+        "res/ios/OneSignalExtension.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalExtension.framework/Versions/Current/Headers/OneSignalReceiveReceiptsController.h",
+        "res/ios/OneSignalExtension.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalExtension.framework/Versions/Current/Modules/module.modulemap",
+        "res/ios/OneSignalExtension.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalExtension.framework/Versions/Current/OneSignalExtension",
+        "res/ios/OneSignalExtension.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalExtension.framework/Versions/Current/Resources/Info.plist",
+        "res/ios/OneSignalExtension.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalExtension.framework/Versions/Current/Resources/PrivacyInfo.xcprivacy",
+        "res/ios/OneSignalExtension.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalExtension.framework/Versions/Current/_CodeSignature/CodeResources",
+        "res/ios/OneSignalExtension.xcframework/ios-arm64_x86_64-simulator/OneSignalExtension.framework/Headers/OneSignalAttachmentHandler.h",
+        "res/ios/OneSignalExtension.xcframework/ios-arm64_x86_64-simulator/OneSignalExtension.framework/Headers/OneSignalExtension.h",
+        "res/ios/OneSignalExtension.xcframework/ios-arm64_x86_64-simulator/OneSignalExtension.framework/Headers/OneSignalExtensionBadgeHandler.h",
+        "res/ios/OneSignalExtension.xcframework/ios-arm64_x86_64-simulator/OneSignalExtension.framework/Headers/OneSignalNotificationServiceExtensionHandler.h",
+        "res/ios/OneSignalExtension.xcframework/ios-arm64_x86_64-simulator/OneSignalExtension.framework/Headers/OneSignalReceiveReceiptsController.h",
+        "res/ios/OneSignalExtension.xcframework/ios-arm64_x86_64-simulator/OneSignalExtension.framework/Info.plist",
+        "res/ios/OneSignalExtension.xcframework/ios-arm64_x86_64-simulator/OneSignalExtension.framework/Modules/module.modulemap",
+        "res/ios/OneSignalExtension.xcframework/ios-arm64_x86_64-simulator/OneSignalExtension.framework/OneSignalExtension",
+        "res/ios/OneSignalExtension.xcframework/ios-arm64_x86_64-simulator/OneSignalExtension.framework/PrivacyInfo.xcprivacy",
+        "res/ios/OneSignalExtension.xcframework/ios-arm64_x86_64-simulator/OneSignalExtension.framework/_CodeSignature/CodeResources",
+        "res/ios/OneSignalFramework.xcframework/Info.plist",
+        "res/ios/OneSignalFramework.xcframework/_CodeSignature/CodeDirectory",
+        "res/ios/OneSignalFramework.xcframework/_CodeSignature/CodeRequirements",
+        "res/ios/OneSignalFramework.xcframework/_CodeSignature/CodeRequirements-1",
+        "res/ios/OneSignalFramework.xcframework/_CodeSignature/CodeResources",
+        "res/ios/OneSignalFramework.xcframework/_CodeSignature/CodeSignature",
+        "res/ios/OneSignalFramework.xcframework/ios-arm64/OneSignalFramework.framework/Headers/OneSignalFramework-Swift.h",
+        "res/ios/OneSignalFramework.xcframework/ios-arm64/OneSignalFramework.framework/Headers/OneSignalFramework.h",
+        "res/ios/OneSignalFramework.xcframework/ios-arm64/OneSignalFramework.framework/Headers/OneSignalLiveActivityController.h",
+        "res/ios/OneSignalFramework.xcframework/ios-arm64/OneSignalFramework.framework/Info.plist",
+        "res/ios/OneSignalFramework.xcframework/ios-arm64/OneSignalFramework.framework/Modules/OneSignalFramework.swiftmodule/arm64-apple-ios.abi.json",
+        "res/ios/OneSignalFramework.xcframework/ios-arm64/OneSignalFramework.framework/Modules/OneSignalFramework.swiftmodule/arm64-apple-ios.private.swiftinterface",
+        "res/ios/OneSignalFramework.xcframework/ios-arm64/OneSignalFramework.framework/Modules/OneSignalFramework.swiftmodule/arm64-apple-ios.swiftdoc",
+        "res/ios/OneSignalFramework.xcframework/ios-arm64/OneSignalFramework.framework/Modules/OneSignalFramework.swiftmodule/arm64-apple-ios.swiftinterface",
+        "res/ios/OneSignalFramework.xcframework/ios-arm64/OneSignalFramework.framework/Modules/module.modulemap",
+        "res/ios/OneSignalFramework.xcframework/ios-arm64/OneSignalFramework.framework/OneSignalFramework",
+        "res/ios/OneSignalFramework.xcframework/ios-arm64/OneSignalFramework.framework/PrivacyInfo.xcprivacy",
+        "res/ios/OneSignalFramework.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalFramework.framework/Headers/OneSignalFramework-Swift.h",
+        "res/ios/OneSignalFramework.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalFramework.framework/Headers/OneSignalFramework.h",
+        "res/ios/OneSignalFramework.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalFramework.framework/Headers/OneSignalLiveActivityController.h",
+        "res/ios/OneSignalFramework.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalFramework.framework/Modules/OneSignalFramework.swiftmodule/arm64-apple-ios-macabi.abi.json",
+        "res/ios/OneSignalFramework.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalFramework.framework/Modules/OneSignalFramework.swiftmodule/arm64-apple-ios-macabi.private.swiftinterface",
+        "res/ios/OneSignalFramework.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalFramework.framework/Modules/OneSignalFramework.swiftmodule/arm64-apple-ios-macabi.swiftdoc",
+        "res/ios/OneSignalFramework.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalFramework.framework/Modules/OneSignalFramework.swiftmodule/arm64-apple-ios-macabi.swiftinterface",
+        "res/ios/OneSignalFramework.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalFramework.framework/Modules/OneSignalFramework.swiftmodule/x86_64-apple-ios-macabi.abi.json",
+        "res/ios/OneSignalFramework.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalFramework.framework/Modules/OneSignalFramework.swiftmodule/x86_64-apple-ios-macabi.private.swiftinterface",
+        "res/ios/OneSignalFramework.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalFramework.framework/Modules/OneSignalFramework.swiftmodule/x86_64-apple-ios-macabi.swiftdoc",
+        "res/ios/OneSignalFramework.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalFramework.framework/Modules/OneSignalFramework.swiftmodule/x86_64-apple-ios-macabi.swiftinterface",
+        "res/ios/OneSignalFramework.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalFramework.framework/Modules/module.modulemap",
+        "res/ios/OneSignalFramework.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalFramework.framework/OneSignalFramework",
+        "res/ios/OneSignalFramework.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalFramework.framework/Resources/Info.plist",
+        "res/ios/OneSignalFramework.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalFramework.framework/Resources/PrivacyInfo.xcprivacy",
+        "res/ios/OneSignalFramework.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalFramework.framework/Versions/A/Headers/OneSignalFramework-Swift.h",
+        "res/ios/OneSignalFramework.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalFramework.framework/Versions/A/Headers/OneSignalFramework.h",
+        "res/ios/OneSignalFramework.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalFramework.framework/Versions/A/Headers/OneSignalLiveActivityController.h",
+        "res/ios/OneSignalFramework.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalFramework.framework/Versions/A/Modules/OneSignalFramework.swiftmodule/arm64-apple-ios-macabi.abi.json",
+        "res/ios/OneSignalFramework.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalFramework.framework/Versions/A/Modules/OneSignalFramework.swiftmodule/arm64-apple-ios-macabi.private.swiftinterface",
+        "res/ios/OneSignalFramework.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalFramework.framework/Versions/A/Modules/OneSignalFramework.swiftmodule/arm64-apple-ios-macabi.swiftdoc",
+        "res/ios/OneSignalFramework.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalFramework.framework/Versions/A/Modules/OneSignalFramework.swiftmodule/arm64-apple-ios-macabi.swiftinterface",
+        "res/ios/OneSignalFramework.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalFramework.framework/Versions/A/Modules/OneSignalFramework.swiftmodule/x86_64-apple-ios-macabi.abi.json",
+        "res/ios/OneSignalFramework.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalFramework.framework/Versions/A/Modules/OneSignalFramework.swiftmodule/x86_64-apple-ios-macabi.private.swiftinterface",
+        "res/ios/OneSignalFramework.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalFramework.framework/Versions/A/Modules/OneSignalFramework.swiftmodule/x86_64-apple-ios-macabi.swiftdoc",
+        "res/ios/OneSignalFramework.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalFramework.framework/Versions/A/Modules/OneSignalFramework.swiftmodule/x86_64-apple-ios-macabi.swiftinterface",
+        "res/ios/OneSignalFramework.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalFramework.framework/Versions/A/Modules/module.modulemap",
+        "res/ios/OneSignalFramework.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalFramework.framework/Versions/A/OneSignalFramework",
+        "res/ios/OneSignalFramework.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalFramework.framework/Versions/A/Resources/Info.plist",
+        "res/ios/OneSignalFramework.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalFramework.framework/Versions/A/Resources/PrivacyInfo.xcprivacy",
+        "res/ios/OneSignalFramework.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalFramework.framework/Versions/Current/Headers/OneSignalFramework-Swift.h",
+        "res/ios/OneSignalFramework.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalFramework.framework/Versions/Current/Headers/OneSignalFramework.h",
+        "res/ios/OneSignalFramework.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalFramework.framework/Versions/Current/Headers/OneSignalLiveActivityController.h",
+        "res/ios/OneSignalFramework.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalFramework.framework/Versions/Current/Modules/OneSignalFramework.swiftmodule/arm64-apple-ios-macabi.abi.json",
+        "res/ios/OneSignalFramework.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalFramework.framework/Versions/Current/Modules/OneSignalFramework.swiftmodule/arm64-apple-ios-macabi.private.swiftinterface",
+        "res/ios/OneSignalFramework.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalFramework.framework/Versions/Current/Modules/OneSignalFramework.swiftmodule/arm64-apple-ios-macabi.swiftdoc",
+        "res/ios/OneSignalFramework.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalFramework.framework/Versions/Current/Modules/OneSignalFramework.swiftmodule/arm64-apple-ios-macabi.swiftinterface",
+        "res/ios/OneSignalFramework.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalFramework.framework/Versions/Current/Modules/OneSignalFramework.swiftmodule/x86_64-apple-ios-macabi.abi.json",
+        "res/ios/OneSignalFramework.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalFramework.framework/Versions/Current/Modules/OneSignalFramework.swiftmodule/x86_64-apple-ios-macabi.private.swiftinterface",
+        "res/ios/OneSignalFramework.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalFramework.framework/Versions/Current/Modules/OneSignalFramework.swiftmodule/x86_64-apple-ios-macabi.swiftdoc",
+        "res/ios/OneSignalFramework.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalFramework.framework/Versions/Current/Modules/OneSignalFramework.swiftmodule/x86_64-apple-ios-macabi.swiftinterface",
+        "res/ios/OneSignalFramework.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalFramework.framework/Versions/Current/Modules/module.modulemap",
+        "res/ios/OneSignalFramework.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalFramework.framework/Versions/Current/OneSignalFramework",
+        "res/ios/OneSignalFramework.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalFramework.framework/Versions/Current/Resources/Info.plist",
+        "res/ios/OneSignalFramework.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalFramework.framework/Versions/Current/Resources/PrivacyInfo.xcprivacy",
+        "res/ios/OneSignalFramework.xcframework/ios-arm64_x86_64-simulator/OneSignalFramework.framework/Headers/OneSignalFramework-Swift.h",
+        "res/ios/OneSignalFramework.xcframework/ios-arm64_x86_64-simulator/OneSignalFramework.framework/Headers/OneSignalFramework.h",
+        "res/ios/OneSignalFramework.xcframework/ios-arm64_x86_64-simulator/OneSignalFramework.framework/Headers/OneSignalLiveActivityController.h",
+        "res/ios/OneSignalFramework.xcframework/ios-arm64_x86_64-simulator/OneSignalFramework.framework/Info.plist",
+        "res/ios/OneSignalFramework.xcframework/ios-arm64_x86_64-simulator/OneSignalFramework.framework/Modules/OneSignalFramework.swiftmodule/arm64-apple-ios-simulator.abi.json",
+        "res/ios/OneSignalFramework.xcframework/ios-arm64_x86_64-simulator/OneSignalFramework.framework/Modules/OneSignalFramework.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface",
+        "res/ios/OneSignalFramework.xcframework/ios-arm64_x86_64-simulator/OneSignalFramework.framework/Modules/OneSignalFramework.swiftmodule/arm64-apple-ios-simulator.swiftdoc",
+        "res/ios/OneSignalFramework.xcframework/ios-arm64_x86_64-simulator/OneSignalFramework.framework/Modules/OneSignalFramework.swiftmodule/arm64-apple-ios-simulator.swiftinterface",
+        "res/ios/OneSignalFramework.xcframework/ios-arm64_x86_64-simulator/OneSignalFramework.framework/Modules/OneSignalFramework.swiftmodule/x86_64-apple-ios-simulator.abi.json",
+        "res/ios/OneSignalFramework.xcframework/ios-arm64_x86_64-simulator/OneSignalFramework.framework/Modules/OneSignalFramework.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface",
+        "res/ios/OneSignalFramework.xcframework/ios-arm64_x86_64-simulator/OneSignalFramework.framework/Modules/OneSignalFramework.swiftmodule/x86_64-apple-ios-simulator.swiftdoc",
+        "res/ios/OneSignalFramework.xcframework/ios-arm64_x86_64-simulator/OneSignalFramework.framework/Modules/OneSignalFramework.swiftmodule/x86_64-apple-ios-simulator.swiftinterface",
+        "res/ios/OneSignalFramework.xcframework/ios-arm64_x86_64-simulator/OneSignalFramework.framework/Modules/module.modulemap",
+        "res/ios/OneSignalFramework.xcframework/ios-arm64_x86_64-simulator/OneSignalFramework.framework/OneSignalFramework",
+        "res/ios/OneSignalFramework.xcframework/ios-arm64_x86_64-simulator/OneSignalFramework.framework/PrivacyInfo.xcprivacy",
+        "res/ios/OneSignalFramework.xcframework/ios-arm64_x86_64-simulator/OneSignalFramework.framework/_CodeSignature/CodeResources",
+        "res/ios/OneSignalInAppMessages.xcframework/Info.plist",
+        "res/ios/OneSignalInAppMessages.xcframework/_CodeSignature/CodeDirectory",
+        "res/ios/OneSignalInAppMessages.xcframework/_CodeSignature/CodeRequirements",
+        "res/ios/OneSignalInAppMessages.xcframework/_CodeSignature/CodeRequirements-1",
+        "res/ios/OneSignalInAppMessages.xcframework/_CodeSignature/CodeResources",
+        "res/ios/OneSignalInAppMessages.xcframework/_CodeSignature/CodeSignature",
+        "res/ios/OneSignalInAppMessages.xcframework/ios-arm64/OneSignalInAppMessages.framework/Headers/OneSignalInAppMessages.h",
+        "res/ios/OneSignalInAppMessages.xcframework/ios-arm64/OneSignalInAppMessages.framework/Info.plist",
+        "res/ios/OneSignalInAppMessages.xcframework/ios-arm64/OneSignalInAppMessages.framework/Modules/module.modulemap",
+        "res/ios/OneSignalInAppMessages.xcframework/ios-arm64/OneSignalInAppMessages.framework/OneSignalInAppMessages",
+        "res/ios/OneSignalInAppMessages.xcframework/ios-arm64/OneSignalInAppMessages.framework/PrivacyInfo.xcprivacy",
+        "res/ios/OneSignalInAppMessages.xcframework/ios-arm64/OneSignalInAppMessages.framework/_CodeSignature/CodeResources",
+        "res/ios/OneSignalInAppMessages.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalInAppMessages.framework/Headers/OneSignalInAppMessages.h",
+        "res/ios/OneSignalInAppMessages.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalInAppMessages.framework/Modules/module.modulemap",
+        "res/ios/OneSignalInAppMessages.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalInAppMessages.framework/OneSignalInAppMessages",
+        "res/ios/OneSignalInAppMessages.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalInAppMessages.framework/Resources/Info.plist",
+        "res/ios/OneSignalInAppMessages.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalInAppMessages.framework/Resources/PrivacyInfo.xcprivacy",
+        "res/ios/OneSignalInAppMessages.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalInAppMessages.framework/Versions/A/Headers/OneSignalInAppMessages.h",
+        "res/ios/OneSignalInAppMessages.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalInAppMessages.framework/Versions/A/Modules/module.modulemap",
+        "res/ios/OneSignalInAppMessages.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalInAppMessages.framework/Versions/A/OneSignalInAppMessages",
+        "res/ios/OneSignalInAppMessages.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalInAppMessages.framework/Versions/A/Resources/Info.plist",
+        "res/ios/OneSignalInAppMessages.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalInAppMessages.framework/Versions/A/Resources/PrivacyInfo.xcprivacy",
+        "res/ios/OneSignalInAppMessages.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalInAppMessages.framework/Versions/A/_CodeSignature/CodeResources",
+        "res/ios/OneSignalInAppMessages.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalInAppMessages.framework/Versions/Current/Headers/OneSignalInAppMessages.h",
+        "res/ios/OneSignalInAppMessages.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalInAppMessages.framework/Versions/Current/Modules/module.modulemap",
+        "res/ios/OneSignalInAppMessages.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalInAppMessages.framework/Versions/Current/OneSignalInAppMessages",
+        "res/ios/OneSignalInAppMessages.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalInAppMessages.framework/Versions/Current/Resources/Info.plist",
+        "res/ios/OneSignalInAppMessages.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalInAppMessages.framework/Versions/Current/Resources/PrivacyInfo.xcprivacy",
+        "res/ios/OneSignalInAppMessages.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalInAppMessages.framework/Versions/Current/_CodeSignature/CodeResources",
+        "res/ios/OneSignalInAppMessages.xcframework/ios-arm64_x86_64-simulator/OneSignalInAppMessages.framework/Headers/OneSignalInAppMessages.h",
+        "res/ios/OneSignalInAppMessages.xcframework/ios-arm64_x86_64-simulator/OneSignalInAppMessages.framework/Info.plist",
+        "res/ios/OneSignalInAppMessages.xcframework/ios-arm64_x86_64-simulator/OneSignalInAppMessages.framework/Modules/module.modulemap",
+        "res/ios/OneSignalInAppMessages.xcframework/ios-arm64_x86_64-simulator/OneSignalInAppMessages.framework/OneSignalInAppMessages",
+        "res/ios/OneSignalInAppMessages.xcframework/ios-arm64_x86_64-simulator/OneSignalInAppMessages.framework/PrivacyInfo.xcprivacy",
+        "res/ios/OneSignalInAppMessages.xcframework/ios-arm64_x86_64-simulator/OneSignalInAppMessages.framework/_CodeSignature/CodeResources",
+        "res/ios/OneSignalLocation.xcframework/Info.plist",
+        "res/ios/OneSignalLocation.xcframework/_CodeSignature/CodeDirectory",
+        "res/ios/OneSignalLocation.xcframework/_CodeSignature/CodeRequirements",
+        "res/ios/OneSignalLocation.xcframework/_CodeSignature/CodeRequirements-1",
+        "res/ios/OneSignalLocation.xcframework/_CodeSignature/CodeResources",
+        "res/ios/OneSignalLocation.xcframework/_CodeSignature/CodeSignature",
+        "res/ios/OneSignalLocation.xcframework/ios-arm64/OneSignalLocation.framework/Headers/OneSignalLocationManager.h",
+        "res/ios/OneSignalLocation.xcframework/ios-arm64/OneSignalLocation.framework/Info.plist",
+        "res/ios/OneSignalLocation.xcframework/ios-arm64/OneSignalLocation.framework/OneSignalLocation",
+        "res/ios/OneSignalLocation.xcframework/ios-arm64/OneSignalLocation.framework/PrivacyInfo.xcprivacy",
+        "res/ios/OneSignalLocation.xcframework/ios-arm64/OneSignalLocation.framework/_CodeSignature/CodeResources",
+        "res/ios/OneSignalLocation.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalLocation.framework/Headers/OneSignalLocationManager.h",
+        "res/ios/OneSignalLocation.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalLocation.framework/OneSignalLocation",
+        "res/ios/OneSignalLocation.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalLocation.framework/Resources/Info.plist",
+        "res/ios/OneSignalLocation.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalLocation.framework/Resources/PrivacyInfo.xcprivacy",
+        "res/ios/OneSignalLocation.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalLocation.framework/Versions/A/Headers/OneSignalLocationManager.h",
+        "res/ios/OneSignalLocation.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalLocation.framework/Versions/A/OneSignalLocation",
+        "res/ios/OneSignalLocation.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalLocation.framework/Versions/A/Resources/Info.plist",
+        "res/ios/OneSignalLocation.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalLocation.framework/Versions/A/Resources/PrivacyInfo.xcprivacy",
+        "res/ios/OneSignalLocation.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalLocation.framework/Versions/A/_CodeSignature/CodeResources",
+        "res/ios/OneSignalLocation.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalLocation.framework/Versions/Current/Headers/OneSignalLocationManager.h",
+        "res/ios/OneSignalLocation.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalLocation.framework/Versions/Current/OneSignalLocation",
+        "res/ios/OneSignalLocation.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalLocation.framework/Versions/Current/Resources/Info.plist",
+        "res/ios/OneSignalLocation.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalLocation.framework/Versions/Current/Resources/PrivacyInfo.xcprivacy",
+        "res/ios/OneSignalLocation.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalLocation.framework/Versions/Current/_CodeSignature/CodeResources",
+        "res/ios/OneSignalLocation.xcframework/ios-arm64_x86_64-simulator/OneSignalLocation.framework/Headers/OneSignalLocationManager.h",
+        "res/ios/OneSignalLocation.xcframework/ios-arm64_x86_64-simulator/OneSignalLocation.framework/Info.plist",
+        "res/ios/OneSignalLocation.xcframework/ios-arm64_x86_64-simulator/OneSignalLocation.framework/OneSignalLocation",
+        "res/ios/OneSignalLocation.xcframework/ios-arm64_x86_64-simulator/OneSignalLocation.framework/PrivacyInfo.xcprivacy",
+        "res/ios/OneSignalLocation.xcframework/ios-arm64_x86_64-simulator/OneSignalLocation.framework/_CodeSignature/CodeResources",
+        "res/ios/OneSignalNotifications.xcframework/Info.plist",
+        "res/ios/OneSignalNotifications.xcframework/_CodeSignature/CodeDirectory",
+        "res/ios/OneSignalNotifications.xcframework/_CodeSignature/CodeRequirements",
+        "res/ios/OneSignalNotifications.xcframework/_CodeSignature/CodeRequirements-1",
+        "res/ios/OneSignalNotifications.xcframework/_CodeSignature/CodeResources",
+        "res/ios/OneSignalNotifications.xcframework/_CodeSignature/CodeSignature",
+        "res/ios/OneSignalNotifications.xcframework/ios-arm64/OneSignalNotifications.framework/Headers/OSNotification+OneSignal.h",
+        "res/ios/OneSignalNotifications.xcframework/ios-arm64/OneSignalNotifications.framework/Headers/OSNotificationsManager.h",
+        "res/ios/OneSignalNotifications.xcframework/ios-arm64/OneSignalNotifications.framework/Headers/OSPermission.h",
+        "res/ios/OneSignalNotifications.xcframework/ios-arm64/OneSignalNotifications.framework/Headers/OneSignalNotificationSettings.h",
+        "res/ios/OneSignalNotifications.xcframework/ios-arm64/OneSignalNotifications.framework/Headers/OneSignalNotifications.h",
+        "res/ios/OneSignalNotifications.xcframework/ios-arm64/OneSignalNotifications.framework/Info.plist",
+        "res/ios/OneSignalNotifications.xcframework/ios-arm64/OneSignalNotifications.framework/Modules/module.modulemap",
+        "res/ios/OneSignalNotifications.xcframework/ios-arm64/OneSignalNotifications.framework/OneSignalNotifications",
+        "res/ios/OneSignalNotifications.xcframework/ios-arm64/OneSignalNotifications.framework/_CodeSignature/CodeResources",
+        "res/ios/OneSignalNotifications.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalNotifications.framework/Headers/OSNotification+OneSignal.h",
+        "res/ios/OneSignalNotifications.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalNotifications.framework/Headers/OSNotificationsManager.h",
+        "res/ios/OneSignalNotifications.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalNotifications.framework/Headers/OSPermission.h",
+        "res/ios/OneSignalNotifications.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalNotifications.framework/Headers/OneSignalNotificationSettings.h",
+        "res/ios/OneSignalNotifications.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalNotifications.framework/Headers/OneSignalNotifications.h",
+        "res/ios/OneSignalNotifications.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalNotifications.framework/Modules/module.modulemap",
+        "res/ios/OneSignalNotifications.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalNotifications.framework/OneSignalNotifications",
+        "res/ios/OneSignalNotifications.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalNotifications.framework/Resources/Info.plist",
+        "res/ios/OneSignalNotifications.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalNotifications.framework/Versions/A/Headers/OSNotification+OneSignal.h",
+        "res/ios/OneSignalNotifications.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalNotifications.framework/Versions/A/Headers/OSNotificationsManager.h",
+        "res/ios/OneSignalNotifications.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalNotifications.framework/Versions/A/Headers/OSPermission.h",
+        "res/ios/OneSignalNotifications.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalNotifications.framework/Versions/A/Headers/OneSignalNotificationSettings.h",
+        "res/ios/OneSignalNotifications.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalNotifications.framework/Versions/A/Headers/OneSignalNotifications.h",
+        "res/ios/OneSignalNotifications.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalNotifications.framework/Versions/A/Modules/module.modulemap",
+        "res/ios/OneSignalNotifications.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalNotifications.framework/Versions/A/OneSignalNotifications",
+        "res/ios/OneSignalNotifications.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalNotifications.framework/Versions/A/Resources/Info.plist",
+        "res/ios/OneSignalNotifications.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalNotifications.framework/Versions/A/_CodeSignature/CodeResources",
+        "res/ios/OneSignalNotifications.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalNotifications.framework/Versions/Current/Headers/OSNotification+OneSignal.h",
+        "res/ios/OneSignalNotifications.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalNotifications.framework/Versions/Current/Headers/OSNotificationsManager.h",
+        "res/ios/OneSignalNotifications.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalNotifications.framework/Versions/Current/Headers/OSPermission.h",
+        "res/ios/OneSignalNotifications.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalNotifications.framework/Versions/Current/Headers/OneSignalNotificationSettings.h",
+        "res/ios/OneSignalNotifications.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalNotifications.framework/Versions/Current/Headers/OneSignalNotifications.h",
+        "res/ios/OneSignalNotifications.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalNotifications.framework/Versions/Current/Modules/module.modulemap",
+        "res/ios/OneSignalNotifications.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalNotifications.framework/Versions/Current/OneSignalNotifications",
+        "res/ios/OneSignalNotifications.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalNotifications.framework/Versions/Current/Resources/Info.plist",
+        "res/ios/OneSignalNotifications.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalNotifications.framework/Versions/Current/_CodeSignature/CodeResources",
+        "res/ios/OneSignalNotifications.xcframework/ios-arm64_x86_64-simulator/OneSignalNotifications.framework/Headers/OSNotification+OneSignal.h",
+        "res/ios/OneSignalNotifications.xcframework/ios-arm64_x86_64-simulator/OneSignalNotifications.framework/Headers/OSNotificationsManager.h",
+        "res/ios/OneSignalNotifications.xcframework/ios-arm64_x86_64-simulator/OneSignalNotifications.framework/Headers/OSPermission.h",
+        "res/ios/OneSignalNotifications.xcframework/ios-arm64_x86_64-simulator/OneSignalNotifications.framework/Headers/OneSignalNotificationSettings.h",
+        "res/ios/OneSignalNotifications.xcframework/ios-arm64_x86_64-simulator/OneSignalNotifications.framework/Headers/OneSignalNotifications.h",
+        "res/ios/OneSignalNotifications.xcframework/ios-arm64_x86_64-simulator/OneSignalNotifications.framework/Info.plist",
+        "res/ios/OneSignalNotifications.xcframework/ios-arm64_x86_64-simulator/OneSignalNotifications.framework/Modules/module.modulemap",
+        "res/ios/OneSignalNotifications.xcframework/ios-arm64_x86_64-simulator/OneSignalNotifications.framework/OneSignalNotifications",
+        "res/ios/OneSignalNotifications.xcframework/ios-arm64_x86_64-simulator/OneSignalNotifications.framework/_CodeSignature/CodeResources",
+        "res/ios/OneSignalOSCore.xcframework/Info.plist",
+        "res/ios/OneSignalOSCore.xcframework/_CodeSignature/CodeDirectory",
+        "res/ios/OneSignalOSCore.xcframework/_CodeSignature/CodeRequirements",
+        "res/ios/OneSignalOSCore.xcframework/_CodeSignature/CodeRequirements-1",
+        "res/ios/OneSignalOSCore.xcframework/_CodeSignature/CodeResources",
+        "res/ios/OneSignalOSCore.xcframework/_CodeSignature/CodeSignature",
+        "res/ios/OneSignalOSCore.xcframework/ios-arm64/OneSignalOSCore.framework/Headers/OneSignalOSCore-Swift.h",
+        "res/ios/OneSignalOSCore.xcframework/ios-arm64/OneSignalOSCore.framework/Headers/OneSignalOSCore.h",
+        "res/ios/OneSignalOSCore.xcframework/ios-arm64/OneSignalOSCore.framework/Info.plist",
+        "res/ios/OneSignalOSCore.xcframework/ios-arm64/OneSignalOSCore.framework/Modules/OneSignalOSCore.swiftmodule/arm64-apple-ios.abi.json",
+        "res/ios/OneSignalOSCore.xcframework/ios-arm64/OneSignalOSCore.framework/Modules/OneSignalOSCore.swiftmodule/arm64-apple-ios.private.swiftinterface",
+        "res/ios/OneSignalOSCore.xcframework/ios-arm64/OneSignalOSCore.framework/Modules/OneSignalOSCore.swiftmodule/arm64-apple-ios.swiftdoc",
+        "res/ios/OneSignalOSCore.xcframework/ios-arm64/OneSignalOSCore.framework/Modules/OneSignalOSCore.swiftmodule/arm64-apple-ios.swiftinterface",
+        "res/ios/OneSignalOSCore.xcframework/ios-arm64/OneSignalOSCore.framework/Modules/module.modulemap",
+        "res/ios/OneSignalOSCore.xcframework/ios-arm64/OneSignalOSCore.framework/OneSignalOSCore",
+        "res/ios/OneSignalOSCore.xcframework/ios-arm64/OneSignalOSCore.framework/_CodeSignature/CodeResources",
+        "res/ios/OneSignalOSCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOSCore.framework/Headers/OneSignalOSCore-Swift.h",
+        "res/ios/OneSignalOSCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOSCore.framework/Headers/OneSignalOSCore.h",
+        "res/ios/OneSignalOSCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOSCore.framework/Modules/OneSignalOSCore.swiftmodule/arm64-apple-ios-macabi.abi.json",
+        "res/ios/OneSignalOSCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOSCore.framework/Modules/OneSignalOSCore.swiftmodule/arm64-apple-ios-macabi.private.swiftinterface",
+        "res/ios/OneSignalOSCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOSCore.framework/Modules/OneSignalOSCore.swiftmodule/arm64-apple-ios-macabi.swiftdoc",
+        "res/ios/OneSignalOSCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOSCore.framework/Modules/OneSignalOSCore.swiftmodule/arm64-apple-ios-macabi.swiftinterface",
+        "res/ios/OneSignalOSCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOSCore.framework/Modules/OneSignalOSCore.swiftmodule/x86_64-apple-ios-macabi.abi.json",
+        "res/ios/OneSignalOSCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOSCore.framework/Modules/OneSignalOSCore.swiftmodule/x86_64-apple-ios-macabi.private.swiftinterface",
+        "res/ios/OneSignalOSCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOSCore.framework/Modules/OneSignalOSCore.swiftmodule/x86_64-apple-ios-macabi.swiftdoc",
+        "res/ios/OneSignalOSCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOSCore.framework/Modules/OneSignalOSCore.swiftmodule/x86_64-apple-ios-macabi.swiftinterface",
+        "res/ios/OneSignalOSCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOSCore.framework/Modules/module.modulemap",
+        "res/ios/OneSignalOSCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOSCore.framework/OneSignalOSCore",
+        "res/ios/OneSignalOSCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOSCore.framework/Resources/Info.plist",
+        "res/ios/OneSignalOSCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOSCore.framework/Versions/A/Headers/OneSignalOSCore-Swift.h",
+        "res/ios/OneSignalOSCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOSCore.framework/Versions/A/Headers/OneSignalOSCore.h",
+        "res/ios/OneSignalOSCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOSCore.framework/Versions/A/Modules/OneSignalOSCore.swiftmodule/arm64-apple-ios-macabi.abi.json",
+        "res/ios/OneSignalOSCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOSCore.framework/Versions/A/Modules/OneSignalOSCore.swiftmodule/arm64-apple-ios-macabi.private.swiftinterface",
+        "res/ios/OneSignalOSCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOSCore.framework/Versions/A/Modules/OneSignalOSCore.swiftmodule/arm64-apple-ios-macabi.swiftdoc",
+        "res/ios/OneSignalOSCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOSCore.framework/Versions/A/Modules/OneSignalOSCore.swiftmodule/arm64-apple-ios-macabi.swiftinterface",
+        "res/ios/OneSignalOSCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOSCore.framework/Versions/A/Modules/OneSignalOSCore.swiftmodule/x86_64-apple-ios-macabi.abi.json",
+        "res/ios/OneSignalOSCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOSCore.framework/Versions/A/Modules/OneSignalOSCore.swiftmodule/x86_64-apple-ios-macabi.private.swiftinterface",
+        "res/ios/OneSignalOSCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOSCore.framework/Versions/A/Modules/OneSignalOSCore.swiftmodule/x86_64-apple-ios-macabi.swiftdoc",
+        "res/ios/OneSignalOSCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOSCore.framework/Versions/A/Modules/OneSignalOSCore.swiftmodule/x86_64-apple-ios-macabi.swiftinterface",
+        "res/ios/OneSignalOSCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOSCore.framework/Versions/A/Modules/module.modulemap",
+        "res/ios/OneSignalOSCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOSCore.framework/Versions/A/OneSignalOSCore",
+        "res/ios/OneSignalOSCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOSCore.framework/Versions/A/Resources/Info.plist",
+        "res/ios/OneSignalOSCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOSCore.framework/Versions/A/_CodeSignature/CodeResources",
+        "res/ios/OneSignalOSCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOSCore.framework/Versions/Current/Headers/OneSignalOSCore-Swift.h",
+        "res/ios/OneSignalOSCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOSCore.framework/Versions/Current/Headers/OneSignalOSCore.h",
+        "res/ios/OneSignalOSCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOSCore.framework/Versions/Current/Modules/OneSignalOSCore.swiftmodule/arm64-apple-ios-macabi.abi.json",
+        "res/ios/OneSignalOSCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOSCore.framework/Versions/Current/Modules/OneSignalOSCore.swiftmodule/arm64-apple-ios-macabi.private.swiftinterface",
+        "res/ios/OneSignalOSCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOSCore.framework/Versions/Current/Modules/OneSignalOSCore.swiftmodule/arm64-apple-ios-macabi.swiftdoc",
+        "res/ios/OneSignalOSCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOSCore.framework/Versions/Current/Modules/OneSignalOSCore.swiftmodule/arm64-apple-ios-macabi.swiftinterface",
+        "res/ios/OneSignalOSCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOSCore.framework/Versions/Current/Modules/OneSignalOSCore.swiftmodule/x86_64-apple-ios-macabi.abi.json",
+        "res/ios/OneSignalOSCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOSCore.framework/Versions/Current/Modules/OneSignalOSCore.swiftmodule/x86_64-apple-ios-macabi.private.swiftinterface",
+        "res/ios/OneSignalOSCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOSCore.framework/Versions/Current/Modules/OneSignalOSCore.swiftmodule/x86_64-apple-ios-macabi.swiftdoc",
+        "res/ios/OneSignalOSCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOSCore.framework/Versions/Current/Modules/OneSignalOSCore.swiftmodule/x86_64-apple-ios-macabi.swiftinterface",
+        "res/ios/OneSignalOSCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOSCore.framework/Versions/Current/Modules/module.modulemap",
+        "res/ios/OneSignalOSCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOSCore.framework/Versions/Current/OneSignalOSCore",
+        "res/ios/OneSignalOSCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOSCore.framework/Versions/Current/Resources/Info.plist",
+        "res/ios/OneSignalOSCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOSCore.framework/Versions/Current/_CodeSignature/CodeResources",
+        "res/ios/OneSignalOSCore.xcframework/ios-arm64_x86_64-simulator/OneSignalOSCore.framework/Headers/OneSignalOSCore-Swift.h",
+        "res/ios/OneSignalOSCore.xcframework/ios-arm64_x86_64-simulator/OneSignalOSCore.framework/Headers/OneSignalOSCore.h",
+        "res/ios/OneSignalOSCore.xcframework/ios-arm64_x86_64-simulator/OneSignalOSCore.framework/Info.plist",
+        "res/ios/OneSignalOSCore.xcframework/ios-arm64_x86_64-simulator/OneSignalOSCore.framework/Modules/OneSignalOSCore.swiftmodule/arm64-apple-ios-simulator.abi.json",
+        "res/ios/OneSignalOSCore.xcframework/ios-arm64_x86_64-simulator/OneSignalOSCore.framework/Modules/OneSignalOSCore.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface",
+        "res/ios/OneSignalOSCore.xcframework/ios-arm64_x86_64-simulator/OneSignalOSCore.framework/Modules/OneSignalOSCore.swiftmodule/arm64-apple-ios-simulator.swiftdoc",
+        "res/ios/OneSignalOSCore.xcframework/ios-arm64_x86_64-simulator/OneSignalOSCore.framework/Modules/OneSignalOSCore.swiftmodule/arm64-apple-ios-simulator.swiftinterface",
+        "res/ios/OneSignalOSCore.xcframework/ios-arm64_x86_64-simulator/OneSignalOSCore.framework/Modules/OneSignalOSCore.swiftmodule/x86_64-apple-ios-simulator.abi.json",
+        "res/ios/OneSignalOSCore.xcframework/ios-arm64_x86_64-simulator/OneSignalOSCore.framework/Modules/OneSignalOSCore.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface",
+        "res/ios/OneSignalOSCore.xcframework/ios-arm64_x86_64-simulator/OneSignalOSCore.framework/Modules/OneSignalOSCore.swiftmodule/x86_64-apple-ios-simulator.swiftdoc",
+        "res/ios/OneSignalOSCore.xcframework/ios-arm64_x86_64-simulator/OneSignalOSCore.framework/Modules/OneSignalOSCore.swiftmodule/x86_64-apple-ios-simulator.swiftinterface",
+        "res/ios/OneSignalOSCore.xcframework/ios-arm64_x86_64-simulator/OneSignalOSCore.framework/Modules/module.modulemap",
+        "res/ios/OneSignalOSCore.xcframework/ios-arm64_x86_64-simulator/OneSignalOSCore.framework/OneSignalOSCore",
+        "res/ios/OneSignalOSCore.xcframework/ios-arm64_x86_64-simulator/OneSignalOSCore.framework/_CodeSignature/CodeResources",
+        "res/ios/OneSignalOutcomes.xcframework/Info.plist",
+        "res/ios/OneSignalOutcomes.xcframework/_CodeSignature/CodeDirectory",
+        "res/ios/OneSignalOutcomes.xcframework/_CodeSignature/CodeRequirements",
+        "res/ios/OneSignalOutcomes.xcframework/_CodeSignature/CodeRequirements-1",
+        "res/ios/OneSignalOutcomes.xcframework/_CodeSignature/CodeResources",
+        "res/ios/OneSignalOutcomes.xcframework/_CodeSignature/CodeSignature",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64/OneSignalOutcomes.framework/Headers/OSCachedUniqueOutcome.h",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64/OneSignalOutcomes.framework/Headers/OSChannelTracker.h",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64/OneSignalOutcomes.framework/Headers/OSFocusInfluenceParam.h",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64/OneSignalOutcomes.framework/Headers/OSInAppMessageOutcome.h",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64/OneSignalOutcomes.framework/Headers/OSIndirectInfluence.h",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64/OneSignalOutcomes.framework/Headers/OSInfluence.h",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64/OneSignalOutcomes.framework/Headers/OSInfluenceDataDefines.h",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64/OneSignalOutcomes.framework/Headers/OSInfluenceDataRepository.h",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64/OneSignalOutcomes.framework/Headers/OSOutcomeEvent.h",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64/OneSignalOutcomes.framework/Headers/OSOutcomeEventParams.h",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64/OneSignalOutcomes.framework/Headers/OSOutcomeEventsCache.h",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64/OneSignalOutcomes.framework/Headers/OSOutcomeEventsFactory.h",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64/OneSignalOutcomes.framework/Headers/OSOutcomeEventsRepository.h",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64/OneSignalOutcomes.framework/Headers/OSOutcomeSource.h",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64/OneSignalOutcomes.framework/Headers/OSOutcomeSourceBody.h",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64/OneSignalOutcomes.framework/Headers/OSSessionManager.h",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64/OneSignalOutcomes.framework/Headers/OSTrackerFactory.h",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64/OneSignalOutcomes.framework/Headers/OneSignalOutcomeEventsController.h",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64/OneSignalOutcomes.framework/Headers/OneSignalOutcomes.h",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64/OneSignalOutcomes.framework/Info.plist",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64/OneSignalOutcomes.framework/Modules/module.modulemap",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64/OneSignalOutcomes.framework/OneSignalOutcomes",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64/OneSignalOutcomes.framework/_CodeSignature/CodeResources",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOutcomes.framework/Headers/OSCachedUniqueOutcome.h",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOutcomes.framework/Headers/OSChannelTracker.h",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOutcomes.framework/Headers/OSFocusInfluenceParam.h",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOutcomes.framework/Headers/OSInAppMessageOutcome.h",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOutcomes.framework/Headers/OSIndirectInfluence.h",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOutcomes.framework/Headers/OSInfluence.h",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOutcomes.framework/Headers/OSInfluenceDataDefines.h",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOutcomes.framework/Headers/OSInfluenceDataRepository.h",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOutcomes.framework/Headers/OSOutcomeEvent.h",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOutcomes.framework/Headers/OSOutcomeEventParams.h",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOutcomes.framework/Headers/OSOutcomeEventsCache.h",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOutcomes.framework/Headers/OSOutcomeEventsFactory.h",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOutcomes.framework/Headers/OSOutcomeEventsRepository.h",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOutcomes.framework/Headers/OSOutcomeSource.h",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOutcomes.framework/Headers/OSOutcomeSourceBody.h",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOutcomes.framework/Headers/OSSessionManager.h",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOutcomes.framework/Headers/OSTrackerFactory.h",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOutcomes.framework/Headers/OneSignalOutcomeEventsController.h",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOutcomes.framework/Headers/OneSignalOutcomes.h",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOutcomes.framework/Modules/module.modulemap",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOutcomes.framework/OneSignalOutcomes",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOutcomes.framework/Resources/Info.plist",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOutcomes.framework/Versions/A/Headers/OSCachedUniqueOutcome.h",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOutcomes.framework/Versions/A/Headers/OSChannelTracker.h",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOutcomes.framework/Versions/A/Headers/OSFocusInfluenceParam.h",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOutcomes.framework/Versions/A/Headers/OSInAppMessageOutcome.h",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOutcomes.framework/Versions/A/Headers/OSIndirectInfluence.h",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOutcomes.framework/Versions/A/Headers/OSInfluence.h",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOutcomes.framework/Versions/A/Headers/OSInfluenceDataDefines.h",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOutcomes.framework/Versions/A/Headers/OSInfluenceDataRepository.h",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOutcomes.framework/Versions/A/Headers/OSOutcomeEvent.h",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOutcomes.framework/Versions/A/Headers/OSOutcomeEventParams.h",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOutcomes.framework/Versions/A/Headers/OSOutcomeEventsCache.h",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOutcomes.framework/Versions/A/Headers/OSOutcomeEventsFactory.h",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOutcomes.framework/Versions/A/Headers/OSOutcomeEventsRepository.h",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOutcomes.framework/Versions/A/Headers/OSOutcomeSource.h",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOutcomes.framework/Versions/A/Headers/OSOutcomeSourceBody.h",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOutcomes.framework/Versions/A/Headers/OSSessionManager.h",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOutcomes.framework/Versions/A/Headers/OSTrackerFactory.h",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOutcomes.framework/Versions/A/Headers/OneSignalOutcomeEventsController.h",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOutcomes.framework/Versions/A/Headers/OneSignalOutcomes.h",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOutcomes.framework/Versions/A/Modules/module.modulemap",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOutcomes.framework/Versions/A/OneSignalOutcomes",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOutcomes.framework/Versions/A/Resources/Info.plist",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOutcomes.framework/Versions/A/_CodeSignature/CodeResources",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOutcomes.framework/Versions/Current/Headers/OSCachedUniqueOutcome.h",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOutcomes.framework/Versions/Current/Headers/OSChannelTracker.h",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOutcomes.framework/Versions/Current/Headers/OSFocusInfluenceParam.h",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOutcomes.framework/Versions/Current/Headers/OSInAppMessageOutcome.h",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOutcomes.framework/Versions/Current/Headers/OSIndirectInfluence.h",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOutcomes.framework/Versions/Current/Headers/OSInfluence.h",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOutcomes.framework/Versions/Current/Headers/OSInfluenceDataDefines.h",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOutcomes.framework/Versions/Current/Headers/OSInfluenceDataRepository.h",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOutcomes.framework/Versions/Current/Headers/OSOutcomeEvent.h",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOutcomes.framework/Versions/Current/Headers/OSOutcomeEventParams.h",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOutcomes.framework/Versions/Current/Headers/OSOutcomeEventsCache.h",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOutcomes.framework/Versions/Current/Headers/OSOutcomeEventsFactory.h",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOutcomes.framework/Versions/Current/Headers/OSOutcomeEventsRepository.h",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOutcomes.framework/Versions/Current/Headers/OSOutcomeSource.h",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOutcomes.framework/Versions/Current/Headers/OSOutcomeSourceBody.h",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOutcomes.framework/Versions/Current/Headers/OSSessionManager.h",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOutcomes.framework/Versions/Current/Headers/OSTrackerFactory.h",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOutcomes.framework/Versions/Current/Headers/OneSignalOutcomeEventsController.h",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOutcomes.framework/Versions/Current/Headers/OneSignalOutcomes.h",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOutcomes.framework/Versions/Current/Modules/module.modulemap",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOutcomes.framework/Versions/Current/OneSignalOutcomes",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOutcomes.framework/Versions/Current/Resources/Info.plist",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOutcomes.framework/Versions/Current/_CodeSignature/CodeResources",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64_x86_64-simulator/OneSignalOutcomes.framework/Headers/OSCachedUniqueOutcome.h",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64_x86_64-simulator/OneSignalOutcomes.framework/Headers/OSChannelTracker.h",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64_x86_64-simulator/OneSignalOutcomes.framework/Headers/OSFocusInfluenceParam.h",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64_x86_64-simulator/OneSignalOutcomes.framework/Headers/OSInAppMessageOutcome.h",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64_x86_64-simulator/OneSignalOutcomes.framework/Headers/OSIndirectInfluence.h",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64_x86_64-simulator/OneSignalOutcomes.framework/Headers/OSInfluence.h",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64_x86_64-simulator/OneSignalOutcomes.framework/Headers/OSInfluenceDataDefines.h",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64_x86_64-simulator/OneSignalOutcomes.framework/Headers/OSInfluenceDataRepository.h",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64_x86_64-simulator/OneSignalOutcomes.framework/Headers/OSOutcomeEvent.h",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64_x86_64-simulator/OneSignalOutcomes.framework/Headers/OSOutcomeEventParams.h",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64_x86_64-simulator/OneSignalOutcomes.framework/Headers/OSOutcomeEventsCache.h",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64_x86_64-simulator/OneSignalOutcomes.framework/Headers/OSOutcomeEventsFactory.h",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64_x86_64-simulator/OneSignalOutcomes.framework/Headers/OSOutcomeEventsRepository.h",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64_x86_64-simulator/OneSignalOutcomes.framework/Headers/OSOutcomeSource.h",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64_x86_64-simulator/OneSignalOutcomes.framework/Headers/OSOutcomeSourceBody.h",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64_x86_64-simulator/OneSignalOutcomes.framework/Headers/OSSessionManager.h",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64_x86_64-simulator/OneSignalOutcomes.framework/Headers/OSTrackerFactory.h",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64_x86_64-simulator/OneSignalOutcomes.framework/Headers/OneSignalOutcomeEventsController.h",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64_x86_64-simulator/OneSignalOutcomes.framework/Headers/OneSignalOutcomes.h",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64_x86_64-simulator/OneSignalOutcomes.framework/Info.plist",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64_x86_64-simulator/OneSignalOutcomes.framework/Modules/module.modulemap",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64_x86_64-simulator/OneSignalOutcomes.framework/OneSignalOutcomes",
+        "res/ios/OneSignalOutcomes.xcframework/ios-arm64_x86_64-simulator/OneSignalOutcomes.framework/_CodeSignature/CodeResources",
+        "res/ios/OneSignalUser.xcframework/Info.plist",
+        "res/ios/OneSignalUser.xcframework/_CodeSignature/CodeDirectory",
+        "res/ios/OneSignalUser.xcframework/_CodeSignature/CodeRequirements",
+        "res/ios/OneSignalUser.xcframework/_CodeSignature/CodeRequirements-1",
+        "res/ios/OneSignalUser.xcframework/_CodeSignature/CodeResources",
+        "res/ios/OneSignalUser.xcframework/_CodeSignature/CodeSignature",
+        "res/ios/OneSignalUser.xcframework/ios-arm64/OneSignalUser.framework/Headers/OneSignalUser-Swift.h",
+        "res/ios/OneSignalUser.xcframework/ios-arm64/OneSignalUser.framework/Headers/OneSignalUser.h",
+        "res/ios/OneSignalUser.xcframework/ios-arm64/OneSignalUser.framework/Info.plist",
+        "res/ios/OneSignalUser.xcframework/ios-arm64/OneSignalUser.framework/Modules/OneSignalUser.swiftmodule/arm64-apple-ios.abi.json",
+        "res/ios/OneSignalUser.xcframework/ios-arm64/OneSignalUser.framework/Modules/OneSignalUser.swiftmodule/arm64-apple-ios.private.swiftinterface",
+        "res/ios/OneSignalUser.xcframework/ios-arm64/OneSignalUser.framework/Modules/OneSignalUser.swiftmodule/arm64-apple-ios.swiftdoc",
+        "res/ios/OneSignalUser.xcframework/ios-arm64/OneSignalUser.framework/Modules/OneSignalUser.swiftmodule/arm64-apple-ios.swiftinterface",
+        "res/ios/OneSignalUser.xcframework/ios-arm64/OneSignalUser.framework/Modules/module.modulemap",
+        "res/ios/OneSignalUser.xcframework/ios-arm64/OneSignalUser.framework/OneSignalUser",
+        "res/ios/OneSignalUser.xcframework/ios-arm64/OneSignalUser.framework/_CodeSignature/CodeResources",
+        "res/ios/OneSignalUser.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalUser.framework/Headers/OneSignalUser-Swift.h",
+        "res/ios/OneSignalUser.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalUser.framework/Headers/OneSignalUser.h",
+        "res/ios/OneSignalUser.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalUser.framework/Modules/OneSignalUser.swiftmodule/arm64-apple-ios-macabi.abi.json",
+        "res/ios/OneSignalUser.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalUser.framework/Modules/OneSignalUser.swiftmodule/arm64-apple-ios-macabi.private.swiftinterface",
+        "res/ios/OneSignalUser.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalUser.framework/Modules/OneSignalUser.swiftmodule/arm64-apple-ios-macabi.swiftdoc",
+        "res/ios/OneSignalUser.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalUser.framework/Modules/OneSignalUser.swiftmodule/arm64-apple-ios-macabi.swiftinterface",
+        "res/ios/OneSignalUser.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalUser.framework/Modules/OneSignalUser.swiftmodule/x86_64-apple-ios-macabi.abi.json",
+        "res/ios/OneSignalUser.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalUser.framework/Modules/OneSignalUser.swiftmodule/x86_64-apple-ios-macabi.private.swiftinterface",
+        "res/ios/OneSignalUser.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalUser.framework/Modules/OneSignalUser.swiftmodule/x86_64-apple-ios-macabi.swiftdoc",
+        "res/ios/OneSignalUser.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalUser.framework/Modules/OneSignalUser.swiftmodule/x86_64-apple-ios-macabi.swiftinterface",
+        "res/ios/OneSignalUser.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalUser.framework/Modules/module.modulemap",
+        "res/ios/OneSignalUser.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalUser.framework/OneSignalUser",
+        "res/ios/OneSignalUser.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalUser.framework/Resources/Info.plist",
+        "res/ios/OneSignalUser.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalUser.framework/Versions/A/Headers/OneSignalUser-Swift.h",
+        "res/ios/OneSignalUser.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalUser.framework/Versions/A/Headers/OneSignalUser.h",
+        "res/ios/OneSignalUser.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalUser.framework/Versions/A/Modules/OneSignalUser.swiftmodule/arm64-apple-ios-macabi.abi.json",
+        "res/ios/OneSignalUser.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalUser.framework/Versions/A/Modules/OneSignalUser.swiftmodule/arm64-apple-ios-macabi.private.swiftinterface",
+        "res/ios/OneSignalUser.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalUser.framework/Versions/A/Modules/OneSignalUser.swiftmodule/arm64-apple-ios-macabi.swiftdoc",
+        "res/ios/OneSignalUser.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalUser.framework/Versions/A/Modules/OneSignalUser.swiftmodule/arm64-apple-ios-macabi.swiftinterface",
+        "res/ios/OneSignalUser.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalUser.framework/Versions/A/Modules/OneSignalUser.swiftmodule/x86_64-apple-ios-macabi.abi.json",
+        "res/ios/OneSignalUser.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalUser.framework/Versions/A/Modules/OneSignalUser.swiftmodule/x86_64-apple-ios-macabi.private.swiftinterface",
+        "res/ios/OneSignalUser.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalUser.framework/Versions/A/Modules/OneSignalUser.swiftmodule/x86_64-apple-ios-macabi.swiftdoc",
+        "res/ios/OneSignalUser.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalUser.framework/Versions/A/Modules/OneSignalUser.swiftmodule/x86_64-apple-ios-macabi.swiftinterface",
+        "res/ios/OneSignalUser.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalUser.framework/Versions/A/Modules/module.modulemap",
+        "res/ios/OneSignalUser.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalUser.framework/Versions/A/OneSignalUser",
+        "res/ios/OneSignalUser.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalUser.framework/Versions/A/Resources/Info.plist",
+        "res/ios/OneSignalUser.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalUser.framework/Versions/A/_CodeSignature/CodeResources",
+        "res/ios/OneSignalUser.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalUser.framework/Versions/Current/Headers/OneSignalUser-Swift.h",
+        "res/ios/OneSignalUser.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalUser.framework/Versions/Current/Headers/OneSignalUser.h",
+        "res/ios/OneSignalUser.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalUser.framework/Versions/Current/Modules/OneSignalUser.swiftmodule/arm64-apple-ios-macabi.abi.json",
+        "res/ios/OneSignalUser.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalUser.framework/Versions/Current/Modules/OneSignalUser.swiftmodule/arm64-apple-ios-macabi.private.swiftinterface",
+        "res/ios/OneSignalUser.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalUser.framework/Versions/Current/Modules/OneSignalUser.swiftmodule/arm64-apple-ios-macabi.swiftdoc",
+        "res/ios/OneSignalUser.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalUser.framework/Versions/Current/Modules/OneSignalUser.swiftmodule/arm64-apple-ios-macabi.swiftinterface",
+        "res/ios/OneSignalUser.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalUser.framework/Versions/Current/Modules/OneSignalUser.swiftmodule/x86_64-apple-ios-macabi.abi.json",
+        "res/ios/OneSignalUser.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalUser.framework/Versions/Current/Modules/OneSignalUser.swiftmodule/x86_64-apple-ios-macabi.private.swiftinterface",
+        "res/ios/OneSignalUser.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalUser.framework/Versions/Current/Modules/OneSignalUser.swiftmodule/x86_64-apple-ios-macabi.swiftdoc",
+        "res/ios/OneSignalUser.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalUser.framework/Versions/Current/Modules/OneSignalUser.swiftmodule/x86_64-apple-ios-macabi.swiftinterface",
+        "res/ios/OneSignalUser.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalUser.framework/Versions/Current/Modules/module.modulemap",
+        "res/ios/OneSignalUser.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalUser.framework/Versions/Current/OneSignalUser",
+        "res/ios/OneSignalUser.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalUser.framework/Versions/Current/Resources/Info.plist",
+        "res/ios/OneSignalUser.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalUser.framework/Versions/Current/_CodeSignature/CodeResources",
+        "res/ios/OneSignalUser.xcframework/ios-arm64_x86_64-simulator/OneSignalUser.framework/Headers/OneSignalUser-Swift.h",
+        "res/ios/OneSignalUser.xcframework/ios-arm64_x86_64-simulator/OneSignalUser.framework/Headers/OneSignalUser.h",
+        "res/ios/OneSignalUser.xcframework/ios-arm64_x86_64-simulator/OneSignalUser.framework/Info.plist",
+        "res/ios/OneSignalUser.xcframework/ios-arm64_x86_64-simulator/OneSignalUser.framework/Modules/OneSignalUser.swiftmodule/arm64-apple-ios-simulator.abi.json",
+        "res/ios/OneSignalUser.xcframework/ios-arm64_x86_64-simulator/OneSignalUser.framework/Modules/OneSignalUser.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface",
+        "res/ios/OneSignalUser.xcframework/ios-arm64_x86_64-simulator/OneSignalUser.framework/Modules/OneSignalUser.swiftmodule/arm64-apple-ios-simulator.swiftdoc",
+        "res/ios/OneSignalUser.xcframework/ios-arm64_x86_64-simulator/OneSignalUser.framework/Modules/OneSignalUser.swiftmodule/arm64-apple-ios-simulator.swiftinterface",
+        "res/ios/OneSignalUser.xcframework/ios-arm64_x86_64-simulator/OneSignalUser.framework/Modules/OneSignalUser.swiftmodule/x86_64-apple-ios-simulator.abi.json",
+        "res/ios/OneSignalUser.xcframework/ios-arm64_x86_64-simulator/OneSignalUser.framework/Modules/OneSignalUser.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface",
+        "res/ios/OneSignalUser.xcframework/ios-arm64_x86_64-simulator/OneSignalUser.framework/Modules/OneSignalUser.swiftmodule/x86_64-apple-ios-simulator.swiftdoc",
+        "res/ios/OneSignalUser.xcframework/ios-arm64_x86_64-simulator/OneSignalUser.framework/Modules/OneSignalUser.swiftmodule/x86_64-apple-ios-simulator.swiftinterface",
+        "res/ios/OneSignalUser.xcframework/ios-arm64_x86_64-simulator/OneSignalUser.framework/Modules/module.modulemap",
+        "res/ios/OneSignalUser.xcframework/ios-arm64_x86_64-simulator/OneSignalUser.framework/OneSignalUser",
+        "res/ios/OneSignalUser.xcframework/ios-arm64_x86_64-simulator/OneSignalUser.framework/_CodeSignature/CodeResources",
+        "res/ios/manifest"
+      ]
+    },
+    "OneSignalSDK.Xamarin/4.3.5": {
+      "sha512": "aG83dQNlIZmwX2a6ctV9xcyVABQtHHzi5+uqX9Cr0X53Gf3IYLyABWaoFJ+7ADM4Qd23/+SLyzq27rHHbrtcwA==",
+      "type": "package",
+      "path": "onesignalsdk.xamarin/4.3.5",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/Xamarin.iOS/OneSignalSDK.Xamarin.targets",
+        "lib/MonoAndroid4.1/OneSignal.Android.Binding.dll",
+        "lib/MonoAndroid4.1/OneSignal.Android.Binding.pdb",
+        "lib/MonoAndroid4.1/OneSignal.Android.Binding.xml",
+        "lib/MonoAndroid4.1/OneSignalSDK.Xamarin.Core.dll",
+        "lib/MonoAndroid4.1/OneSignalSDK.Xamarin.Core.pdb",
+        "lib/MonoAndroid4.1/OneSignalSDK.Xamarin.dll",
+        "lib/MonoAndroid4.1/OneSignalSDK.Xamarin.pdb",
+        "lib/Xamarin.iOS/OneSignal.iOS.Binding.dll",
+        "lib/Xamarin.iOS/OneSignal.iOS.Binding.pdb",
+        "lib/Xamarin.iOS/OneSignalSDK.Xamarin.Core.dll",
+        "lib/Xamarin.iOS/OneSignalSDK.Xamarin.Core.pdb",
+        "lib/Xamarin.iOS/OneSignalSDK.Xamarin.dll",
+        "lib/Xamarin.iOS/OneSignalSDK.Xamarin.pdb",
+        "lib/netstandard2.0/OneSignalSDK.Xamarin.Core.dll",
+        "lib/netstandard2.0/OneSignalSDK.Xamarin.Core.pdb",
+        "lib/netstandard2.0/OneSignalSDK.Xamarin.dll",
+        "lib/netstandard2.0/OneSignalSDK.Xamarin.pdb",
+        "nuget_icon.png",
+        "onesignalsdk.xamarin.4.3.5.nupkg.sha512",
+        "onesignalsdk.xamarin.nuspec",
+        "res/iOS/OneSignal.xcframework/Info.plist",
+        "res/iOS/OneSignal.xcframework/_CodeSignature/CodeDirectory",
+        "res/iOS/OneSignal.xcframework/_CodeSignature/CodeRequirements",
+        "res/iOS/OneSignal.xcframework/_CodeSignature/CodeRequirements-1",
+        "res/iOS/OneSignal.xcframework/_CodeSignature/CodeResources",
+        "res/iOS/OneSignal.xcframework/_CodeSignature/CodeSignature",
+        "res/iOS/OneSignal.xcframework/ios-arm64/OneSignal.framework/Headers/OneSignal.h",
+        "res/iOS/OneSignal.xcframework/ios-arm64/OneSignal.framework/Info.plist",
+        "res/iOS/OneSignal.xcframework/ios-arm64/OneSignal.framework/Modules/module.modulemap",
+        "res/iOS/OneSignal.xcframework/ios-arm64/OneSignal.framework/OneSignal",
+        "res/iOS/OneSignal.xcframework/ios-arm64/OneSignal.framework/PrivacyInfo.xcprivacy",
+        "res/iOS/OneSignal.xcframework/ios-arm64_x86_64-maccatalyst/OneSignal.framework/Versions/A/Headers/OneSignal.h",
+        "res/iOS/OneSignal.xcframework/ios-arm64_x86_64-maccatalyst/OneSignal.framework/Versions/A/Modules/module.modulemap",
+        "res/iOS/OneSignal.xcframework/ios-arm64_x86_64-maccatalyst/OneSignal.framework/Versions/A/OneSignal",
+        "res/iOS/OneSignal.xcframework/ios-arm64_x86_64-maccatalyst/OneSignal.framework/Versions/A/Resources/Info.plist",
+        "res/iOS/OneSignal.xcframework/ios-arm64_x86_64-maccatalyst/OneSignal.framework/Versions/A/Resources/PrivacyInfo.xcprivacy",
+        "res/iOS/OneSignal.xcframework/ios-arm64_x86_64-simulator/OneSignal.framework/Headers/OneSignal.h",
+        "res/iOS/OneSignal.xcframework/ios-arm64_x86_64-simulator/OneSignal.framework/Info.plist",
+        "res/iOS/OneSignal.xcframework/ios-arm64_x86_64-simulator/OneSignal.framework/Modules/module.modulemap",
+        "res/iOS/OneSignal.xcframework/ios-arm64_x86_64-simulator/OneSignal.framework/OneSignal",
+        "res/iOS/OneSignal.xcframework/ios-arm64_x86_64-simulator/OneSignal.framework/PrivacyInfo.xcprivacy",
+        "res/iOS/OneSignal.xcframework/ios-arm64_x86_64-simulator/OneSignal.framework/_CodeSignature/CodeResources",
+        "res/iOS/OneSignalCore.xcframework/Info.plist",
+        "res/iOS/OneSignalCore.xcframework/_CodeSignature/CodeDirectory",
+        "res/iOS/OneSignalCore.xcframework/_CodeSignature/CodeRequirements",
+        "res/iOS/OneSignalCore.xcframework/_CodeSignature/CodeRequirements-1",
+        "res/iOS/OneSignalCore.xcframework/_CodeSignature/CodeResources",
+        "res/iOS/OneSignalCore.xcframework/_CodeSignature/CodeSignature",
+        "res/iOS/OneSignalCore.xcframework/ios-arm64/OneSignalCore.framework/Headers/NSString+OneSignal.h",
+        "res/iOS/OneSignalCore.xcframework/ios-arm64/OneSignalCore.framework/Headers/NSURL+OneSignal.h",
+        "res/iOS/OneSignalCore.xcframework/ios-arm64/OneSignalCore.framework/Headers/OSJSONHandling.h",
+        "res/iOS/OneSignalCore.xcframework/ios-arm64/OneSignalCore.framework/Headers/OSMacros.h",
+        "res/iOS/OneSignalCore.xcframework/ios-arm64/OneSignalCore.framework/Headers/OSNotification+Internal.h",
+        "res/iOS/OneSignalCore.xcframework/ios-arm64/OneSignalCore.framework/Headers/OSNotification.h",
+        "res/iOS/OneSignalCore.xcframework/ios-arm64/OneSignalCore.framework/Headers/OSNotificationClasses.h",
+        "res/iOS/OneSignalCore.xcframework/ios-arm64/OneSignalCore.framework/Headers/OSPrivacyConsentController.h",
+        "res/iOS/OneSignalCore.xcframework/ios-arm64/OneSignalCore.framework/Headers/OSRequests.h",
+        "res/iOS/OneSignalCore.xcframework/ios-arm64/OneSignalCore.framework/Headers/OneSignalClient.h",
+        "res/iOS/OneSignalCore.xcframework/ios-arm64/OneSignalCore.framework/Headers/OneSignalCommonDefines.h",
+        "res/iOS/OneSignalCore.xcframework/ios-arm64/OneSignalCore.framework/Headers/OneSignalCore.h",
+        "res/iOS/OneSignalCore.xcframework/ios-arm64/OneSignalCore.framework/Headers/OneSignalCoreHelper.h",
+        "res/iOS/OneSignalCore.xcframework/ios-arm64/OneSignalCore.framework/Headers/OneSignalLog.h",
+        "res/iOS/OneSignalCore.xcframework/ios-arm64/OneSignalCore.framework/Headers/OneSignalRequest.h",
+        "res/iOS/OneSignalCore.xcframework/ios-arm64/OneSignalCore.framework/Headers/OneSignalTrackFirebaseAnalytics.h",
+        "res/iOS/OneSignalCore.xcframework/ios-arm64/OneSignalCore.framework/Headers/OneSignalUserDefaults.h",
+        "res/iOS/OneSignalCore.xcframework/ios-arm64/OneSignalCore.framework/Info.plist",
+        "res/iOS/OneSignalCore.xcframework/ios-arm64/OneSignalCore.framework/Modules/module.modulemap",
+        "res/iOS/OneSignalCore.xcframework/ios-arm64/OneSignalCore.framework/OneSignalCore",
+        "res/iOS/OneSignalCore.xcframework/ios-arm64/OneSignalCore.framework/PrivacyInfo.xcprivacy",
+        "res/iOS/OneSignalCore.xcframework/ios-arm64/OneSignalCore.framework/_CodeSignature/CodeResources",
+        "res/iOS/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Versions/A/Headers/NSString+OneSignal.h",
+        "res/iOS/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Versions/A/Headers/NSURL+OneSignal.h",
+        "res/iOS/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Versions/A/Headers/OSJSONHandling.h",
+        "res/iOS/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Versions/A/Headers/OSMacros.h",
+        "res/iOS/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Versions/A/Headers/OSNotification+Internal.h",
+        "res/iOS/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Versions/A/Headers/OSNotification.h",
+        "res/iOS/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Versions/A/Headers/OSNotificationClasses.h",
+        "res/iOS/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Versions/A/Headers/OSPrivacyConsentController.h",
+        "res/iOS/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Versions/A/Headers/OSRequests.h",
+        "res/iOS/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Versions/A/Headers/OneSignalClient.h",
+        "res/iOS/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Versions/A/Headers/OneSignalCommonDefines.h",
+        "res/iOS/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Versions/A/Headers/OneSignalCore.h",
+        "res/iOS/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Versions/A/Headers/OneSignalCoreHelper.h",
+        "res/iOS/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Versions/A/Headers/OneSignalLog.h",
+        "res/iOS/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Versions/A/Headers/OneSignalRequest.h",
+        "res/iOS/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Versions/A/Headers/OneSignalTrackFirebaseAnalytics.h",
+        "res/iOS/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Versions/A/Headers/OneSignalUserDefaults.h",
+        "res/iOS/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Versions/A/Modules/module.modulemap",
+        "res/iOS/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Versions/A/OneSignalCore",
+        "res/iOS/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Versions/A/Resources/Info.plist",
+        "res/iOS/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Versions/A/Resources/PrivacyInfo.xcprivacy",
+        "res/iOS/OneSignalCore.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalCore.framework/Versions/A/_CodeSignature/CodeResources",
+        "res/iOS/OneSignalCore.xcframework/ios-arm64_x86_64-simulator/OneSignalCore.framework/Headers/NSString+OneSignal.h",
+        "res/iOS/OneSignalCore.xcframework/ios-arm64_x86_64-simulator/OneSignalCore.framework/Headers/NSURL+OneSignal.h",
+        "res/iOS/OneSignalCore.xcframework/ios-arm64_x86_64-simulator/OneSignalCore.framework/Headers/OSJSONHandling.h",
+        "res/iOS/OneSignalCore.xcframework/ios-arm64_x86_64-simulator/OneSignalCore.framework/Headers/OSMacros.h",
+        "res/iOS/OneSignalCore.xcframework/ios-arm64_x86_64-simulator/OneSignalCore.framework/Headers/OSNotification+Internal.h",
+        "res/iOS/OneSignalCore.xcframework/ios-arm64_x86_64-simulator/OneSignalCore.framework/Headers/OSNotification.h",
+        "res/iOS/OneSignalCore.xcframework/ios-arm64_x86_64-simulator/OneSignalCore.framework/Headers/OSNotificationClasses.h",
+        "res/iOS/OneSignalCore.xcframework/ios-arm64_x86_64-simulator/OneSignalCore.framework/Headers/OSPrivacyConsentController.h",
+        "res/iOS/OneSignalCore.xcframework/ios-arm64_x86_64-simulator/OneSignalCore.framework/Headers/OSRequests.h",
+        "res/iOS/OneSignalCore.xcframework/ios-arm64_x86_64-simulator/OneSignalCore.framework/Headers/OneSignalClient.h",
+        "res/iOS/OneSignalCore.xcframework/ios-arm64_x86_64-simulator/OneSignalCore.framework/Headers/OneSignalCommonDefines.h",
+        "res/iOS/OneSignalCore.xcframework/ios-arm64_x86_64-simulator/OneSignalCore.framework/Headers/OneSignalCore.h",
+        "res/iOS/OneSignalCore.xcframework/ios-arm64_x86_64-simulator/OneSignalCore.framework/Headers/OneSignalCoreHelper.h",
+        "res/iOS/OneSignalCore.xcframework/ios-arm64_x86_64-simulator/OneSignalCore.framework/Headers/OneSignalLog.h",
+        "res/iOS/OneSignalCore.xcframework/ios-arm64_x86_64-simulator/OneSignalCore.framework/Headers/OneSignalRequest.h",
+        "res/iOS/OneSignalCore.xcframework/ios-arm64_x86_64-simulator/OneSignalCore.framework/Headers/OneSignalTrackFirebaseAnalytics.h",
+        "res/iOS/OneSignalCore.xcframework/ios-arm64_x86_64-simulator/OneSignalCore.framework/Headers/OneSignalUserDefaults.h",
+        "res/iOS/OneSignalCore.xcframework/ios-arm64_x86_64-simulator/OneSignalCore.framework/Info.plist",
+        "res/iOS/OneSignalCore.xcframework/ios-arm64_x86_64-simulator/OneSignalCore.framework/Modules/module.modulemap",
+        "res/iOS/OneSignalCore.xcframework/ios-arm64_x86_64-simulator/OneSignalCore.framework/OneSignalCore",
+        "res/iOS/OneSignalCore.xcframework/ios-arm64_x86_64-simulator/OneSignalCore.framework/PrivacyInfo.xcprivacy",
+        "res/iOS/OneSignalCore.xcframework/ios-arm64_x86_64-simulator/OneSignalCore.framework/_CodeSignature/CodeResources",
+        "res/iOS/OneSignalExtension.xcframework/Info.plist",
+        "res/iOS/OneSignalExtension.xcframework/_CodeSignature/CodeDirectory",
+        "res/iOS/OneSignalExtension.xcframework/_CodeSignature/CodeRequirements",
+        "res/iOS/OneSignalExtension.xcframework/_CodeSignature/CodeRequirements-1",
+        "res/iOS/OneSignalExtension.xcframework/_CodeSignature/CodeResources",
+        "res/iOS/OneSignalExtension.xcframework/_CodeSignature/CodeSignature",
+        "res/iOS/OneSignalExtension.xcframework/ios-arm64/OneSignalExtension.framework/Headers/OneSignalAttachmentHandler.h",
+        "res/iOS/OneSignalExtension.xcframework/ios-arm64/OneSignalExtension.framework/Headers/OneSignalExtension.h",
+        "res/iOS/OneSignalExtension.xcframework/ios-arm64/OneSignalExtension.framework/Headers/OneSignalExtensionBadgeHandler.h",
+        "res/iOS/OneSignalExtension.xcframework/ios-arm64/OneSignalExtension.framework/Headers/OneSignalNotificationServiceExtensionHandler.h",
+        "res/iOS/OneSignalExtension.xcframework/ios-arm64/OneSignalExtension.framework/Headers/OneSignalReceiveReceiptsController.h",
+        "res/iOS/OneSignalExtension.xcframework/ios-arm64/OneSignalExtension.framework/Info.plist",
+        "res/iOS/OneSignalExtension.xcframework/ios-arm64/OneSignalExtension.framework/Modules/module.modulemap",
+        "res/iOS/OneSignalExtension.xcframework/ios-arm64/OneSignalExtension.framework/OneSignalExtension",
+        "res/iOS/OneSignalExtension.xcframework/ios-arm64/OneSignalExtension.framework/PrivacyInfo.xcprivacy",
+        "res/iOS/OneSignalExtension.xcframework/ios-arm64/OneSignalExtension.framework/_CodeSignature/CodeResources",
+        "res/iOS/OneSignalExtension.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalExtension.framework/Versions/A/Headers/OneSignalAttachmentHandler.h",
+        "res/iOS/OneSignalExtension.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalExtension.framework/Versions/A/Headers/OneSignalExtension.h",
+        "res/iOS/OneSignalExtension.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalExtension.framework/Versions/A/Headers/OneSignalExtensionBadgeHandler.h",
+        "res/iOS/OneSignalExtension.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalExtension.framework/Versions/A/Headers/OneSignalNotificationServiceExtensionHandler.h",
+        "res/iOS/OneSignalExtension.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalExtension.framework/Versions/A/Headers/OneSignalReceiveReceiptsController.h",
+        "res/iOS/OneSignalExtension.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalExtension.framework/Versions/A/Modules/module.modulemap",
+        "res/iOS/OneSignalExtension.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalExtension.framework/Versions/A/OneSignalExtension",
+        "res/iOS/OneSignalExtension.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalExtension.framework/Versions/A/Resources/Info.plist",
+        "res/iOS/OneSignalExtension.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalExtension.framework/Versions/A/Resources/PrivacyInfo.xcprivacy",
+        "res/iOS/OneSignalExtension.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalExtension.framework/Versions/A/_CodeSignature/CodeResources",
+        "res/iOS/OneSignalExtension.xcframework/ios-arm64_x86_64-simulator/OneSignalExtension.framework/Headers/OneSignalAttachmentHandler.h",
+        "res/iOS/OneSignalExtension.xcframework/ios-arm64_x86_64-simulator/OneSignalExtension.framework/Headers/OneSignalExtension.h",
+        "res/iOS/OneSignalExtension.xcframework/ios-arm64_x86_64-simulator/OneSignalExtension.framework/Headers/OneSignalExtensionBadgeHandler.h",
+        "res/iOS/OneSignalExtension.xcframework/ios-arm64_x86_64-simulator/OneSignalExtension.framework/Headers/OneSignalNotificationServiceExtensionHandler.h",
+        "res/iOS/OneSignalExtension.xcframework/ios-arm64_x86_64-simulator/OneSignalExtension.framework/Headers/OneSignalReceiveReceiptsController.h",
+        "res/iOS/OneSignalExtension.xcframework/ios-arm64_x86_64-simulator/OneSignalExtension.framework/Info.plist",
+        "res/iOS/OneSignalExtension.xcframework/ios-arm64_x86_64-simulator/OneSignalExtension.framework/Modules/module.modulemap",
+        "res/iOS/OneSignalExtension.xcframework/ios-arm64_x86_64-simulator/OneSignalExtension.framework/OneSignalExtension",
+        "res/iOS/OneSignalExtension.xcframework/ios-arm64_x86_64-simulator/OneSignalExtension.framework/PrivacyInfo.xcprivacy",
+        "res/iOS/OneSignalExtension.xcframework/ios-arm64_x86_64-simulator/OneSignalExtension.framework/_CodeSignature/CodeResources",
+        "res/iOS/OneSignalOutcomes.xcframework/Info.plist",
+        "res/iOS/OneSignalOutcomes.xcframework/_CodeSignature/CodeDirectory",
+        "res/iOS/OneSignalOutcomes.xcframework/_CodeSignature/CodeRequirements",
+        "res/iOS/OneSignalOutcomes.xcframework/_CodeSignature/CodeRequirements-1",
+        "res/iOS/OneSignalOutcomes.xcframework/_CodeSignature/CodeResources",
+        "res/iOS/OneSignalOutcomes.xcframework/_CodeSignature/CodeSignature",
+        "res/iOS/OneSignalOutcomes.xcframework/ios-arm64/OneSignalOutcomes.framework/Headers/OSCachedUniqueOutcome.h",
+        "res/iOS/OneSignalOutcomes.xcframework/ios-arm64/OneSignalOutcomes.framework/Headers/OSChannelTracker.h",
+        "res/iOS/OneSignalOutcomes.xcframework/ios-arm64/OneSignalOutcomes.framework/Headers/OSInAppMessageOutcome.h",
+        "res/iOS/OneSignalOutcomes.xcframework/ios-arm64/OneSignalOutcomes.framework/Headers/OSIndirectInfluence.h",
+        "res/iOS/OneSignalOutcomes.xcframework/ios-arm64/OneSignalOutcomes.framework/Headers/OSInfluence.h",
+        "res/iOS/OneSignalOutcomes.xcframework/ios-arm64/OneSignalOutcomes.framework/Headers/OSInfluenceDataDefines.h",
+        "res/iOS/OneSignalOutcomes.xcframework/ios-arm64/OneSignalOutcomes.framework/Headers/OSInfluenceDataRepository.h",
+        "res/iOS/OneSignalOutcomes.xcframework/ios-arm64/OneSignalOutcomes.framework/Headers/OSOutcomeEvent.h",
+        "res/iOS/OneSignalOutcomes.xcframework/ios-arm64/OneSignalOutcomes.framework/Headers/OSOutcomeEventParams.h",
+        "res/iOS/OneSignalOutcomes.xcframework/ios-arm64/OneSignalOutcomes.framework/Headers/OSOutcomeEventsCache.h",
+        "res/iOS/OneSignalOutcomes.xcframework/ios-arm64/OneSignalOutcomes.framework/Headers/OSOutcomeEventsFactory.h",
+        "res/iOS/OneSignalOutcomes.xcframework/ios-arm64/OneSignalOutcomes.framework/Headers/OSOutcomeEventsRepository.h",
+        "res/iOS/OneSignalOutcomes.xcframework/ios-arm64/OneSignalOutcomes.framework/Headers/OSOutcomeSource.h",
+        "res/iOS/OneSignalOutcomes.xcframework/ios-arm64/OneSignalOutcomes.framework/Headers/OSOutcomeSourceBody.h",
+        "res/iOS/OneSignalOutcomes.xcframework/ios-arm64/OneSignalOutcomes.framework/Headers/OSSessionManager.h",
+        "res/iOS/OneSignalOutcomes.xcframework/ios-arm64/OneSignalOutcomes.framework/Headers/OSTrackerFactory.h",
+        "res/iOS/OneSignalOutcomes.xcframework/ios-arm64/OneSignalOutcomes.framework/Headers/OneSignalOutcomeEventsController.h",
+        "res/iOS/OneSignalOutcomes.xcframework/ios-arm64/OneSignalOutcomes.framework/Headers/OneSignalOutcomes.h",
+        "res/iOS/OneSignalOutcomes.xcframework/ios-arm64/OneSignalOutcomes.framework/Info.plist",
+        "res/iOS/OneSignalOutcomes.xcframework/ios-arm64/OneSignalOutcomes.framework/Modules/module.modulemap",
+        "res/iOS/OneSignalOutcomes.xcframework/ios-arm64/OneSignalOutcomes.framework/OneSignalOutcomes",
+        "res/iOS/OneSignalOutcomes.xcframework/ios-arm64/OneSignalOutcomes.framework/PrivacyInfo.xcprivacy",
+        "res/iOS/OneSignalOutcomes.xcframework/ios-arm64/OneSignalOutcomes.framework/_CodeSignature/CodeResources",
+        "res/iOS/OneSignalOutcomes.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOutcomes.framework/Versions/A/Headers/OSCachedUniqueOutcome.h",
+        "res/iOS/OneSignalOutcomes.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOutcomes.framework/Versions/A/Headers/OSChannelTracker.h",
+        "res/iOS/OneSignalOutcomes.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOutcomes.framework/Versions/A/Headers/OSInAppMessageOutcome.h",
+        "res/iOS/OneSignalOutcomes.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOutcomes.framework/Versions/A/Headers/OSIndirectInfluence.h",
+        "res/iOS/OneSignalOutcomes.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOutcomes.framework/Versions/A/Headers/OSInfluence.h",
+        "res/iOS/OneSignalOutcomes.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOutcomes.framework/Versions/A/Headers/OSInfluenceDataDefines.h",
+        "res/iOS/OneSignalOutcomes.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOutcomes.framework/Versions/A/Headers/OSInfluenceDataRepository.h",
+        "res/iOS/OneSignalOutcomes.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOutcomes.framework/Versions/A/Headers/OSOutcomeEvent.h",
+        "res/iOS/OneSignalOutcomes.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOutcomes.framework/Versions/A/Headers/OSOutcomeEventParams.h",
+        "res/iOS/OneSignalOutcomes.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOutcomes.framework/Versions/A/Headers/OSOutcomeEventsCache.h",
+        "res/iOS/OneSignalOutcomes.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOutcomes.framework/Versions/A/Headers/OSOutcomeEventsFactory.h",
+        "res/iOS/OneSignalOutcomes.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOutcomes.framework/Versions/A/Headers/OSOutcomeEventsRepository.h",
+        "res/iOS/OneSignalOutcomes.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOutcomes.framework/Versions/A/Headers/OSOutcomeSource.h",
+        "res/iOS/OneSignalOutcomes.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOutcomes.framework/Versions/A/Headers/OSOutcomeSourceBody.h",
+        "res/iOS/OneSignalOutcomes.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOutcomes.framework/Versions/A/Headers/OSSessionManager.h",
+        "res/iOS/OneSignalOutcomes.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOutcomes.framework/Versions/A/Headers/OSTrackerFactory.h",
+        "res/iOS/OneSignalOutcomes.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOutcomes.framework/Versions/A/Headers/OneSignalOutcomeEventsController.h",
+        "res/iOS/OneSignalOutcomes.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOutcomes.framework/Versions/A/Headers/OneSignalOutcomes.h",
+        "res/iOS/OneSignalOutcomes.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOutcomes.framework/Versions/A/Modules/module.modulemap",
+        "res/iOS/OneSignalOutcomes.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOutcomes.framework/Versions/A/OneSignalOutcomes",
+        "res/iOS/OneSignalOutcomes.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOutcomes.framework/Versions/A/Resources/Info.plist",
+        "res/iOS/OneSignalOutcomes.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOutcomes.framework/Versions/A/Resources/PrivacyInfo.xcprivacy",
+        "res/iOS/OneSignalOutcomes.xcframework/ios-arm64_x86_64-maccatalyst/OneSignalOutcomes.framework/Versions/A/_CodeSignature/CodeResources",
+        "res/iOS/OneSignalOutcomes.xcframework/ios-arm64_x86_64-simulator/OneSignalOutcomes.framework/Headers/OSCachedUniqueOutcome.h",
+        "res/iOS/OneSignalOutcomes.xcframework/ios-arm64_x86_64-simulator/OneSignalOutcomes.framework/Headers/OSChannelTracker.h",
+        "res/iOS/OneSignalOutcomes.xcframework/ios-arm64_x86_64-simulator/OneSignalOutcomes.framework/Headers/OSInAppMessageOutcome.h",
+        "res/iOS/OneSignalOutcomes.xcframework/ios-arm64_x86_64-simulator/OneSignalOutcomes.framework/Headers/OSIndirectInfluence.h",
+        "res/iOS/OneSignalOutcomes.xcframework/ios-arm64_x86_64-simulator/OneSignalOutcomes.framework/Headers/OSInfluence.h",
+        "res/iOS/OneSignalOutcomes.xcframework/ios-arm64_x86_64-simulator/OneSignalOutcomes.framework/Headers/OSInfluenceDataDefines.h",
+        "res/iOS/OneSignalOutcomes.xcframework/ios-arm64_x86_64-simulator/OneSignalOutcomes.framework/Headers/OSInfluenceDataRepository.h",
+        "res/iOS/OneSignalOutcomes.xcframework/ios-arm64_x86_64-simulator/OneSignalOutcomes.framework/Headers/OSOutcomeEvent.h",
+        "res/iOS/OneSignalOutcomes.xcframework/ios-arm64_x86_64-simulator/OneSignalOutcomes.framework/Headers/OSOutcomeEventParams.h",
+        "res/iOS/OneSignalOutcomes.xcframework/ios-arm64_x86_64-simulator/OneSignalOutcomes.framework/Headers/OSOutcomeEventsCache.h",
+        "res/iOS/OneSignalOutcomes.xcframework/ios-arm64_x86_64-simulator/OneSignalOutcomes.framework/Headers/OSOutcomeEventsFactory.h",
+        "res/iOS/OneSignalOutcomes.xcframework/ios-arm64_x86_64-simulator/OneSignalOutcomes.framework/Headers/OSOutcomeEventsRepository.h",
+        "res/iOS/OneSignalOutcomes.xcframework/ios-arm64_x86_64-simulator/OneSignalOutcomes.framework/Headers/OSOutcomeSource.h",
+        "res/iOS/OneSignalOutcomes.xcframework/ios-arm64_x86_64-simulator/OneSignalOutcomes.framework/Headers/OSOutcomeSourceBody.h",
+        "res/iOS/OneSignalOutcomes.xcframework/ios-arm64_x86_64-simulator/OneSignalOutcomes.framework/Headers/OSSessionManager.h",
+        "res/iOS/OneSignalOutcomes.xcframework/ios-arm64_x86_64-simulator/OneSignalOutcomes.framework/Headers/OSTrackerFactory.h",
+        "res/iOS/OneSignalOutcomes.xcframework/ios-arm64_x86_64-simulator/OneSignalOutcomes.framework/Headers/OneSignalOutcomeEventsController.h",
+        "res/iOS/OneSignalOutcomes.xcframework/ios-arm64_x86_64-simulator/OneSignalOutcomes.framework/Headers/OneSignalOutcomes.h",
+        "res/iOS/OneSignalOutcomes.xcframework/ios-arm64_x86_64-simulator/OneSignalOutcomes.framework/Info.plist",
+        "res/iOS/OneSignalOutcomes.xcframework/ios-arm64_x86_64-simulator/OneSignalOutcomes.framework/Modules/module.modulemap",
+        "res/iOS/OneSignalOutcomes.xcframework/ios-arm64_x86_64-simulator/OneSignalOutcomes.framework/OneSignalOutcomes",
+        "res/iOS/OneSignalOutcomes.xcframework/ios-arm64_x86_64-simulator/OneSignalOutcomes.framework/PrivacyInfo.xcprivacy",
+        "res/iOS/OneSignalOutcomes.xcframework/ios-arm64_x86_64-simulator/OneSignalOutcomes.framework/_CodeSignature/CodeResources",
+        "res/iOS/manifest"
+      ]
+    },
+    "RestSharp/111.3.0": {
+      "sha512": "+cHtmb3I5efys4scOCo+pWRgJNkwyEI8p39d4VMTbCXpPwsDeGP6OJH+1m4xtYUAZttMp2s4yxagy3usl2X13g==",
+      "type": "package",
+      "path": "restsharp/111.3.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "lib/net471/RestSharp.dll",
+        "lib/net471/RestSharp.xml",
+        "lib/net48/RestSharp.dll",
+        "lib/net48/RestSharp.xml",
+        "lib/net6.0/RestSharp.dll",
+        "lib/net6.0/RestSharp.xml",
+        "lib/net7.0/RestSharp.dll",
+        "lib/net7.0/RestSharp.xml",
+        "lib/net8.0/RestSharp.dll",
+        "lib/net8.0/RestSharp.xml",
+        "lib/netstandard2.0/RestSharp.dll",
+        "lib/netstandard2.0/RestSharp.xml",
+        "restsharp.111.3.0.nupkg.sha512",
+        "restsharp.nuspec",
+        "restsharp.png"
       ]
     },
     "Swashbuckle.AspNetCore/6.4.0": {
@@ -3874,27 +5615,31 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "System.Diagnostics.DiagnosticSource/6.0.1": {
-      "sha512": "KiLYDu2k2J82Q9BJpWiuQqCkFjRBWVq4jDzKKWawVi9KWzyD0XG3cmfX0vqTQlL14Wi9EufJrbL0+KCLTbqWiQ==",
+    "System.Diagnostics.DiagnosticSource/8.0.0": {
+      "sha512": "c9xLpVz6PL9lp/djOWtk5KPDZq3cSYpmXoJQY524EOtuFl5z9ZtsotpsyrDW40U1DRnQSYvcPKEUV0X//u6gkQ==",
       "type": "package",
-      "path": "system.diagnostics.diagnosticsource/6.0.1",
+      "path": "system.diagnostics.diagnosticsource/8.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/System.Diagnostics.DiagnosticSource.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net6.0/_._",
         "buildTransitive/netcoreapp2.0/System.Diagnostics.DiagnosticSource.targets",
-        "buildTransitive/netcoreapp3.1/_._",
-        "lib/net461/System.Diagnostics.DiagnosticSource.dll",
-        "lib/net461/System.Diagnostics.DiagnosticSource.xml",
-        "lib/net5.0/System.Diagnostics.DiagnosticSource.dll",
-        "lib/net5.0/System.Diagnostics.DiagnosticSource.xml",
+        "lib/net462/System.Diagnostics.DiagnosticSource.dll",
+        "lib/net462/System.Diagnostics.DiagnosticSource.xml",
         "lib/net6.0/System.Diagnostics.DiagnosticSource.dll",
         "lib/net6.0/System.Diagnostics.DiagnosticSource.xml",
+        "lib/net7.0/System.Diagnostics.DiagnosticSource.dll",
+        "lib/net7.0/System.Diagnostics.DiagnosticSource.xml",
+        "lib/net8.0/System.Diagnostics.DiagnosticSource.dll",
+        "lib/net8.0/System.Diagnostics.DiagnosticSource.xml",
         "lib/netstandard2.0/System.Diagnostics.DiagnosticSource.dll",
         "lib/netstandard2.0/System.Diagnostics.DiagnosticSource.xml",
-        "system.diagnostics.diagnosticsource.6.0.1.nupkg.sha512",
+        "system.diagnostics.diagnosticsource.8.0.0.nupkg.sha512",
         "system.diagnostics.diagnosticsource.nuspec",
         "useSharedDesignerContext.txt"
       ]
@@ -4526,10 +6271,10 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "System.Text.Json/8.0.0": {
-      "sha512": "OdrZO2WjkiEG6ajEFRABTRCi/wuXQPxeV6g8xvUJqdxMvvuCCEk86zPla8UiIQJz3durtUEbNyY/3lIhS0yZvQ==",
+    "System.Text.Json/8.0.4": {
+      "sha512": "bAkhgDJ88XTsqczoxEMliSrpijKZHhbJQldhAmObj/RbrN3sU5dcokuXmWJWsdQAhiMJ9bTayWsL1C9fbbCRhw==",
       "type": "package",
-      "path": "system.text.json/8.0.0",
+      "path": "system.text.json/8.0.4",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -4594,7 +6339,7 @@
         "lib/net8.0/System.Text.Json.xml",
         "lib/netstandard2.0/System.Text.Json.dll",
         "lib/netstandard2.0/System.Text.Json.xml",
-        "system.text.json.8.0.0.nupkg.sha512",
+        "system.text.json.8.0.4.nupkg.sha512",
         "system.text.json.nuspec",
         "useSharedDesignerContext.txt"
       ]
@@ -4693,10 +6438,18 @@
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 8.0.6",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 8.0.6",
       "Microsoft.AspNetCore.Identity.UI >= 8.0.6",
+      "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation >= 8.0.7",
       "Microsoft.EntityFrameworkCore >= 8.0.6",
       "Microsoft.EntityFrameworkCore.SqlServer >= 8.0.6",
       "Microsoft.EntityFrameworkCore.Tools >= 8.0.6",
+      "Microsoft.Extensions.Http >= 8.0.0",
       "Microsoft.Extensions.Logging >= 8.0.0",
+      "Newtonsoft.Json >= 13.0.3",
+      "OneSignal.CSharp.SDK >= 0.10.0",
+      "OneSignal.CSharp.SDK.Core >= 2.0.0",
+      "OneSignalSDK.DotNet >= 5.1.3",
+      "OneSignalSDK.Xamarin >= 4.3.5",
+      "RestSharp >= 111.3.0",
       "Swashbuckle.AspNetCore >= 6.4.0"
     ]
   },
@@ -4766,6 +6519,10 @@
             "target": "Package",
             "version": "[8.0.6, )"
           },
+          "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": {
+            "target": "Package",
+            "version": "[8.0.7, )"
+          },
           "Microsoft.EntityFrameworkCore": {
             "target": "Package",
             "version": "[8.0.6, )"
@@ -4780,9 +6537,37 @@
             "target": "Package",
             "version": "[8.0.6, )"
           },
+          "Microsoft.Extensions.Http": {
+            "target": "Package",
+            "version": "[8.0.0, )"
+          },
           "Microsoft.Extensions.Logging": {
             "target": "Package",
             "version": "[8.0.0, )"
+          },
+          "Newtonsoft.Json": {
+            "target": "Package",
+            "version": "[13.0.3, )"
+          },
+          "OneSignal.CSharp.SDK": {
+            "target": "Package",
+            "version": "[0.10.0, )"
+          },
+          "OneSignal.CSharp.SDK.Core": {
+            "target": "Package",
+            "version": "[2.0.0, )"
+          },
+          "OneSignalSDK.DotNet": {
+            "target": "Package",
+            "version": "[5.1.3, )"
+          },
+          "OneSignalSDK.Xamarin": {
+            "target": "Package",
+            "version": "[4.3.5, )"
+          },
+          "RestSharp": {
+            "target": "Package",
+            "version": "[111.3.0, )"
           },
           "Swashbuckle.AspNetCore": {
             "target": "Package",
@@ -4811,5 +6596,17 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'OneSignal.CSharp.SDK 0.10.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0'. This package may not be fully compatible with your project.",
+      "libraryId": "OneSignal.CSharp.SDK",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    }
+  ]
 }

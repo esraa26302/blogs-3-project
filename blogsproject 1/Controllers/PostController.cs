@@ -1,4 +1,5 @@
 ﻿using blogsproject_1.Models;
+using blogsproject_1.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -11,21 +12,21 @@ namespace blogsproject_1.Controllers
     public class PostController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private readonly INotificationService _notificationService;
 
-        public PostController(ApplicationDbContext context)
+        public PostController(ApplicationDbContext context, INotificationService notificationService)
         {
             _context = context;
+            _notificationService = notificationService;
         }
 
         [HttpGet]
-     
         public async Task<ActionResult<IEnumerable<Post>>> GetPosts()
         {
             return await _context.Posts.Include(p => p.User).Include(p => p.Comments).ToListAsync();
         }
 
         [HttpGet("{id}")]
-     
         public async Task<ActionResult<Post>> GetPost(int id)
         {
             var post = await _context.Posts.Include(p => p.User).Include(p => p.Comments).FirstOrDefaultAsync(p => p.Id == id);
@@ -55,8 +56,6 @@ namespace blogsproject_1.Controllers
             }
 
             var userId = int.Parse(userIdClaim.Value);
-
-         
             var user = await _context.Users.FindAsync(userId);
             if (user == null)
             {
@@ -75,10 +74,18 @@ namespace blogsproject_1.Controllers
             _context.Posts.Add(post);
             await _context.SaveChangesAsync();
 
+            var adminUsers = await _context.Users.Where(u => u.Role == "Admin").ToListAsync();
+            foreach (var admin in adminUsers)
+            {
+                await _notificationService.SendNotificationAsync(admin.OneId.ToString(), "New Post Created", $"Writer {user.Name} has created a new post.");
+            }
+
             return CreatedAtAction(nameof(GetPost), new { id = post.Id }, post);
         }
+    
 
-        [HttpPut("{id}")]
+
+[HttpPut("{id}")]
         [Authorize(Policy = "WriterOrAdminPolicy")]
         public async Task<IActionResult> PutPost(int id, PostUpdateDto postDto)
         {
@@ -134,7 +141,7 @@ namespace blogsproject_1.Controllers
             var post = await _context.Posts.FindAsync(id);
             if (post == null)
             {
-                return NotFound();
+                return NotFound(new { message = "Post not found." });
             }
 
             if (post.UserId != userId && userRole != "Admin")
@@ -146,11 +153,6 @@ namespace blogsproject_1.Controllers
             await _context.SaveChangesAsync();
 
             return NoContent();
-        }
-
-        private bool PostExists(int id)
-        {
-            return _context.Posts.Any(e => e.Id == id);
         }
     }
 }
