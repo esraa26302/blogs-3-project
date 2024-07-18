@@ -7,6 +7,8 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using RestSharp;
+using blogsproject_1.Models;
+using Microsoft.EntityFrameworkCore;
 
 
 namespace blogsproject_1.Services
@@ -21,32 +23,28 @@ namespace blogsproject_1.Services
         private readonly IConfiguration _configuration;
         private readonly IRestClient _restClient;
         private readonly ILogger<OneSignalNotificationService> _logger;
+        private readonly ApplicationDbContext _context;
 
-        public OneSignalNotificationService(IConfiguration configuration, ILogger<OneSignalNotificationService> logger)
+        public OneSignalNotificationService(IConfiguration configuration, ILogger<OneSignalNotificationService> logger, ApplicationDbContext context)
         {
             _configuration = configuration;
             _logger = logger;
-            _restClient = new RestClient("https://onesignal.com/apps/adf99ce1-b541-4afb-a667-1246aa0df969/notifications");
-
-            var appId = _configuration["OneSignal:AppId"];
-            var apiKey = _configuration["OneSignal:ApiKey"];
-
-            _logger.LogInformation($"OneSignal AppId: {appId}");
-            _logger.LogInformation($"OneSignal ApiKey: {apiKey}");
+            _context = context;
+            _restClient = new RestClient("https://onesignal.com/api/v1");
         }
 
-        public async Task SendNotificationAsync(string OneId, string title, string message)
+        public async Task SendNotificationAsync(string oneId, string title, string message)
         {
             var appId = _configuration["OneSignal:AppId"];
             var request = new RestRequest("notifications", Method.Post);
             request.AddHeader("Authorization", $"Basic {_configuration["OneSignal:ApiKey"]}");
             request.AddHeader("Content-Type", "application/json");
-            request.AddHeader("Accept", "application/json"); 
+            request.AddHeader("Accept", "application/json");
 
             var notification = new
             {
                 app_id = appId,
-                include_player_ids = new List<string> { OneId },
+                include_player_ids = new List<string> { oneId },
                 headings = new Dictionary<string, string> { { "en", title } },
                 contents = new Dictionary<string, string> { { "en", message } }
             };
@@ -63,10 +61,27 @@ namespace blogsproject_1.Services
 
                 if (!response.IsSuccessful)
                 {
+                    _logger.LogError($"Failed to send notification: {response.StatusCode} - {response.Content}");
                     throw new ApplicationException($"Failed to send notification: {response.StatusCode} - {response.Content}");
                 }
 
                 _logger.LogInformation($"Notification sent successfully: {response.Content}");
+
+               
+                var adminUser = await _context.Users.FirstOrDefaultAsync(u => u.OneId == oneId);
+                if (adminUser != null)
+                {
+                    var dbNotification = new Nofication
+                    {
+                        Title = title,
+                        Message = message,
+                        SentDate = DateTime.UtcNow,
+                        AdminUserId = adminUser.Id
+                    };
+
+                    _context.Nofications.Add(dbNotification);
+                    await _context.SaveChangesAsync();
+                }
             }
             catch (Exception ex)
             {

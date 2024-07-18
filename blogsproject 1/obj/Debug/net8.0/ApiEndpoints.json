@@ -109,6 +109,16 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "blogsproject_1.Controllers.NotificationController",
+    "Method": "Index",
+    "RelativePath": "api/Notification",
+    "HttpMethod": "",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "blogsproject_1.Controllers.PostController",
     "Method": "GetPosts",
     "RelativePath": "api/Post",

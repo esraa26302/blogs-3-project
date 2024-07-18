@@ -41,6 +41,7 @@ builder.Services.AddAuthentication(options =>
         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:SecretKey"]))
     };
 });
+builder.Services.AddControllersWithViews();
 
 builder.Services.AddAuthorization(options =>
 {

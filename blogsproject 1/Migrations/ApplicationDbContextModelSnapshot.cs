@@ -60,6 +60,35 @@ namespace blogsproject_1.Migrations
                     b.ToTable("Comments");
                 });
 
+            modelBuilder.Entity("blogsproject_1.Models.Nofication", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("AdminUserId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Message")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("SentDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AdminUserId");
+
+                    b.ToTable("Nofications");
+                });
+
             modelBuilder.Entity("blogsproject_1.Models.Post", b =>
                 {
                     b.Property<int>("Id")
@@ -148,6 +177,17 @@ namespace blogsproject_1.Migrations
                     b.Navigation("Post");
 
                     b.Navigation("User");
+                });
+
+            modelBuilder.Entity("blogsproject_1.Models.Nofication", b =>
+                {
+                    b.HasOne("blogsproject_1.Models.User", "AdminUser")
+                        .WithMany()
+                        .HasForeignKey("AdminUserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("AdminUser");
                 });
 
             modelBuilder.Entity("blogsproject_1.Models.Post", b =>

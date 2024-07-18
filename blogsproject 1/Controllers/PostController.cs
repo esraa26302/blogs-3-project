@@ -77,7 +77,7 @@ namespace blogsproject_1.Controllers
             var adminUsers = await _context.Users.Where(u => u.Role == "Admin").ToListAsync();
             foreach (var admin in adminUsers)
             {
-                await _notificationService.SendNotificationAsync(admin.OneId.ToString(), "New Post Created", $"Writer {user.Name} has created a new post.");
+                await _notificationService.SendNotificationAsync(admin.OneId.ToString(), "New Post Created ", $"Writer {user.Name} with id {user.Id} and email {user.Email} has created a new post.");
             }
 
             return CreatedAtAction(nameof(GetPost), new { id = post.Id }, post);

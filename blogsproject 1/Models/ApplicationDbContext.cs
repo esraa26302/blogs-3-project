@@ -14,6 +14,7 @@ namespace blogsproject_1.Models
         public DbSet<User> Users { get; set; }
         public DbSet<Post> Posts { get; set; }
         public DbSet<Comment> Comments { get; set; }
+        public DbSet<Nofication> Nofications { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
