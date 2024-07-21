@@ -1,12 +1,20 @@
 {
   "Version": 1,
-  "Hash": "8sXEOjH1J6DXYKDGtUbzp3ZmRl0BO2GMgGS6zyjsHaU=",
+  "Hash": "OI/QSZNWwNdDpp3D1EF3oPWSmJDQLYCiJsjp+OmhPG8=",
   "Source": "blogsproject 1",
   "BasePath": "_content/blogsproject 1",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "blogsproject 1\\wwwroot",
+      "Source": "blogsproject 1",
+      "ContentRoot": "C:\\Users\\hassa\\OneDrive\\Desktop\\blogsproject 1\\blogsproject 1\\wwwroot\\",
+      "BasePath": "_content/blogsproject 1",
+      "Pattern": "**"
+    }
+  ],
   "Assets": [
     {
       "Identity": "C:\\Users\\hassa\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\8.0.6\\staticwebassets\\V5\\css\\site.css",
@@ -1147,6 +1155,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\hassa\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\8.0.6\\staticwebassets\\V5\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Identity": "C:\\Users\\hassa\\OneDrive\\Desktop\\blogsproject 1\\blogsproject 1\\wwwroot\\OneSignalSDKWorker.js",
+      "SourceId": "blogsproject 1",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\hassa\\OneDrive\\Desktop\\blogsproject 1\\blogsproject 1\\wwwroot\\",
+      "BasePath": "_content/blogsproject 1",
+      "RelativePath": "OneSignalSDKWorker.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\OneSignalSDKWorker.js"
     }
   ]
 }

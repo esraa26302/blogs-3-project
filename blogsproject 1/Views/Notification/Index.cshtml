@@ -1,16 +1,16 @@
 ﻿@using Microsoft.AspNetCore.Mvc
 @using Microsoft.AspNetCore.Mvc.Rendering
 @using Microsoft.AspNetCore.Mvc.ViewFeatures
+
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
 @model IEnumerable<blogsproject_1.Models.Nofication>
 
+<!DOCTYPE html>
 <html>
 <head>
     <title>Notifications</title>
-
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-
 </head>
 <body>
     <div class="container">
@@ -32,18 +32,23 @@
         OneSignalDeferred.push(async function (OneSignal) {
             await OneSignal.init({
                 appId: "adf99ce1-b541-4afb-a667-1246aa0df969",
+                safari_web_id: 'web.onesignal.auto.safari.xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx', 
+                notifyButton: {
+                    enable: true, 
+                },
+                serviceWorkerParam: {
+                    scope: '/'
+                },
+                serviceWorkerPath: '/OneSignalSDKWorker.js'
             });
 
-            
             OneSignal.on('notificationDisplay', function (event) {
                 var notification = event.data;
                 var notificationText = notification.content;
 
-               
                 $('#notificationList').prepend('<div class="alert alert-success" role="alert">' + notificationText + '</div>');
             });
         });
     </script>
 </body>
 </html>
-
