@@ -1,5 +1,6 @@
 ﻿using blogsproject_1.Models;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -11,8 +12,9 @@ namespace blogsproject_1.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [EnableCors("AllowAngularApp")]
 
-    public class UserController : ControllerBase
+    public class UserController : Controller
     {
         private readonly ApplicationDbContext _context;
         private readonly IConfiguration _configuration;
@@ -25,7 +27,7 @@ namespace blogsproject_1.Controllers
         }
 
         [HttpGet]
-        [Authorize(Policy = "AdminPolicy")]
+        //[Authorize(Policy = "AdminPolicy")]
         public async Task<ActionResult<IEnumerable<User>>> GetUsers()
         {
             return await _context.Users.ToListAsync();

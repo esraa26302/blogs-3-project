@@ -14,6 +14,7 @@ namespace blogsproject_1.Models
         public string Content { get; set; }
 
         public int UserId { get; set; }
+        public DateTime CreationDate { get; set; }
 
         [JsonIgnore]
         public User User { get; set; }

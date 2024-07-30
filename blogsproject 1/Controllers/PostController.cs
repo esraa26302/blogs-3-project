@@ -1,6 +1,7 @@
 ﻿using blogsproject_1.Models;
 using blogsproject_1.Services;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
@@ -9,6 +10,7 @@ namespace blogsproject_1.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [EnableCors("AllowAngularApp")]
     public class PostController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -21,10 +23,28 @@ namespace blogsproject_1.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Post>>> GetPosts()
+        public async Task<ActionResult<IEnumerable<PostViewModel>>> GetPosts()
         {
-            return await _context.Posts.Include(p => p.User).Include(p => p.Comments).ToListAsync();
+            var posts = await _context.Posts
+                .Include(p => p.User)
+                .Include(p => p.Comments)
+                .Select(p => new PostViewModel
+                {
+                    Id = p.Id,
+                    Image = p.Image,
+                    Content = p.Content,
+                    UserId = p.UserId,
+                    UserName = p.User.Name,
+                    UserImage = p.User.Image,
+                    CreationDate = p.CreationDate 
+                })
+                .OrderByDescending(p => p.CreationDate) 
+                .ToListAsync();
+
+            return Ok(posts);
         }
+
+
 
         [HttpGet("{id}")]
         public async Task<ActionResult<Post>> GetPost(int id)
@@ -42,6 +62,7 @@ namespace blogsproject_1.Controllers
 
         [HttpPost]
         [Authorize(Policy = "WriterOrAdminPolicy")]
+       
         public async Task<ActionResult<Post>> PostPost(PostCreateDto postDto)
         {
             if (!ModelState.IsValid)

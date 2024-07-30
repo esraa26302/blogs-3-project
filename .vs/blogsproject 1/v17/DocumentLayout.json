@@ -3,44 +3,40 @@
   "WorkspaceRootPath": "C:\\Users\\hassa\\OneDrive\\Desktop\\blogsproject 1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9311D759-1183-4141-B4DB-FB1E3A96346C}|blogsproject 1\\blogsproject 1.csproj|c:\\users\\hassa\\onedrive\\desktop\\blogsproject 1\\blogsproject 1\\views\\notification\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{9311D759-1183-4141-B4DB-FB1E3A96346C}|blogsproject 1\\blogsproject 1.csproj|solutionrelative:blogsproject 1\\views\\notification\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{9311D759-1183-4141-B4DB-FB1E3A96346C}|blogsproject 1\\blogsproject 1.csproj|C:\\Users\\hassa\\OneDrive\\Desktop\\blogsproject 1\\blogsproject 1\\controllers\\postcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9311D759-1183-4141-B4DB-FB1E3A96346C}|blogsproject 1\\blogsproject 1.csproj|solutionrelative:blogsproject 1\\controllers\\postcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9311D759-1183-4141-B4DB-FB1E3A96346C}|blogsproject 1\\blogsproject 1.csproj|C:\\Users\\hassa\\OneDrive\\Desktop\\blogsproject 1\\blogsproject 1\\controllers\\notificationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9311D759-1183-4141-B4DB-FB1E3A96346C}|blogsproject 1\\blogsproject 1.csproj|solutionrelative:blogsproject 1\\controllers\\notificationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9311D759-1183-4141-B4DB-FB1E3A96346C}|blogsproject 1\\blogsproject 1.csproj|C:\\Users\\hassa\\OneDrive\\Desktop\\blogsproject 1\\blogsproject 1\\services\\onesignalnotificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9311D759-1183-4141-B4DB-FB1E3A96346C}|blogsproject 1\\blogsproject 1.csproj|solutionrelative:blogsproject 1\\services\\onesignalnotificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9311D759-1183-4141-B4DB-FB1E3A96346C}|blogsproject 1\\blogsproject 1.csproj|c:\\users\\hassa\\onedrive\\desktop\\blogsproject 1\\blogsproject 1\\models\\postviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9311D759-1183-4141-B4DB-FB1E3A96346C}|blogsproject 1\\blogsproject 1.csproj|solutionrelative:blogsproject 1\\models\\postviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9311D759-1183-4141-B4DB-FB1E3A96346C}|blogsproject 1\\blogsproject 1.csproj|C:\\Users\\hassa\\OneDrive\\Desktop\\blogsproject 1\\blogsproject 1\\models\\post.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9311D759-1183-4141-B4DB-FB1E3A96346C}|blogsproject 1\\blogsproject 1.csproj|solutionrelative:blogsproject 1\\models\\post.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9311D759-1183-4141-B4DB-FB1E3A96346C}|blogsproject 1\\blogsproject 1.csproj|C:\\Users\\hassa\\OneDrive\\Desktop\\blogsproject 1\\blogsproject 1\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9311D759-1183-4141-B4DB-FB1E3A96346C}|blogsproject 1\\blogsproject 1.csproj|solutionrelative:blogsproject 1\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\hassa\\OneDrive\\Desktop\\blogsproject 1\\blogsproject 1\\Migrations\\20240730095303_m80.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:blogsproject 1\\Migrations\\20240730095303_m80.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9311D759-1183-4141-B4DB-FB1E3A96346C}|blogsproject 1\\blogsproject 1.csproj|C:\\Users\\hassa\\OneDrive\\Desktop\\blogsproject 1\\blogsproject 1\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9311D759-1183-4141-B4DB-FB1E3A96346C}|blogsproject 1\\blogsproject 1.csproj|solutionrelative:blogsproject 1\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9311D759-1183-4141-B4DB-FB1E3A96346C}|blogsproject 1\\blogsproject 1.csproj|C:\\Users\\hassa\\OneDrive\\Desktop\\blogsproject 1\\blogsproject 1\\wwwroot\\onesignalsdkworker.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{9311D759-1183-4141-B4DB-FB1E3A96346C}|blogsproject 1\\blogsproject 1.csproj|solutionrelative:blogsproject 1\\wwwroot\\onesignalsdkworker.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+      "AbsoluteMoniker": "D:0:0:{9311D759-1183-4141-B4DB-FB1E3A96346C}|blogsproject 1\\blogsproject 1.csproj|C:\\Users\\hassa\\OneDrive\\Desktop\\blogsproject 1\\blogsproject 1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9311D759-1183-4141-B4DB-FB1E3A96346C}|blogsproject 1\\blogsproject 1.csproj|solutionrelative:blogsproject 1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9311D759-1183-4141-B4DB-FB1E3A96346C}|blogsproject 1\\blogsproject 1.csproj|C:\\Users\\hassa\\OneDrive\\Desktop\\blogsproject 1\\blogsproject 1\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{9311D759-1183-4141-B4DB-FB1E3A96346C}|blogsproject 1\\blogsproject 1.csproj|solutionrelative:blogsproject 1\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9311D759-1183-4141-B4DB-FB1E3A96346C}|blogsproject 1\\blogsproject 1.csproj|C:\\Users\\hassa\\OneDrive\\Desktop\\blogsproject 1\\blogsproject 1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9311D759-1183-4141-B4DB-FB1E3A96346C}|blogsproject 1\\blogsproject 1.csproj|solutionrelative:blogsproject 1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9311D759-1183-4141-B4DB-FB1E3A96346C}|blogsproject 1\\blogsproject 1.csproj|C:\\Users\\hassa\\OneDrive\\Desktop\\blogsproject 1\\blogsproject 1\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9311D759-1183-4141-B4DB-FB1E3A96346C}|blogsproject 1\\blogsproject 1.csproj|solutionrelative:blogsproject 1\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9311D759-1183-4141-B4DB-FB1E3A96346C}|blogsproject 1\\blogsproject 1.csproj|c:\\users\\hassa\\onedrive\\desktop\\blogsproject 1\\blogsproject 1\\controllers\\notificationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9311D759-1183-4141-B4DB-FB1E3A96346C}|blogsproject 1\\blogsproject 1.csproj|solutionrelative:blogsproject 1\\controllers\\notificationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9311D759-1183-4141-B4DB-FB1E3A96346C}|blogsproject 1\\blogsproject 1.csproj|C:\\Users\\hassa\\OneDrive\\Desktop\\blogsproject 1\\blogsproject 1\\controllers\\commentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -51,12 +47,24 @@
       "RelativeMoniker": "D:0:0:{9311D759-1183-4141-B4DB-FB1E3A96346C}|blogsproject 1\\blogsproject 1.csproj|solutionrelative:blogsproject 1\\models\\nofication.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{9311D759-1183-4141-B4DB-FB1E3A96346C}|blogsproject 1\\blogsproject 1.csproj|C:\\Users\\hassa\\OneDrive\\Desktop\\blogsproject 1\\blogsproject 1\\models\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9311D759-1183-4141-B4DB-FB1E3A96346C}|blogsproject 1\\blogsproject 1.csproj|solutionrelative:blogsproject 1\\models\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{9311D759-1183-4141-B4DB-FB1E3A96346C}|blogsproject 1\\blogsproject 1.csproj|C:\\Users\\hassa\\OneDrive\\Desktop\\blogsproject 1\\blogsproject 1\\models\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9311D759-1183-4141-B4DB-FB1E3A96346C}|blogsproject 1\\blogsproject 1.csproj|solutionrelative:blogsproject 1\\models\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9311D759-1183-4141-B4DB-FB1E3A96346C}|blogsproject 1\\blogsproject 1.csproj|C:\\Users\\hassa\\OneDrive\\Desktop\\blogsproject 1\\blogsproject 1\\models\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9311D759-1183-4141-B4DB-FB1E3A96346C}|blogsproject 1\\blogsproject 1.csproj|solutionrelative:blogsproject 1\\models\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9311D759-1183-4141-B4DB-FB1E3A96346C}|blogsproject 1\\blogsproject 1.csproj|C:\\Users\\hassa\\OneDrive\\Desktop\\blogsproject 1\\blogsproject 1\\views\\notification\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9311D759-1183-4141-B4DB-FB1E3A96346C}|blogsproject 1\\blogsproject 1.csproj|solutionrelative:blogsproject 1\\views\\notification\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9311D759-1183-4141-B4DB-FB1E3A96346C}|blogsproject 1\\blogsproject 1.csproj|C:\\Users\\hassa\\OneDrive\\Desktop\\blogsproject 1\\blogsproject 1\\services\\onesignalnotificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9311D759-1183-4141-B4DB-FB1E3A96346C}|blogsproject 1\\blogsproject 1.csproj|solutionrelative:blogsproject 1\\services\\onesignalnotificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9311D759-1183-4141-B4DB-FB1E3A96346C}|blogsproject 1\\blogsproject 1.csproj|C:\\Users\\hassa\\OneDrive\\Desktop\\blogsproject 1\\blogsproject 1\\wwwroot\\onesignalsdkworker.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{9311D759-1183-4141-B4DB-FB1E3A96346C}|blogsproject 1\\blogsproject 1.csproj|solutionrelative:blogsproject 1\\wwwroot\\onesignalsdkworker.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\hassa\\OneDrive\\Desktop\\blogsproject 1\\blogsproject 1\\Migrations\\20240716080415_m30.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -90,63 +98,180 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
+              "Title": "20240730095303_m80.cs",
+              "DocumentMoniker": "C:\\Users\\hassa\\OneDrive\\Desktop\\blogsproject 1\\blogsproject 1\\Migrations\\20240730095303_m80.cs",
+              "RelativeDocumentMoniker": "blogsproject 1\\Migrations\\20240730095303_m80.cs",
+              "ToolTip": "C:\\Users\\hassa\\OneDrive\\Desktop\\blogsproject 1\\blogsproject 1\\Migrations\\20240730095303_m80.cs",
+              "RelativeToolTip": "blogsproject 1\\Migrations\\20240730095303_m80.cs",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAQwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-30T09:53:04.066Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "PostController.cs",
               "DocumentMoniker": "C:\\Users\\hassa\\OneDrive\\Desktop\\blogsproject 1\\blogsproject 1\\Controllers\\PostController.cs",
               "RelativeDocumentMoniker": "blogsproject 1\\Controllers\\PostController.cs",
               "ToolTip": "C:\\Users\\hassa\\OneDrive\\Desktop\\blogsproject 1\\blogsproject 1\\Controllers\\PostController.cs",
               "RelativeToolTip": "blogsproject 1\\Controllers\\PostController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAJAAAA",
+              "ViewState": "AQIAABYAAAAAAAAAAAAuwCgAAAA4AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-10T12:26:18.81Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "NotificationController.cs",
-              "DocumentMoniker": "C:\\Users\\hassa\\OneDrive\\Desktop\\blogsproject 1\\blogsproject 1\\Controllers\\NotificationController.cs",
-              "RelativeDocumentMoniker": "blogsproject 1\\Controllers\\NotificationController.cs",
-              "ToolTip": "C:\\Users\\hassa\\OneDrive\\Desktop\\blogsproject 1\\blogsproject 1\\Controllers\\NotificationController.cs",
-              "RelativeToolTip": "blogsproject 1\\Controllers\\NotificationController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAAAAAA",
+              "DocumentIndex": 4,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\hassa\\OneDrive\\Desktop\\blogsproject 1\\blogsproject 1\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "blogsproject 1\\Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\hassa\\OneDrive\\Desktop\\blogsproject 1\\blogsproject 1\\Controllers\\UserController.cs",
+              "RelativeToolTip": "blogsproject 1\\Controllers\\UserController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAjAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-18T07:33:01.651Z",
+              "WhenOpened": "2024-07-10T13:20:56.474Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Post.cs",
+              "DocumentMoniker": "C:\\Users\\hassa\\OneDrive\\Desktop\\blogsproject 1\\blogsproject 1\\Models\\Post.cs",
+              "RelativeDocumentMoniker": "blogsproject 1\\Models\\Post.cs",
+              "ToolTip": "C:\\Users\\hassa\\OneDrive\\Desktop\\blogsproject 1\\blogsproject 1\\Models\\Post.cs",
+              "RelativeToolTip": "blogsproject 1\\Models\\Post.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAyAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-16T07:40:28.14Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PostViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\hassa\\OneDrive\\Desktop\\blogsproject 1\\blogsproject 1\\Models\\PostViewModel.cs",
+              "RelativeDocumentMoniker": "blogsproject 1\\Models\\PostViewModel.cs",
+              "ToolTip": "C:\\Users\\hassa\\OneDrive\\Desktop\\blogsproject 1\\blogsproject 1\\Models\\PostViewModel.cs",
+              "RelativeToolTip": "blogsproject 1\\Models\\PostViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAzAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-28T11:06:06.61Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\hassa\\OneDrive\\Desktop\\blogsproject 1\\blogsproject 1\\Program.cs",
+              "RelativeDocumentMoniker": "blogsproject 1\\Program.cs",
+              "ToolTip": "C:\\Users\\hassa\\OneDrive\\Desktop\\blogsproject 1\\blogsproject 1\\Program.cs",
+              "RelativeToolTip": "blogsproject 1\\Program.cs",
+              "ViewState": "AQIAAGYAAAAAAAAAAAAAAHUAAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-23T19:22:08.133Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\hassa\\OneDrive\\Desktop\\blogsproject 1\\blogsproject 1\\appsettings.json",
+              "RelativeDocumentMoniker": "blogsproject 1\\appsettings.json",
+              "ToolTip": "C:\\Users\\hassa\\OneDrive\\Desktop\\blogsproject 1\\blogsproject 1\\appsettings.json",
+              "RelativeToolTip": "blogsproject 1\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-07-09T10:11:25.274Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "User.cs",
               "DocumentMoniker": "C:\\Users\\hassa\\OneDrive\\Desktop\\blogsproject 1\\blogsproject 1\\Models\\User.cs",
               "RelativeDocumentMoniker": "blogsproject 1\\Models\\User.cs",
               "ToolTip": "C:\\Users\\hassa\\OneDrive\\Desktop\\blogsproject 1\\blogsproject 1\\Models\\User.cs",
               "RelativeToolTip": "blogsproject 1\\Models\\User.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABoAAAAoAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-16T07:25:56.201Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\hassa\\OneDrive\\Desktop\\blogsproject 1\\blogsproject 1\\Views\\Notification\\Index.cshtml",
-              "RelativeDocumentMoniker": "blogsproject 1\\Views\\Notification\\Index.cshtml",
-              "ToolTip": "C:\\Users\\hassa\\OneDrive\\Desktop\\blogsproject 1\\blogsproject 1\\Views\\Notification\\Index.cshtml",
-              "RelativeToolTip": "blogsproject 1\\Views\\Notification\\Index.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAADcAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-18T08:08:48.082Z",
+              "DocumentIndex": 8,
+              "Title": "NotificationController.cs",
+              "DocumentMoniker": "C:\\Users\\hassa\\OneDrive\\Desktop\\blogsproject 1\\blogsproject 1\\Controllers\\NotificationController.cs",
+              "RelativeDocumentMoniker": "blogsproject 1\\Controllers\\NotificationController.cs",
+              "ToolTip": "C:\\Users\\hassa\\OneDrive\\Desktop\\blogsproject 1\\blogsproject 1\\Controllers\\NotificationController.cs",
+              "RelativeToolTip": "blogsproject 1\\Controllers\\NotificationController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-18T07:33:01.651Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 9,
+              "Title": "CommentController.cs",
+              "DocumentMoniker": "C:\\Users\\hassa\\OneDrive\\Desktop\\blogsproject 1\\blogsproject 1\\Controllers\\CommentController.cs",
+              "RelativeDocumentMoniker": "blogsproject 1\\Controllers\\CommentController.cs",
+              "ToolTip": "C:\\Users\\hassa\\OneDrive\\Desktop\\blogsproject 1\\blogsproject 1\\Controllers\\CommentController.cs",
+              "RelativeToolTip": "blogsproject 1\\Controllers\\CommentController.cs",
+              "ViewState": "AQIAACMAAAAAAAAAAAAcwCkAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-16T07:45:00.56Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Nofication.cs",
+              "DocumentMoniker": "C:\\Users\\hassa\\OneDrive\\Desktop\\blogsproject 1\\blogsproject 1\\Models\\Nofication.cs",
+              "RelativeDocumentMoniker": "blogsproject 1\\Models\\Nofication.cs",
+              "ToolTip": "C:\\Users\\hassa\\OneDrive\\Desktop\\blogsproject 1\\blogsproject 1\\Models\\Nofication.cs",
+              "RelativeToolTip": "blogsproject 1\\Models\\Nofication.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-18T07:31:05.942Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "LoginDto.cs",
+              "DocumentMoniker": "C:\\Users\\hassa\\OneDrive\\Desktop\\blogsproject 1\\blogsproject 1\\Models\\LoginDto.cs",
+              "RelativeDocumentMoniker": "blogsproject 1\\Models\\LoginDto.cs",
+              "ToolTip": "C:\\Users\\hassa\\OneDrive\\Desktop\\blogsproject 1\\blogsproject 1\\Models\\LoginDto.cs",
+              "RelativeToolTip": "blogsproject 1\\Models\\LoginDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-18T06:50:39.764Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\hassa\\OneDrive\\Desktop\\blogsproject 1\\blogsproject 1\\Models\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "blogsproject 1\\Models\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\hassa\\OneDrive\\Desktop\\blogsproject 1\\blogsproject 1\\Models\\ApplicationDbContext.cs",
+              "RelativeToolTip": "blogsproject 1\\Models\\ApplicationDbContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-18T07:34:33.006Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
               "Title": "OneSignalNotificationService.cs",
               "DocumentMoniker": "C:\\Users\\hassa\\OneDrive\\Desktop\\blogsproject 1\\blogsproject 1\\Services\\OneSignalNotificationService.cs",
               "RelativeDocumentMoniker": "blogsproject 1\\Services\\OneSignalNotificationService.cs",
@@ -159,58 +284,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Post.cs",
-              "DocumentMoniker": "C:\\Users\\hassa\\OneDrive\\Desktop\\blogsproject 1\\blogsproject 1\\Models\\Post.cs",
-              "RelativeDocumentMoniker": "blogsproject 1\\Models\\Post.cs",
-              "ToolTip": "C:\\Users\\hassa\\OneDrive\\Desktop\\blogsproject 1\\blogsproject 1\\Models\\Post.cs",
-              "RelativeToolTip": "blogsproject 1\\Models\\Post.cs",
-              "ViewState": "AQIAABIAAAAAAAAAAAA7wAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-16T07:40:28.14Z",
+              "DocumentIndex": 13,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\hassa\\OneDrive\\Desktop\\blogsproject 1\\blogsproject 1\\Views\\Notification\\Index.cshtml",
+              "RelativeDocumentMoniker": "blogsproject 1\\Views\\Notification\\Index.cshtml",
+              "ToolTip": "C:\\Users\\hassa\\OneDrive\\Desktop\\blogsproject 1\\blogsproject 1\\Views\\Notification\\Index.cshtml",
+              "RelativeToolTip": "blogsproject 1\\Views\\Notification\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-18T08:08:48.082Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "UserController.cs",
-              "DocumentMoniker": "C:\\Users\\hassa\\OneDrive\\Desktop\\blogsproject 1\\blogsproject 1\\Controllers\\UserController.cs",
-              "RelativeDocumentMoniker": "blogsproject 1\\Controllers\\UserController.cs",
-              "ToolTip": "C:\\Users\\hassa\\OneDrive\\Desktop\\blogsproject 1\\blogsproject 1\\Controllers\\UserController.cs",
-              "RelativeToolTip": "blogsproject 1\\Controllers\\UserController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-10T13:20:56.474Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\hassa\\OneDrive\\Desktop\\blogsproject 1\\blogsproject 1\\appsettings.json",
-              "RelativeDocumentMoniker": "blogsproject 1\\appsettings.json",
-              "ToolTip": "C:\\Users\\hassa\\OneDrive\\Desktop\\blogsproject 1\\blogsproject 1\\appsettings.json",
-              "RelativeToolTip": "blogsproject 1\\appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-07-09T10:11:25.274Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\hassa\\OneDrive\\Desktop\\blogsproject 1\\blogsproject 1\\Program.cs",
-              "RelativeDocumentMoniker": "blogsproject 1\\Program.cs",
-              "ToolTip": "C:\\Users\\hassa\\OneDrive\\Desktop\\blogsproject 1\\blogsproject 1\\Program.cs",
-              "RelativeToolTip": "blogsproject 1\\Program.cs",
-              "ViewState": "AQIAAFoAAAAAAAAAAAAAAGwAAAAVAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-23T19:22:08.133Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 15,
               "Title": "OneSignalSDKWorker.js",
               "DocumentMoniker": "C:\\Users\\hassa\\OneDrive\\Desktop\\blogsproject 1\\blogsproject 1\\wwwroot\\OneSignalSDKWorker.js",
               "RelativeDocumentMoniker": "blogsproject 1\\wwwroot\\OneSignalSDKWorker.js",
@@ -223,31 +310,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "CommentController.cs",
-              "DocumentMoniker": "C:\\Users\\hassa\\OneDrive\\Desktop\\blogsproject 1\\blogsproject 1\\Controllers\\CommentController.cs",
-              "RelativeDocumentMoniker": "blogsproject 1\\Controllers\\CommentController.cs",
-              "ToolTip": "C:\\Users\\hassa\\OneDrive\\Desktop\\blogsproject 1\\blogsproject 1\\Controllers\\CommentController.cs",
-              "RelativeToolTip": "blogsproject 1\\Controllers\\CommentController.cs",
-              "ViewState": "AQIAAAQAAAAAAAAAAADwv0IAAAAjAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-16T07:45:00.56Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Nofication.cs",
-              "DocumentMoniker": "C:\\Users\\hassa\\OneDrive\\Desktop\\blogsproject 1\\blogsproject 1\\Models\\Nofication.cs",
-              "RelativeDocumentMoniker": "blogsproject 1\\Models\\Nofication.cs",
-              "ToolTip": "C:\\Users\\hassa\\OneDrive\\Desktop\\blogsproject 1\\blogsproject 1\\Models\\Nofication.cs",
-              "RelativeToolTip": "blogsproject 1\\Models\\Nofication.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAArAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-18T07:31:05.942Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 21,
               "Title": "20240718073748_m40.cs",
               "DocumentMoniker": "C:\\Users\\hassa\\OneDrive\\Desktop\\blogsproject 1\\blogsproject 1\\Migrations\\20240718073748_m40.cs",
               "RelativeDocumentMoniker": "blogsproject 1\\Migrations\\20240718073748_m40.cs",
@@ -255,35 +318,12 @@
               "RelativeToolTip": "blogsproject 1\\Migrations\\20240718073748_m40.cs",
               "ViewState": "AQIAAB8AAAAAAAAAAAAQwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-18T07:37:48.205Z"
+              "WhenOpened": "2024-07-18T07:37:48.205Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "ApplicationDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\hassa\\OneDrive\\Desktop\\blogsproject 1\\blogsproject 1\\Models\\ApplicationDbContext.cs",
-              "RelativeDocumentMoniker": "blogsproject 1\\Models\\ApplicationDbContext.cs",
-              "ToolTip": "C:\\Users\\hassa\\OneDrive\\Desktop\\blogsproject 1\\blogsproject 1\\Models\\ApplicationDbContext.cs",
-              "RelativeToolTip": "blogsproject 1\\Models\\ApplicationDbContext.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAsAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-18T07:34:33.006Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "LoginDto.cs",
-              "DocumentMoniker": "C:\\Users\\hassa\\OneDrive\\Desktop\\blogsproject 1\\blogsproject 1\\Models\\LoginDto.cs",
-              "RelativeDocumentMoniker": "blogsproject 1\\Models\\LoginDto.cs",
-              "ToolTip": "C:\\Users\\hassa\\OneDrive\\Desktop\\blogsproject 1\\blogsproject 1\\Models\\LoginDto.cs",
-              "RelativeToolTip": "blogsproject 1\\Models\\LoginDto.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAHAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-18T06:50:39.764Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 20,
               "Title": "20240716080712_m30.cs",
               "DocumentMoniker": "C:\\Users\\hassa\\OneDrive\\Desktop\\blogsproject 1\\blogsproject 1\\Migrations\\20240716080712_m30.cs",
               "RelativeDocumentMoniker": "blogsproject 1\\Migrations\\20240716080712_m30.cs",
@@ -291,11 +331,12 @@
               "RelativeToolTip": "blogsproject 1\\Migrations\\20240716080712_m30.cs",
               "ViewState": "AQIAAAgAAAAAAAAAAAAAwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-16T08:07:12.645Z"
+              "WhenOpened": "2024-07-16T08:07:12.645Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 16,
               "Title": "20240716080415_m30.cs",
               "DocumentMoniker": "C:\\Users\\hassa\\OneDrive\\Desktop\\blogsproject 1\\blogsproject 1\\Migrations\\20240716080415_m30.cs",
               "RelativeDocumentMoniker": "blogsproject 1\\Migrations\\20240716080415_m30.cs",
@@ -303,11 +344,12 @@
               "RelativeToolTip": "blogsproject 1\\Migrations\\20240716080415_m30.cs",
               "ViewState": "AQIAABYAAAAAAAAAAAAQwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-16T08:04:15.821Z"
+              "WhenOpened": "2024-07-16T08:04:15.821Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 17,
               "Title": "OneSignalService.cs",
               "DocumentMoniker": "C:\\Users\\hassa\\OneDrive\\Desktop\\blogsproject 1\\blogsproject 1\\Services\\OneSignalService.cs",
               "RelativeDocumentMoniker": "blogsproject 1\\Services\\OneSignalService.cs",
@@ -315,11 +357,12 @@
               "RelativeToolTip": "blogsproject 1\\Services\\OneSignalService.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAACkAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-11T06:40:06.314Z"
+              "WhenOpened": "2024-07-11T06:40:06.314Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 18,
               "Title": "Comment.cs",
               "DocumentMoniker": "C:\\Users\\hassa\\OneDrive\\Desktop\\blogsproject 1\\blogsproject 1\\Models\\Comment.cs",
               "RelativeDocumentMoniker": "blogsproject 1\\Models\\Comment.cs",
@@ -327,18 +370,20 @@
               "RelativeToolTip": "blogsproject 1\\Models\\Comment.cs",
               "ViewState": "AQIAAAUAAAAAAAAAAAAAwA4AAAAnAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-16T07:40:49.892Z"
+              "WhenOpened": "2024-07-16T07:40:49.892Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 19,
               "Title": "blogsproject 1",
               "DocumentMoniker": "C:\\Users\\hassa\\OneDrive\\Desktop\\blogsproject 1\\blogsproject 1\\blogsproject 1.csproj",
               "RelativeDocumentMoniker": "blogsproject 1\\blogsproject 1.csproj",
               "ToolTip": "C:\\Users\\hassa\\OneDrive\\Desktop\\blogsproject 1\\blogsproject 1\\blogsproject 1.csproj",
               "RelativeToolTip": "blogsproject 1\\blogsproject 1.csproj",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-07-11T07:40:39.931Z"
+              "WhenOpened": "2024-07-11T07:40:39.931Z",
+              "EditorCaption": ""
             }
           ]
         }

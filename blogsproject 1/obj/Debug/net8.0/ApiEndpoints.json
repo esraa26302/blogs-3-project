@@ -109,16 +109,6 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "blogsproject_1.Controllers.NotificationController",
-    "Method": "Index",
-    "RelativePath": "api/Notification",
-    "HttpMethod": "",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
     "ContainingType": "blogsproject_1.Controllers.PostController",
     "Method": "GetPosts",
     "RelativePath": "api/Post",
@@ -128,7 +118,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[blogsproject_1.Models.Post, blogsproject 1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[blogsproject_1.Models.PostViewModel, blogsproject 1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",

@@ -63,6 +63,17 @@ builder.Services.AddHttpClient<IRestClient, RestClient>(client =>
 
 
 builder.Configuration.AddJsonFile("appsettings.json");
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAngularApp",
+        builder =>
+        {
+            builder.WithOrigins("http://localhost:4200")
+                   .AllowAnyHeader()
+                   .AllowAnyMethod();
+        });
+});
+
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(opt =>
@@ -104,9 +115,11 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseRouting();
+app.UseCors("AllowAngularApp");
 app.UseAuthentication();
 app.UseAuthorization();
 app.UseStaticFiles();
+
 app.UseEndpoints(endpoints =>
 {
     endpoints.MapControllers();

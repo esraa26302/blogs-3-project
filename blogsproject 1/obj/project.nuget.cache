@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "p/3ETM/8AJ3sFCgWgCCguMDshmuZDbBYv5U0cYi12RaK90YxNnD0i9vqUg/BQH027b/SgmThEH76ZXec4MOzPA==",
+  "dgSpecHash": "pkKUa9TEDWvOloUidQ/26twGJltUWTFwKKdK6CGs+VXXrnd3UfuZL8N+Ci1LJ6bt37ZHmPIl9XoGmxtgl6Y+dQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\hassa\\OneDrive\\Desktop\\blogsproject 1\\blogsproject 1\\blogsproject 1.csproj",
   "expectedPackageFiles": [
@@ -63,6 +63,7 @@
     "C:\\Users\\hassa\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\8.0.6\\microsoft.aspnetcore.authentication.jwtbearer.8.0.6.nupkg.sha512",
     "C:\\Users\\hassa\\.nuget\\packages\\microsoft.aspnetcore.authorization\\2.2.0\\microsoft.aspnetcore.authorization.2.2.0.nupkg.sha512",
     "C:\\Users\\hassa\\.nuget\\packages\\microsoft.aspnetcore.authorization.policy\\2.2.0\\microsoft.aspnetcore.authorization.policy.2.2.0.nupkg.sha512",
+    "C:\\Users\\hassa\\.nuget\\packages\\microsoft.aspnetcore.cors\\2.2.0\\microsoft.aspnetcore.cors.2.2.0.nupkg.sha512",
     "C:\\Users\\hassa\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\8.0.6\\microsoft.aspnetcore.cryptography.internal.8.0.6.nupkg.sha512",
     "C:\\Users\\hassa\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\8.0.6\\microsoft.aspnetcore.cryptography.keyderivation.8.0.6.nupkg.sha512",
     "C:\\Users\\hassa\\.nuget\\packages\\microsoft.aspnetcore.hosting.abstractions\\2.2.0\\microsoft.aspnetcore.hosting.abstractions.2.2.0.nupkg.sha512",

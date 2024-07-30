@@ -5,9 +5,10 @@ using Microsoft.EntityFrameworkCore;
 
 namespace blogsproject_1.Controllers
 {
-    [ApiController]
-    [Route("api/[controller]")]
-    //[Authorize(Policy = "AdminPolicy")]
+    //[ApiController]
+    //[Route("api/[controller]")]
+    ////[Authorize(Policy = "AdminPolicy")]
+    ///[EnableCors("AllowSpecificOrigin")]
     public class NotificationController : Controller
     {
         private readonly ApplicationDbContext _context;
