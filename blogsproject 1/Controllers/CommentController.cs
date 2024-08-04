@@ -9,7 +9,7 @@ namespace blogsproject_1.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    [EnableCors("AllowSpecificOrigin")]
+  
     public class CommentController : ControllerBase
     {
 
@@ -137,7 +137,9 @@ namespace blogsproject_1.Controllers
             }
 
             var userId = int.Parse(userIdClaim.Value);
-            if (comment.UserId != userId)
+            var userRoleClaim = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Role);
+            var userRole = userRoleClaim?.Value;
+            if (comment.UserId != userId && userRole != "Admin")
             {
                 return StatusCode(StatusCodes.Status403Forbidden, new { message = "You are not authorized to update this comment." });
             }
@@ -168,7 +170,9 @@ namespace blogsproject_1.Controllers
         [Authorize]
         public async Task<IActionResult> DeleteComment(int id)
         {
-            var comment = await _context.Comments.FindAsync(id);
+            var comment = await _context.Comments
+                                        .Include(c => c.Replies)
+                                        .FirstOrDefaultAsync(c => c.Id == id);
             if (comment == null)
             {
                 return NotFound();
@@ -181,8 +185,6 @@ namespace blogsproject_1.Controllers
             }
 
             var userId = int.Parse(userIdClaim.Value);
-
-           
             var isAdmin = User.IsInRole("Admin");
 
             if (comment.UserId != userId && !isAdmin)
@@ -190,12 +192,18 @@ namespace blogsproject_1.Controllers
                 return StatusCode(StatusCodes.Status403Forbidden, new { message = "You are not authorized to delete this comment." });
             }
 
+            // Delete all replies
+            foreach (var reply in comment.Replies)
+            {
+                _context.Comments.Remove(reply);
+            }
+
+           
             _context.Comments.Remove(comment);
             await _context.SaveChangesAsync();
 
             return NoContent();
         }
-
 
         private bool CommentExists(int id)
         {

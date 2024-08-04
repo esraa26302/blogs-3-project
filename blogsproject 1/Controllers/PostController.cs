@@ -47,9 +47,41 @@ namespace blogsproject_1.Controllers
 
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<Post>> GetPost(int id)
+        public async Task<ActionResult<PostViewModel>> GetPost(int id)
         {
-            var post = await _context.Posts.Include(p => p.User).Include(p => p.Comments).FirstOrDefaultAsync(p => p.Id == id);
+            var post = await _context.Posts
+                .Include(p => p.User)
+                .Include(p => p.Comments)
+                    .ThenInclude(c => c.Replies)
+                .Select(p => new PostViewModel
+                {
+                    Id = p.Id,
+                    Image = p.Image,
+                    Content = p.Content,
+                    UserId = p.UserId,
+                    UserName = p.User.Name,
+                    UserImage = p.User.Image,
+                    CreationDate = p.CreationDate,
+                    Comments = p.Comments.Select(c => new CommentViewModel
+                    {
+                        Id = c.Id,
+                        Content = c.Content,
+                        Title = c.Title,
+                        UserId = c.UserId,
+                        UserName = c.User.Name,
+                        UserImage = c.User.Image,
+                        Replies = c.Replies.Select(r => new CommentViewModel
+                        {
+                            Id = r.Id,
+                            Content = r.Content,
+                            Title = r.Title,
+                            UserId = r.UserId,
+                            UserName = r.User.Name,
+                            UserImage = r.User.Image
+                        }).ToList()
+                    }).ToList()
+                })
+                .FirstOrDefaultAsync(p => p.Id == id);
 
             if (post == null)
             {
@@ -58,6 +90,7 @@ namespace blogsproject_1.Controllers
 
             return post;
         }
+
 
 
         [HttpPost]

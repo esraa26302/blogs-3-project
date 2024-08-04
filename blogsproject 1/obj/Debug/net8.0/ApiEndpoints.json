@@ -170,7 +170,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "blogsproject_1.Models.Post",
+        "Type": "blogsproject_1.Models.PostViewModel",
         "MediaTypes": [
           "text/plain",
           "application/json",

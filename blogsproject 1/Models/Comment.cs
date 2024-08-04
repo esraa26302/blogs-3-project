@@ -10,7 +10,7 @@ namespace blogsproject_1.Models
         [StringLength(1000, ErrorMessage = "Content cannot be longer than 1000 characters.")]
         public string Content { get; set; }
         [StringLength(200, ErrorMessage = "Title cannot be longer than 200 characters.")]
-        public string Title { get; set; }
+        public string? Title { get; set; }
 
         public int UserId { get; set; }
         public User User { get; set; }
