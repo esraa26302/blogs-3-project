@@ -27,15 +27,36 @@ namespace blogsproject_1.Controllers
         }
 
         [HttpGet]
-        //[Authorize(Policy = "AdminPolicy")]
+        [Authorize(Policy = "AdminPolicy")]
         public async Task<ActionResult<IEnumerable<User>>> GetUsers()
         {
             return await _context.Users.ToListAsync();
         }
+        [HttpGet("profile")]
+        [Authorize]
+        public async Task<ActionResult<User>> GetProfile()
+        {
+            var userIdClaim = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Name);
+            if (userIdClaim == null)
+            {
+                return Unauthorized(new { message = "User ID not found in token." });
+            }
+
+            var userId = int.Parse(userIdClaim.Value);
+            var user = await _context.Users.FindAsync(userId);
+
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            return user;
+        }
+
 
         [HttpGet("{id}")]
         [Authorize]
-        public async Task<ActionResult<User>> GetUser(string id)
+        public async Task<ActionResult<User>> GetUser(int id)
         {
             var user = await _context.Users.FindAsync(id);
 
@@ -49,12 +70,10 @@ namespace blogsproject_1.Controllers
             {
                 return Unauthorized(new { message = "User ID not found in token." });
             }
-            var userId = userIdClaim.Value;
-
+            var userId = int.Parse(userIdClaim.Value);
 
             var isAdmin = User.IsInRole("Admin");
 
-           
             if (isAdmin || userId == id)
             {
                 return user;
@@ -190,8 +209,6 @@ namespace blogsproject_1.Controllers
             return NoContent();
         }
 
-
-
         [HttpDelete("{id}")]
         [Authorize]
         public async Task<IActionResult> DeleteUser(int id)
@@ -206,24 +223,57 @@ namespace blogsproject_1.Controllers
             var userRoleClaim = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Role);
             var userRole = userRoleClaim?.Value;
 
-            var user = await _context.Users.FindAsync(id);
+            var user = await _context.Users
+                .Include(u => u.Posts)
+                .ThenInclude(p => p.Comments)
+                .ThenInclude(c => c.Replies) 
+                .FirstOrDefaultAsync(u => u.Id == id);
+
             if (user == null)
             {
                 return NotFound();
             }
-
-
-
 
             if (user.Id != userId && userRole != "Admin")
             {
                 return StatusCode(403, new { message = "You are not authorized to delete this user." });
             }
 
+            
+            foreach (var post in user.Posts)
+            {
+                foreach (var comment in post.Comments)
+                {
+                    
+                    await DeleteCommentAndReplies(comment.Id);
+                }
+            }
+
+           
+            _context.Posts.RemoveRange(user.Posts);
+
             _context.Users.Remove(user);
+
             await _context.SaveChangesAsync();
 
             return NoContent();
+        }
+
+        private async Task DeleteCommentAndReplies(int commentId)
+        {
+            var comment = await _context.Comments
+                .Include(c => c.Replies)
+                .FirstOrDefaultAsync(c => c.Id == commentId);
+
+            if (comment != null)
+            {
+                foreach (var reply in comment.Replies)
+                {
+                    await DeleteCommentAndReplies(reply.Id); 
+                }
+
+                _context.Comments.Remove(comment);
+            }
         }
 
         private bool UserExists(int id)

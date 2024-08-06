@@ -12,8 +12,8 @@ using blogsproject_1.Models;
 namespace blogsproject_1.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240804104610_m900")]
-    partial class m900
+    [Migration("20240806111422_m209")]
+    partial class m209
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
