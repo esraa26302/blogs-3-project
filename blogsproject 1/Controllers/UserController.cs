@@ -225,8 +225,8 @@ namespace blogsproject_1.Controllers
 
             var user = await _context.Users
                 .Include(u => u.Posts)
-                .ThenInclude(p => p.Comments)
-                .ThenInclude(c => c.Replies) 
+                    .ThenInclude(p => p.Comments)
+                        .ThenInclude(c => c.Replies)
                 .FirstOrDefaultAsync(u => u.Id == id);
 
             if (user == null)
@@ -239,19 +239,20 @@ namespace blogsproject_1.Controllers
                 return StatusCode(403, new { message = "You are not authorized to delete this user." });
             }
 
-            
+            // Remove comments and replies first
             foreach (var post in user.Posts)
             {
                 foreach (var comment in post.Comments)
                 {
-                    
-                    await DeleteCommentAndReplies(comment.Id);
+                    _context.Comments.RemoveRange(comment.Replies);
                 }
+                _context.Comments.RemoveRange(post.Comments);
             }
 
            
             _context.Posts.RemoveRange(user.Posts);
 
+           
             _context.Users.Remove(user);
 
             await _context.SaveChangesAsync();
@@ -259,22 +260,8 @@ namespace blogsproject_1.Controllers
             return NoContent();
         }
 
-        private async Task DeleteCommentAndReplies(int commentId)
-        {
-            var comment = await _context.Comments
-                .Include(c => c.Replies)
-                .FirstOrDefaultAsync(c => c.Id == commentId);
 
-            if (comment != null)
-            {
-                foreach (var reply in comment.Replies)
-                {
-                    await DeleteCommentAndReplies(reply.Id); 
-                }
 
-                _context.Comments.Remove(comment);
-            }
-        }
 
         private bool UserExists(int id)
         {

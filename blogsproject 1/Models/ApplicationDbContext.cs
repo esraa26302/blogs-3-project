@@ -19,22 +19,28 @@ namespace blogsproject_1.Models
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Comment>()
-                .HasOne(c => c.User)
-                .WithMany(u => u.Comments)
-                .HasForeignKey(c => c.UserId)
-                .OnDelete(DeleteBehavior.Restrict);
+          .HasOne(c => c.User)
+          .WithMany(u => u.Comments)
+          .HasForeignKey(c => c.UserId)
+          .OnDelete(DeleteBehavior.Restrict); // Avoid cascade delete to prevent cycles
 
             modelBuilder.Entity<Comment>()
                 .HasOne(c => c.Post)
                 .WithMany(p => p.Comments)
                 .HasForeignKey(c => c.PostId)
-                .OnDelete(DeleteBehavior.Restrict);
+                .OnDelete(DeleteBehavior.Restrict); // Avoid cascade delete to prevent cycles
+
+            modelBuilder.Entity<Comment>()
+                .HasOne(c => c.ParentComment)
+                .WithMany(c => c.Replies)
+                .HasForeignKey(c => c.ParentCommentId)
+                .OnDelete(DeleteBehavior.Restrict); // Avoid cascade delete to prevent cycles
 
             modelBuilder.Entity<Post>()
                 .HasOne(p => p.User)
                 .WithMany(u => u.Posts)
                 .HasForeignKey(p => p.UserId)
-                .OnDelete(DeleteBehavior.Restrict);
+                .OnDelete(DeleteBehavior.Restrict); // Avoid cascade delete to prevent cycles
 
             base.OnModelCreating(modelBuilder);
         }

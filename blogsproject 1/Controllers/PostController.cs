@@ -36,9 +36,9 @@ namespace blogsproject_1.Controllers
                     UserId = p.UserId,
                     UserName = p.User.Name,
                     UserImage = p.User.Image,
-                    CreationDate = p.CreationDate 
+                    CreationDate = p.CreationDate
                 })
-                .OrderByDescending(p => p.CreationDate) 
+                .OrderByDescending(p => p.CreationDate)
                 .ToListAsync();
 
             return Ok(posts);
@@ -95,7 +95,7 @@ namespace blogsproject_1.Controllers
 
         [HttpPost]
         [Authorize(Policy = "WriterOrAdminPolicy")]
-       
+
         public async Task<ActionResult<Post>> PostPost(PostCreateDto postDto)
         {
             if (!ModelState.IsValid)
@@ -136,10 +136,10 @@ namespace blogsproject_1.Controllers
 
             return CreatedAtAction(nameof(GetPost), new { id = post.Id }, post);
         }
-    
 
 
-[HttpPut("{id}")]
+
+        [HttpPut("{id}")]
         [Authorize(Policy = "WriterOrAdminPolicy")]
         public async Task<IActionResult> PutPost(int id, PostUpdateDto postDto)
         {
@@ -192,7 +192,7 @@ namespace blogsproject_1.Controllers
             var userRoleClaim = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Role);
             var userRole = userRoleClaim?.Value;
 
-            var post = await _context.Posts.FindAsync(id);
+            var post = await _context.Posts.Include(p => p.Comments).FirstOrDefaultAsync(p => p.Id == id);
             if (post == null)
             {
                 return NotFound(new { message = "Post not found." });
@@ -203,10 +203,14 @@ namespace blogsproject_1.Controllers
                 return StatusCode(403, new { message = "You are not authorized to delete this post." });
             }
 
+           
+            _context.Comments.RemoveRange(post.Comments);
+
+           
             _context.Posts.Remove(post);
             await _context.SaveChangesAsync();
 
             return NoContent();
         }
     }
-}
+    }
